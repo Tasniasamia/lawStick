@@ -1,0 +1,12 @@
+import Banner from "../components/home/banner";
+
+const Index = () => {
+    return (
+        <div>
+            <Banner/>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas sequi nesciunt adipisci ipsum. Neque aspernatur debitis magnam ratione, soluta optio illum deserunt ab blanditiis. Amet nobis illum voluptatum magnam!</p>
+        </div>
+    );
+};
+
+export default Index;

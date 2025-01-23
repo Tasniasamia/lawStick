@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+ 
+
+  --color-scheme: light dark;
+  --textcolor: #3A3D3F;
+  --white: #ffff;
+
+  --font-garamond:"EB Garamond", serif;
+  --font-sans: "Work Sans", serif;
+  --topbar-bg:#734A35
+}
+
+
+
+body {
+margin:0;
+padding:0;
+background:var(--white);
+color:var(--textcolor);
+font-family: var(--font-sans);
+
+}
+.custom-container {
+  @apply max-w-[1320px] w-full   px-4 mx-auto;
+}
+
+//topbar
+.topbar{
+  background-color:var(--topbar-bg);
+  color:var(--white);
+  font-family: var(--font-sans);
+}
+//navbar
+.navbar{
+font-family: var(--font-sans);
+}
+//hero section 
+.hero-banner{
+  font-family: var(--font-sans);
+  height: 100vh;
+
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .hero-banner{
+  height: 90vh;
+}
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-banner{
+  height: 70vh;
+}
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+  .hero-banner{
+  height: 60vh;
+}
+}
+.hero-title {
+ font-family: var(--font-garamond);
+  
+ }
+ 
+ .button{
+  font-family: var(--font-sans);
+
+ }
+
+
+// will be needed
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     color: #213547;
+//     background-color: #ffffff;
+//   }
+//   a:hover {
+//     color: #747bff;
+//   }
+//   button {
+//     background-color: #f9f9f9;
+//   }
+// }
