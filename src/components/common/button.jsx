@@ -1,13 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import{ useState } from 'react';
 import { motion } from "framer-motion";
-const Button = ({
-  children,
-  onClick,
-  className = '',
-  type = 'button',
-  loadingText = 'Loading...',
-}) => {
+// eslint-disable-next-line react/prop-types
+const Button = ({children,onClick,type = 'button',loadingText = 'Loading...'}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = async (event) => {
