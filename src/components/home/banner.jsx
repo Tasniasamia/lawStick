@@ -1,3 +1,5 @@
+import Button from "../common/button";
+
 const Banner = () => {
   return (
     <div
@@ -29,9 +31,9 @@ const Banner = () => {
                 it deserves.
               </p>
               <div className=" lg:mt-10 sm:mt-5 mt-6">
-                <button className="bg-[#C7A87D] md:px-5 px-2 md:py-3 py-2 text-white rounded-lg font-medium whitespace-nowrap md:text-base text-sm">
+                <Button>
                   Get Appointed
-                </button>
+                </Button>
               </div>
             </div>
           </div>

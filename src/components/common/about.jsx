@@ -22,7 +22,7 @@ const AboutUS = () => {
           </div>
 
           {/* text container */}
-          <div className=" w-full xl:w-3/5 flex flex-col  lg:px-5 xl:px-5 md:px-7 smaller:px-8 sm:px-4 px-2 ">
+          <div className=" w-full xl:w-3/5 flex flex-col   lg:px-5 xl:px-5 md:px-7 smaller:px-8 sm:px-4 px-2 ">
             <div className="text-center sm:text-start xl:px-5 md:px-7 smaller:px-8 small:px-4">
               <p className="section-subtitle">
                 About Us
