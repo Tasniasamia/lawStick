@@ -3,7 +3,7 @@ import Button from "../common/button";
 const Banner = () => {
   return (
     <div
-      className="relative  2xl:bg-trasnsparent bg-black   text-white pt-[89px] hero-banner "
+      className="relative overflow-hidden  2xl:bg-trasnsparent bg-black   text-white pt-[89px] hero-banner "
       style={{
         backgroundImage: `url(./images/About-bg-image.png)`,
         backgroundSize: "cover",
@@ -45,7 +45,7 @@ const Banner = () => {
         <div className="md:basis-1/2 basis-full ">
           <div className="relative hero-images  h-full ">
             <img
-              className="absolute bottom-0 hidden md:block xl:h-[calc(100vh-119px)] lg:h-[calc(100vh-190px)] md:h-[calc(100vh-358px)]    2xl:right-[80px] right-0 2xl:w-[773px] xl:w-[690px]"
+              className="absolute hero-image-shape bottom-0 hidden md:block   xl:h-[828px]     2xl:right-[80px] right-0 2xl:w-[773px] xl:w-[690px]"
               src="./images/banner-bg-image.png"
               alt="..."
             />

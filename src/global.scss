@@ -107,22 +107,54 @@ font-family: var(--font-sans);
 //hero section 
 .hero-banner{
   font-family: var(--font-sans);
-  height: 100vh;
+  height: 948px;
 
 }
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
+.hero-image-shape{
+  @media screen and (min-width:1600px)  and (max-width:1699px){
+    right:0!important;
+  }
+  @media screen and (min-width:1500px)  and (max-width:1599px){
+    right:0!important;
+  }
+}
+// @media screen and (min-width: 1024px) and (max-width: 1279px) {
+//   .hero-banner{
+//   height: 90vh;
+// }
+// }
+@media screen and  (min-width:1200px) and (max-width:1279px){
   .hero-banner{
-  height: 90vh;
+    height:850px;
+  }
+  .hero-image-shape{
+    height:742px!important;
+  }
 }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and  (min-width:1024px) and (max-width:1199px){
   .hero-banner{
-  height: 70vh;
+    height:700px;
+  }
+  .hero-image-shape{
+    height:592px!important;
+  }
 }
+@media screen and  (min-width:768px) and (max-width:1023px){
+  .hero-banner{
+    height:600px;
+  }
+  .hero-image-shape{
+    height:492px!important;
+  }
 }
+// @media screen and (min-width: 768px) and (max-width: 1023px) {
+//   .hero-banner{
+//   height: 900px
+// }
+// }
 @media screen and (min-width: 320px) and (max-width: 767px){
   .hero-banner{
-  height: 60vh;
+  height: 500px;
 }
 }
 .hero-title {
