@@ -3,11 +3,11 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 const LawyerCard = ({ data }) => {
   return (
     <div
-      className="max-w-[312px] h-[452px]  mx-auto flex flex-col items-center border-[0px] border-[#1B3A57] text-center text-black space-y-6 rounded-[10px]  px-4 pt-4 pb-6 "
+      className="max-w-[312px]   mx-auto flex flex-col items-center border  text-center text-black rounded-[10px]  px-4 pt-4 pb-6 "
       style={{ boxShadow: "0px 0px 20px 0px #0000001A" }}
       >
       <div className="flex justify-around items-center">
-        <img className="rounded-t-[10px]" src={data?.image} alt="h-[280px]" />
+        <img className="rounded-t-[10px]" src={data?.image} alt="max-h-[280px] max-w-[280px] object-cover" />
       </div>
 
       <div>

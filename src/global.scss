@@ -31,7 +31,10 @@ font-family: var(--font-sans);
 .custom-container {
   @apply max-w-[1320px] w-full   px-4 mx-auto;
 }
-
+//button
+.button_overwrite{
+  border-radius: 40px!important;
+}
 //topbar
 .topbar{
   background-color:var(--topbar-bg);
@@ -118,11 +121,7 @@ font-family: var(--font-sans);
     right:0!important;
   }
 }
-// @media screen and (min-width: 1024px) and (max-width: 1279px) {
-//   .hero-banner{
-//   height: 90vh;
-// }
-// }
+
 @media screen and  (min-width:1200px) and (max-width:1279px){
   .hero-banner{
     height:850px;
@@ -147,11 +146,7 @@ font-family: var(--font-sans);
     height:492px!important;
   }
 }
-// @media screen and (min-width: 768px) and (max-width: 1023px) {
-//   .hero-banner{
-//   height: 900px
-// }
-// }
+
 @media screen and (min-width: 320px) and (max-width: 767px){
   .hero-banner{
   height: 500px;
@@ -162,8 +157,15 @@ font-family: var(--font-sans);
   
  }
 
+// about section
+.about-statu{
 
+  @media  screen and (max-width:1810px) {
+    display: none!important;
+  }
+}
 
-.lawyer , .testimonial , .service , .testimonialCard , .serviceCard , .about-section ,  .button {
+.lawyer , .testimonial , .service , .testimonialCard , .serviceCard , .about-section ,  .button .case-study {
   font-family: var(--font-sans); 
  }
+

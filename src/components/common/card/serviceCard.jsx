@@ -3,7 +3,7 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 const ServiceCard = ({data}) => {
     return (
             <div className='relative serviceCard'>
-            <div className="min-h-[340px]  duration-700 transition-all bg-white group hover:bg-primary text-black flex flex-col justify-between items-center px-4 py-4 text-center  rounded-[10px] hover:text-white relative">
+            <div className=" max-w-[312px] sm:mx-0 mx-auto duration-700 transition-all bg-white group hover:bg-primary space-y-6 text-black flex flex-col justify-between items-center p-4 text-center  rounded-[10px] hover:text-white relative">
                       <img
                         className="absolute bottom-0 right-0 group-hover:hidden duration-700 transition-all"
                         src="./images/practice-design.png"
@@ -22,11 +22,11 @@ const ServiceCard = ({data}) => {
                           />
                         </div>
                         <p className="text-xl font-semibold">{data?.name}</p>
-                        <p className="text-base line-clamp-3">
+                        <p className="text-base line-clamp-3 !pb-[16px] h-[81px] overflow-hidden">
                           {data?.description}
                         </p>
         
-                        <div className="h-10 w-10 rounded-full bg-amber-100 hover:bg-white  flex justify-center items-center  duration-700 transition-all cursor-pointer">
+                        <div className="h-10 w-10  rounded-full bg-[#F9EAF3] hover:bg-white  flex justify-center items-center  duration-700 transition-all cursor-pointer">
                           <MdOutlineArrowRightAlt className="text-primary text-2xl"></MdOutlineArrowRightAlt>
                         </div>
                       </div>

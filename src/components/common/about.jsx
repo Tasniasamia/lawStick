@@ -2,7 +2,7 @@ import Button from '../common/button';
 const AboutUS = () => {
   return (
     <div className="relative about-section">
-      <div className="hidden 2xl:block absolute bottom-0">
+      <div className="hidden 2xl:block absolute bottom-0 about-statu">
         <div className="">
           <img src="./images/justice-statu.png" alt="" />
         </div>
