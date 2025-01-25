@@ -22,7 +22,7 @@ const ServiceCard = ({data}) => {
                           />
                         </div>
                         <p className="text-xl font-semibold">{data?.name}</p>
-                        <p className="text-base line-clamp-3 !pb-[16px] h-[81px] overflow-hidden">
+                        <p className="text-base line-clamp-3 !mb-[16px]">
                           {data?.description}
                         </p>
         

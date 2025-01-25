@@ -11,7 +11,7 @@ const LawyerCard = ({ data }) => {
       </div>
 
       <div>
-        <p className="text-lg font-semibold text-primary cursor-pointer">
+        <p className="text-lg font-semibold text-primary cursor-pointer mt-[24px]">
           {data?.name}
         </p>
         <p className="text-base font-medium text-textColor">{data?.title}</p>
