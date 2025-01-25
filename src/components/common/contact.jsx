@@ -35,6 +35,8 @@ const Contact = () => {
               handleSubmit(e);
             }}
             className="md:basis-1/2 basis-full rounded-[20px] bg-white md:pt-[60px] md:pb-[81px] pt-[43px] pb-[51px] md:w-[588px] max-w-full lg:mx-0 md:mx-auto   md:px-10 px-4 order-2 "
+            style={{boxShadow: "0px 0px 10px 0px #0000000D"
+            }}
           >
             {/* name */}
             <label htmlFor="name" className="block font-medium text-lg mb-2">

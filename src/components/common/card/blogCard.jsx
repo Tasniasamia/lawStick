@@ -9,7 +9,7 @@ const BlogCard = ({data}) => {
                        </div>
                        {/* div 1 */}
                        <div className="">
-                         <img src={data?.image} alt="h-[254px]" />
+                         <img src={data?.image} alt="max-h-[254px] max-w-full" />
                        </div>
                        {/* div 2 */}
                        <div className="sm:p-6 p-5 lg:space-y-5 space-y-2 lg:text-start text-center flex flex-col ">
