@@ -52,11 +52,12 @@ const Footer = () => {
       <div className="custom-container py-[62px] text-white ">
         <div className="flex flex-col md:flex-row lg:flex-nowrap flex-wrap justify-between md:mb-[69px] mb-10 lg:gap-0 md:gap-6 gap-[60px] ">
           {/* 1st */}
-          <div >
+          <div>
             <img src={footerLogo} alt="" />
             <p className="mt-6 leading-[27.2px]  font-normal ">
-              Reach out for expert guidance and personalized <br className="sm:inline-block hidden"/> solutions to meet
-              your needs.
+              Reach out for expert guidance and personalized{" "}
+              <br className="sm:inline-block hidden" /> solutions to meet your
+              needs.
             </p>
             <div className="flex justify-start  mt-10 gap-4 relative !z-50">
               <a className="" href="#">
@@ -68,14 +69,19 @@ const Footer = () => {
               <a className="hover:text-primary cursor-pointer" href="#">
                 <FaYoutube className="text-[24px]" />
               </a>
-              <a className="hover:text-primary cursor-pointer text-white " href="#">
+              <a
+                className="hover:text-primary cursor-pointer text-white "
+                href="#"
+              >
                 <AiFillInstagram className="text-[24px]" />
               </a>
             </div>
           </div>
           {/* 2nd */}
           <div className="flex flex-col ">
-            <h1 className="font-medium text-2xl mb-[10px] whitespace-nowrap">Quick Links</h1>
+            <h1 className="font-medium text-2xl mb-[10px] whitespace-nowrap">
+              Quick Links
+            </h1>
             <div className="md:mt-10 mt-5 flex flex-col leading-9 content-end">
               <a className="hover:text-primary" href="">
                 Home
@@ -110,10 +116,11 @@ const Footer = () => {
             </div>
           </div>
           {/* 4rth */}
-          <div >
+          <div>
             <h1 className="font-medium text-2xl">Address</h1>
             <p className="md:mt-[52px] mt-6 mb-6 leading-7">
-              85 KDA Outer Bypass <br className="inline-block"/> road, Shonadanga, Khulna
+              85 KDA Outer Bypass <br className="inline-block" /> road,
+              Shonadanga, Khulna
             </p>
             <p className="mb-[20px] brightness-50">Language</p>
             <div className="relative flex ">
@@ -134,7 +141,7 @@ const Footer = () => {
 
               {active && (
                 <div className="absolute top-full bg-white text-black px-2 py-2 rounded-lg w-[144px] z-10">
-                  {languages.map((language,index) => (
+                  {languages.map((language, index) => (
                     <div
                       onClick={() => handleLanguageSelect(language)}
                       className="py-1 px-2 cursor-pointer hover:bg-blue-100"
