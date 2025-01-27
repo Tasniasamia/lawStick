@@ -20,6 +20,7 @@ const Index = () => {
             <Faq/>
             <Contact/>
             <NewsBlog/>
+         
         </div>
     );
 };

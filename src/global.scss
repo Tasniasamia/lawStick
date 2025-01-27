@@ -101,6 +101,29 @@ font-family: var(--font-sans);
     font-size: 1rem!important
   }
 }
+//banner title
+/* Base styles for all screen sizes */
+.banner_title {
+  font-family: 'EB Garamond', serif;
+  font-size: 30px;
+  font-weight: 600; /* Semibold */
+  margin-top: 37px;
+}
+
+/* Medium screens (md) */
+@media (min-width: 768px) {
+  .banner_title {
+      font-size: 36px; /* Approximate for text-4xl */
+      margin-top: 0;
+  }
+}
+
+/* Large screens (lg) */
+@media (min-width: 1024px) {
+  .banner_title {
+      font-size: 48px; /* Approximate for text-5xl */
+  }
+}
 
 .mySwiper{
 font-family: var(--font-sans);
@@ -111,6 +134,7 @@ font-family: var(--font-sans);
 .hero-banner{
   font-family: var(--font-sans);
   height: 948px;
+
 
 }
 .hero-image-shape{
@@ -169,3 +193,34 @@ font-family: var(--font-sans);
   font-family: var(--font-sans); 
  }
 
+//playbutton
+
+  @keyframes ripple-1 {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ripple-2 {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  .animate-ripple-1 {
+    animation: ripple-1 1.5s infinite;
+  }
+
+  .animate-ripple-2 {
+    animation: ripple-2 1.5s infinite 0.5s;
+  }

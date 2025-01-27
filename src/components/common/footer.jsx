@@ -22,7 +22,6 @@ const Footer = () => {
     setSelectedLanguage(language);
     setActive(false);
   };
-
   return (
     <div
       className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069]
