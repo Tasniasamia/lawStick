@@ -1,4 +1,5 @@
 import AboutUs from "../components/about/about";
+import CasesStatus from "../components/about/caseStatus";
 import Banner from "../components/common/banner";
 
 const About = () => {
@@ -6,6 +7,7 @@ const About = () => {
         <div>
             <Banner title="About Us"/>
             <AboutUs/>
+            <CasesStatus/>
         </div>
     );
 };
