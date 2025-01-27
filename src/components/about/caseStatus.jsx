@@ -11,7 +11,7 @@ const CasesStatus = () => {
               </span>
               <div>
                 <h3 className="text-3xl font-bold mb-4">162</h3>
-                <p className="text-sm capitalize">Successful Case</p>
+                <p className="text-xl capitalize">Successful Case</p>
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@ const CasesStatus = () => {
               </span>
               <div>
                 <h3 className="text-3xl font-bold mb-4">160</h3>
-                <p className="text-sm capitalize">case close</p>
+                <p className="text-xl capitalize">case close</p>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const CasesStatus = () => {
               </span>
               <div>
                 <h3 className="text-3xl font-bold mb-4">262</h3>
-                <p className="text-sm capitalize">trusted client</p>
+                <p className="text-xl capitalize">trusted client</p>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const CasesStatus = () => {
               </span>
               <div>
                 <h3 className="text-3xl font-bold mb-4">62</h3>
-                <p className="text-sm capitalize">expert team</p>
+                <p className="text-xl capitalize">expert team</p>
               </div>
             </div>
           </div>
