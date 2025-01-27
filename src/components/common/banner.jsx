@@ -6,7 +6,7 @@ const Banner = ({ title }) => {
   return (
     <div
       style={{ backgroundImage: `url(./images/About-bg-image.png` }}
-      className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white bg-cover bg-center bg-no-repeat md:h-[480px] h-[300px] "
+      className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white bg-cover bg-center bg-no-repeat md:h-[480px] h-[300px] xl:mb-[150px] md:mb-14 mb-[29px] "
     > 
     <div className="bg-black bg-opacity-[60%] h-full w-full flex items-center justify-end">
       <div className="custom-container text-center md:pt-[100px] pt-[50px]">

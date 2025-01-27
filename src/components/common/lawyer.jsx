@@ -52,7 +52,7 @@ const Lawyer = () => {
   ];
   return (
     <div className=" min-h-fit work-sans text-black lawyer">
-      <div className="custom-container xl:py-[150px] md:py-[62px] py-[29px] ">
+      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
         <div className=" text-center">
           <p className="section-subtitle">Team</p>
           <h1 className="section-title">The Face Of Justice</h1>

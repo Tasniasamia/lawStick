@@ -1,12 +1,12 @@
 import AboutUS from "../components/common/about";
+import NewsBlog from "../components/common/blog";
+import CaseStudy from "../components/common/caseStudy";
 import Contact from "../components/common/contact";
+import Lawyer from "../components/common/lawyer";
+import Service from "../components/common/service";
+import Testimonial from "../components/common/testimonial";
 import Banner from "../components/home/banner";
-import NewsBlog from "../components/home/blog";
-import CaseStudy from "../components/home/caseStudy";
 import Faq from "../components/home/faq";
-import Lawyer from "../components/home/lawyer";
-import Service from "../components/home/service";
-import Testimonial from "../components/home/testimonial";
 
 const Index = () => {
     return (

@@ -3,9 +3,9 @@ import Button from "../common/button";
 const Banner = () => {
   return (
     <div
-      className="relative overflow-hidden  2xl:bg-trasnsparent bg-black   text-white pt-[89px] hero-banner "
+      className="relative overflow-hidden  2xl:bg-trasnsparent bg-black   text-white pt-[89px] hero-banner xl:mb-[150px] md:mb-14 mb-[29px]"
       style={{
-        backgroundImage: `url(./images/About-bg-image.png)`,
+        backgroundImage: `url(./images/bg.png)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

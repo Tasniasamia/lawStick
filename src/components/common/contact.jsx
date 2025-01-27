@@ -20,7 +20,7 @@ const Contact = () => {
     
   };
   return (
-    <div className="custom-container lg:py-[75px] md:py-[64px] py-[27px] ">
+    <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
       <div className="relative min-h-[738px] rounded-[20px]">
         <div
           style={{ backgroundImage: `url(${bg_contact})` }}

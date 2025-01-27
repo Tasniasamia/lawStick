@@ -14,8 +14,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 // import { Pagination } from "swiper/modules";
-import ServiceCard from "../common/card/serviceCard";
-import Button from "../common/button";
+import ServiceCard from "./card/serviceCard";
+import Button from "./button";
 
 const Service = () => {
   let swiperRef = useRef(null);
@@ -71,7 +71,7 @@ const Service = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white relative service">
+    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white relative service  xl:mb-[150px] md:mb-14 mb-[29px]">
       <div className="hidden 2xl:block absolute top-0">
         <img className="brightness-50" src={practiceDesign} alt="..." />
       </div>

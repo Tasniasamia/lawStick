@@ -41,7 +41,7 @@ let useClickOutside = (handler) => {
     setvideoOpen(false);
   });
   return (
-    <div className=" xl:py-[150px] md:py-10 py-3">
+    <div className=" xl:mb-[150px] md:mb-14 mb-[29px]">
       <div className="custom-container">
         <div className="flex flex-col lg:flex-row  lg:gap-14 md:gap-7 gap-6 my-14">
           {/* image container */}
@@ -69,7 +69,7 @@ let useClickOutside = (handler) => {
           </div>
 
           {/* text container */}
-          <div className="eb-garamond w-full lg:w-3/5 flex flex-col justify-center lg:px-5 xl:px-5 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
+          <div className="eb-garamond w-full lg:w-3/5 flex flex-col justify-center lg:px-5 xl:px-5 md:px-7 smaller:px-8 sm:px-4 px-2">
             <div className="text-center sm:text-start xl:px-5 md:px-7 smaller:px-8 small:px-4">
               <p className="section-subtitle text-[#D4AF37]">
                 About Us
@@ -87,7 +87,7 @@ let useClickOutside = (handler) => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-[40px] gap-x-[24px] work-sans mb-[50px] xl:px-5 md:px-7 smaller:px-8 small:px-4">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-[40px] gap-x-[24px] work-sans mb-[50px] xl:px-5 md:px-7 smaller:px-8 sm:px-4">
               <div className="space-y-4">
                 <div className="flex gap-4">
                   <div className="flex-none md:w-[60px] md:h-[60px] w-11 h-11 rounded-full bg-red-100 flex justify-center items-center">

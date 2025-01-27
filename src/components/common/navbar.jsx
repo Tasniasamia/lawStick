@@ -100,7 +100,7 @@ const Navbar = () => {
                   <Link to={`/about`}>
                     <li
                       className={`hover:text-primary ${
-                        location?.pathname === "About" ? "text-primary" : ""
+                        location?.pathname === "about" ? "text-primary" : ""
                       }`}
                     >
                       About
@@ -111,7 +111,7 @@ const Navbar = () => {
                   <Link to={`/service`}>
                     <li
                       className={`hover:text-primary ${
-                        location?.pathname === "Service" ? "text-primary" : ""
+                        location?.pathname === "service" ? "text-primary" : ""
                       }`}
                     >
                       Service
@@ -122,7 +122,7 @@ const Navbar = () => {
                   <Link to={`/caseStudy`}>
                     <li
                       className={`hover:text-primary ${
-                        location?.pathname === "Case Study"
+                        location?.pathname === "caseStudy"
                           ? "text-primary"
                           : ""
                       }`}

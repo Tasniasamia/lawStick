@@ -9,7 +9,7 @@ const AboutUS = () => {
       </div>
 
       <div className="custom-container">
-        <div className="flex flex-col-reverse lg:flex-row xl:my-[150px] md:my-14 my-[29px] sm:mt-[29px] sm:mb-[38px]">
+        <div className="flex flex-col-reverse lg:flex-row  xl:mb-[150px] md:mb-14 mb-[29px]">
           {/* image container */}
           <div className="flex w-full xl:w-2/5 justify-center items-center ">
             <div className="md:max-w-[564px] md:max-h-[646px] rounded-[20px]">

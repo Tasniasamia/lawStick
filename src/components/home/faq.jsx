@@ -26,7 +26,7 @@ const Faq = () => {
 
   return (
     <div className=" text-black ">
-      <div className="custom-container lg:py-[75px] md:py-[64px] py-[27px] ">
+      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px]">
         <div className=" text-center">
           <p className="section-subtitle">FAQ’S</p>
           <h1 className="section-title">Frequently Asked Questions</h1>

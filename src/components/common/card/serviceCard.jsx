@@ -3,7 +3,8 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 const ServiceCard = ({data}) => {
     return (
             <div className='relative serviceCard'>
-            <div className=" max-w-[312px] sm:mx-0 mx-auto duration-700 transition-all bg-white group hover:bg-primary space-y-6 text-black flex flex-col justify-between items-center p-4 text-center  rounded-[10px] hover:text-white relative">
+            <div className="border border-opacity-[50%]  max-w-[312px] sm:mx-0 mx-auto duration-700 transition-all bg-white group hover:bg-primary space-y-6 text-black flex flex-col justify-between items-center p-4 text-center  rounded-[10px] hover:text-white relative"style={{boxShadow:"0px 0px 20px 0px #0000001A" 
+}}>
                       <img
                         className="absolute bottom-0 right-0 group-hover:hidden duration-700 transition-all"
                         src="./images/practice-design.png"

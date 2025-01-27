@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { MdChevronLeft } from "react-icons/md";
 import { MdChevronRight } from "react-icons/md";
-import BlogCard from "../common/card/blogCard";
+import BlogCard from "./card/blogCard";
 
 const NewsBlog = () => {
   let sliderRef = useRef(null);
@@ -51,7 +51,7 @@ const NewsBlog = () => {
 
   return (
     <div className="  text-black">
-      <div className="custom-container lg:py-[62px] md:py-[57px] py-[27px] ">
+      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
         <div className=" sm:text-start text-center">
           <p className="section-subtitle text-[#D4AF37]">News & Blog</p>
           <h1 className="section-title">Our Latest Blog & News</h1>

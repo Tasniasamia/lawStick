@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <div
       className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069]
-     relative mt-[93px]"
+     relative "
     >
       <img
         className="absolute bottom-0 left-0 hidden 2xl:block h-[311px] !z-20 "

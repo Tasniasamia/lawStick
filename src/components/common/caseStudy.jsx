@@ -5,8 +5,8 @@ import case3 from "./../../../public/images/case-3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import CaseCard from "../common/card/caseCard";
-import Button from "../common/button";
+import CaseCard from "./card/caseCard";
+import Button from "./button";
 
 
 const CaseStudy = () => {
@@ -50,7 +50,7 @@ const CaseStudy = () => {
   ]
   return (
     <div className="case-study text-black">
-      <div className="custom-container xl:pt-[150px] xl:pb-[75px] md:py-16 py-[29px] ">
+      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
         <div className=" text-center sm:text-start">
           <p className="section-subtitle">Case Study</p>
           <h1 className="section-title">
