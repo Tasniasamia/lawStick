@@ -1,5 +1,5 @@
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 const BlogCard = ({data}) => {
    
     return (
@@ -27,9 +27,11 @@ const BlogCard = ({data}) => {
                              </span>
                            </p>
                            <div className="flex  gap-1 items-center text-primary sm:ms-auto xl:mt-0 lg:mt-[10px] mt-0">
+                            <Link to={`/blog/${data?.id}`} className="h-full w-full">
                              <p className="font-medium lg:text-xl text-base">
                                Read More
                              </p>
+                             </Link>
                              <MdOutlineKeyboardDoubleArrowRight className="h-8 w-6 " />
                            </div>
                          </div>

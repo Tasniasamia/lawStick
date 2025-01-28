@@ -7,8 +7,6 @@
 
 
 :root {
- 
-
   --color-scheme: light dark;
   --textcolor: #3A3D3F;
   --white: #ffff;
@@ -101,9 +99,9 @@ font-family: var(--font-sans);
     font-size: 1rem!important
   }
 }
-//banner title
+//header section 
 /* Base styles for all screen sizes */
-.banner_title {
+.header-1 {
   font-family: 'EB Garamond', serif;
   font-size: 30px;
   font-weight: 600; /* Semibold */
@@ -112,7 +110,7 @@ font-family: var(--font-sans);
 
 /* Medium screens (md) */
 @media (min-width: 768px) {
-  .banner_title {
+  .header-1 {
       font-size: 36px; /* Approximate for text-4xl */
       margin-top: 0;
   }
@@ -120,15 +118,27 @@ font-family: var(--font-sans);
 
 /* Large screens (lg) */
 @media (min-width: 1024px) {
-  .banner_title {
+  .header-1{
       font-size: 48px; /* Approximate for text-5xl */
   }
 }
+.header-2{
+  font-family: "EB Garamond", serif;
+  display: flex;
+  align-items: center;
+  gap: 4px; 
+  font-size: 20px; 
+  font-weight: 500; 
+  line-height: 31px;
+  margin-bottom: 0.75rem; 
 
-.mySwiper{
-font-family: var(--font-sans);
-
+ 
+  @media (min-width: 768px) {
+    font-size: 21px;
+    margin-bottom: 1.5rem;
+  }
 }
+
 
 //hero section 
 .hero-banner{
@@ -176,7 +186,7 @@ font-family: var(--font-sans);
   height: 500px;
 }
 }
-.hero-title {
+.hero-title , .blog-header {
  font-family: var(--font-garamond);
   
  }
@@ -189,7 +199,7 @@ font-family: var(--font-sans);
   }
 }
 
-.lawyer , .testimonial , .service , .testimonialCard , .serviceCard , .about-section ,  .button .case-study {
+.lawyer , .testimonial , .service , .testimonialCard , .serviceCard , .about-section ,  .button , .case-study , .searchBar ,.mySwiper{
   font-family: var(--font-sans); 
  }
 
@@ -227,4 +237,43 @@ font-family: var(--font-sans);
 .plan-section, .our_client{
   font-family: 'EB Garamond', serif;
 
+}
+
+
+//scrollbar 
+// // for website components
+// .scroll-container {
+//   overflow-y: auto;
+//   max-height: 290px; 
+//   scroll-behavior: smooth; 
+// }
+
+/* For Webkit browsers (Chrome, Edge, Safari) */
+.scroll-container::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent; /* Scrollbar track (background) */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+ // background-color: #d4af37; /* Scrollbar color */
+ background-color: transparent;
+ border-radius: 4px; /* Rounded scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  //background-color: #b9922c; /* Scrollbar color on hover */
+  background-color: transparent;
+}
+
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
 }

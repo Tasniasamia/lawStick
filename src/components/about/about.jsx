@@ -5,22 +5,22 @@ import { IoClose } from "react-icons/io5";
 
 const AboutUs = () => {
   let videoRef = useRef(null);
-//   let [isPlaying, setIsPlaying] = useState(false);
+  //   let [isPlaying, setIsPlaying] = useState(false);
 
-//   let handlePlayPause = () => {
-//     if (videoRef.current) {
-//       if (isPlaying) {
-//         videoRef.current.pause();
-//       } else {
-//         videoRef.current.play();
-//       }
-//       setIsPlaying(!isPlaying);
-//     }
-//   };
+  //   let handlePlayPause = () => {
+  //     if (videoRef.current) {
+  //       if (isPlaying) {
+  //         videoRef.current.pause();
+  //       } else {
+  //         videoRef.current.play();
+  //       }
+  //       setIsPlaying(!isPlaying);
+  //     }
+  //   };
 
-let useClickOutside = (handler) => {
+  let useClickOutside = (handler) => {
     let domNode = useRef();
-  
+
     useEffect(() => {
       let maybeHandler = (event) => {
         if (!domNode.current.contains(event.target)) {
@@ -28,7 +28,7 @@ let useClickOutside = (handler) => {
         }
       };
       document.addEventListener("mousedown", maybeHandler);
-  
+
       return () => {
         document.removeEventListener("mousedown", maybeHandler);
       };
@@ -45,7 +45,10 @@ let useClickOutside = (handler) => {
       <div className="custom-container">
         <div className="flex flex-col lg:flex-row  lg:gap-14 md:gap-7 gap-6 my-14">
           {/* image container */}
-          <div ref={domNode} className="lg:max-w-auto md:max-w-[582px] lg:mx-0 sm:mx-auto lg:flex sm:block hidden lg:w-2/5 justify-center items-center relative">
+          <div
+            ref={domNode}
+            className="lg:max-w-auto md:max-w-[582px] lg:mx-0 sm:mx-auto lg:flex sm:block hidden lg:w-2/5 justify-center items-center relative"
+          >
             <div className="md:max-w-[452px] rounded-[20px]">
               <img
                 className="w-full h-auto object-cover rounded-[20px] "
@@ -56,12 +59,10 @@ let useClickOutside = (handler) => {
 
             <div className="absolute top-[246px] right-[-64px] bg-white h-[280px] w-[263px] flex justify-center items-center">
               <div className="right-[-56px] bottom-[92px] h-full w-full border-[12px] border-primary">
-              <img src='./images/about.png' className="h-full w-full"/>
-                 <div className="absolute top-[6rem] left-[6rem] ">
-                  <div
-                     onClick={() => setvideoOpen(true)}
-                  >
-                    <PlayButton videoOpen={videoOpen}/>
+                <img src="./images/about.png" className="h-full w-full" />
+                <div className="absolute top-[6rem] left-[6rem] ">
+                  <div onClick={() => setvideoOpen(true)}>
+                    <PlayButton videoOpen={videoOpen} />
                   </div>
                 </div>
               </div>
@@ -71,9 +72,7 @@ let useClickOutside = (handler) => {
           {/* text container */}
           <div className="eb-garamond w-full lg:w-3/5 flex flex-col justify-center lg:px-5 xl:px-5 md:px-7 smaller:px-8 sm:px-4 px-2">
             <div className="text-center sm:text-start xl:px-5 md:px-7 smaller:px-8 small:px-4">
-              <p className="section-subtitle text-[#D4AF37]">
-                About Us
-              </p>
+              <p className="section-subtitle text-[#D4AF37]">About Us</p>
               <h1 className="section-title  block">
                 We fight for fairness and stand <br />
                 against <span className="text-[#D4AF37]">injustice</span>.
@@ -165,9 +164,7 @@ let useClickOutside = (handler) => {
               </div>
             </div>
             <div className="flex sm:justify-start justify-center xl:px-5 md:px-7 smaller:px-8 small:px-4">
-              <Button>
-                Read More
-              </Button>
+              <Button>Read More</Button>
             </div>
           </div>
         </div>
@@ -176,16 +173,16 @@ let useClickOutside = (handler) => {
         <div className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black bg-opacity-70">
           <div className="mx-auto w-full max-w-[550px] bg-white">
             <>
-                <video
-                  ref={videoRef} 
-                  className="w-full h-full object-cover"
-                  controls
-                  autoPlay
-                  loop
-                  muted
-                >
-                  <source src={'./images/video.mp4'} type="video/mp4" />
-                </video>
+              <video
+                ref={videoRef}
+                className="w-full h-full object-cover"
+                controls
+                autoPlay
+                loop
+                muted
+              >
+                <source src={"./images/video.mp4"} type="video/mp4" />
+              </video>
             </>
           </div>
 
@@ -193,7 +190,7 @@ let useClickOutside = (handler) => {
             onClick={() => setvideoOpen(false)}
             className="absolute right-0 top-0 flex h-20 w-20 cursor-pointer items-center justify-center "
           >
-         <IoClose className="text-7xl"/>
+            <IoClose className="text-7xl" />
           </button>
         </div>
       )}

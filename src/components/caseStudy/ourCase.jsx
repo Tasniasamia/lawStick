@@ -1,15 +1,9 @@
-// import "../../../src/style/Style.css";
 import case1 from "./../../../public/images/case-1.png";
 import case2 from "./../../../public/images/case-2.png";
 import case3 from "./../../../public/images/case-3.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import CaseCard from "./card/caseCard";
-import Button from "./button";
+import CaseCard from "./../common/card/caseCard";
 
-
-const CaseStudy = () => {
+const OurCase = () => {
   const data=[
     {
       image: case1,
@@ -65,51 +59,24 @@ const CaseStudy = () => {
         </div>
 
         <div className="pt-[16px]">
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={24}
-            pagination={{
-              clickable: true,
-            }}
-            breakpoints={{
-              320: {
-                slidesPerView: 1,
-                spaceBetween: 5,
-              },
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
-            }}
-            className="mySwiper"
-          >
+          <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
             {
               data?.map((i,index)=>{
                 return (
-                  <SwiperSlide key={index}>
-                  <CaseCard data={i}/>
-                  </SwiperSlide>
+              
+                  <CaseCard data={i} key={index}/>
+             
                 )
               })
             }
-       </Swiper>
+       </div>
         </div>
-        <div className="flex justify-center text-center md:mt-[50px] mt-[27px]">
-          <Button>
-            View All
-          </Button>
+        <div className="flex justify-center text-center md:mt-[50px] mt-[26px]">
+          
         </div>
       </div>
     </div>
   );
 };
 
-export default CaseStudy;
+export default OurCase;

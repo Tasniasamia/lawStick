@@ -5,63 +5,31 @@ import Button from "./button";
 import { IoMdClose } from "react-icons/io";
 import { Dropdown } from "antd";
 import { FaAngleDown } from "react-icons/fa";
-
+import logo from "./../../../public/images/logo.png";
 const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState(false);
   const dropdownContent = (
-    <ul
-      style={{
-        listStyle: "none",
-        margin: 0,
-        padding: "10px",
-        background: "#fff",
-        border: "1px solid #d9d9d9",
-        borderRadius: "4px",
-      }}
+    <div className="bg-white shadow-sm flex flex-col items-start w-[100px] h-fit"
+     
     >
-      <li style={{ padding: "5px 10px" }}>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-          style={{ textDecoration: "none", color: "#000" }}
-        >
-          1st menu item
-        </a>
-      </li>
-      <li style={{ padding: "5px 10px", color: "#999", cursor: "not-allowed" }}>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.aliyun.com"
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            pointerEvents: "none",
-          }}
-        >
-          2nd menu item (disabled)
-        </a>
-      </li>
-      <li style={{ padding: "5px 10px", color: "#999", cursor: "not-allowed" }}>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.luohanacademy.com"
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            pointerEvents: "none",
-          }}
-        >
-          3rd menu item (disabled)
-        </a>
-      </li>
-      <li style={{ padding: "5px 10px", color: "#ff4d4f", cursor: "pointer" }}>
-        <div>a danger item</div>
-      </li>
-    </ul>
+      {/* <p > */}
+        <Link to="/blog" className={`${location?.pathname === '/blog'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
+          Blog
+        </Link>
+      {/* </p> */}
+      {/* <p > */}
+      <Link to="/faq" className={`${location?.pathname === '/term'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
+          Faq
+        </Link>
+      {/* </p> */}
+      {/* <p> */}
+      <Link to="/contact" className={`${location?.pathname === '/contact'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
+          Contact
+        </Link>
+      {/* </p> */}
+    
+    </div>
   );
 
   return (
@@ -74,7 +42,7 @@ const Navbar = () => {
         <a href="#">
           <img
             className="xl:w-[56px] xl:h-[62px] md:w-[45px] md:h-[49px] w-[29px] h-[32px]"
-            src={"./images/logo.png"}
+            src={logo}
             alt="logo"
           />
         </a>
@@ -100,7 +68,7 @@ const Navbar = () => {
                   <Link to={`/about`}>
                     <li
                       className={`hover:text-primary ${
-                        location?.pathname === "about" ? "text-primary" : ""
+                        location?.pathname === "/about" ? "text-primary" : ""
                       }`}
                     >
                       About
@@ -111,7 +79,7 @@ const Navbar = () => {
                   <Link to={`/service`}>
                     <li
                       className={`hover:text-primary ${
-                        location?.pathname === "service" ? "text-primary" : ""
+                        location?.pathname === "/service" ? "text-primary" : ""
                       }`}
                     >
                       Service
@@ -122,7 +90,7 @@ const Navbar = () => {
                   <Link to={`/caseStudy`}>
                     <li
                       className={`hover:text-primary ${
-                        location?.pathname === "caseStudy"
+                        location?.pathname === "/caseStudy"
                           ? "text-primary"
                           : ""
                       }`}
@@ -131,13 +99,15 @@ const Navbar = () => {
                     </li>
                   </Link>
                 </div>
+                <Link to={`/contact`}>
                 <li
                   className={`hover:text-primary cursor-pointer ${
-                    location?.pathname === "Contact Us" ? "text-primary" : ""
+                    location?.pathname === "/contact" ? "text-primary" : ""
                   }`}
                 >
                   Contact Us
                 </li>
+                </Link>
                 <li
                   className={`hover:text-primary cursor-pointer`}
                 >
@@ -167,7 +137,7 @@ const Navbar = () => {
           </div>
         </div>
         {active && (
-          <div className="absolute top-[-30px] left-0 z-10 bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white">
+          <div className="absolute top-[-30px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white"style={{zIndex:"150"}}>
             <ul className="flex flex-col items-center gap-8">
               <div>
                 <Link to={`/`}>
