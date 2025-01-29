@@ -1,4 +1,3 @@
-// import about_hero_bg from "../../assets/About-bg-image.png";
 import { TbArrowNarrowRight } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import aboutImage from './../../../public/images/About-bg-image.png';

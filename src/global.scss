@@ -277,3 +277,6 @@ select {
   background-position: right 10px center;
   background-size: 16px;
 }
+.ant-form-item-required::before{
+  content:''!important
+}

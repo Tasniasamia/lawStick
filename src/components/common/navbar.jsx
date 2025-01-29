@@ -123,7 +123,7 @@ const Navbar = () => {
           </div>
           {/* Right Section */}
           <div className="flex items-center gap-3">
-            <Button>Get Appointed</Button>
+            <Link to="/signup"><Button>Get Appointed</Button></Link>
 
             {/*droppings*/}
             <div className="relative">

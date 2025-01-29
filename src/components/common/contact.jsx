@@ -25,7 +25,9 @@ const Contact = () => {
         <div
           style={{ backgroundImage: `url(${bg_contact})` }}
           className="absolute inset-0 bg-cover bg-center  rounded-[20px] z-0 py-[60px] md:ps-[60px] md:pe-[78px] pe-4 ps-4"
-        ></div>
+        >
+          
+        </div>
 
         <div className="relative py-[60px] md:ps-[60px] ps-4  rounded-[20px] md:pe-[78px] pe-4 z-10 flex lg:flex-row-reverse flex-col text-black    gap-10 bg-black h-full w-full bg-opacity-[70%]">
           {/* div 1 */}
