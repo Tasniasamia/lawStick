@@ -161,7 +161,7 @@ font-family: var(--font-sans);
     height:850px;
   }
   .hero-image-shape{
-    height:742px!important;
+    height:732px!important;
   }
 }
 @media screen and  (min-width:1024px) and (max-width:1199px){
@@ -169,7 +169,7 @@ font-family: var(--font-sans);
     height:700px;
   }
   .hero-image-shape{
-    height:592px!important;
+    height:580px!important;
   }
 }
 @media screen and  (min-width:768px) and (max-width:1023px){
@@ -177,7 +177,7 @@ font-family: var(--font-sans);
     height:600px;
   }
   .hero-image-shape{
-    height:492px!important;
+    height:482px!important;
   }
 }
 
@@ -240,13 +240,6 @@ font-family: var(--font-sans);
 }
 
 
-//scrollbar 
-// // for website components
-// .scroll-container {
-//   overflow-y: auto;
-//   max-height: 290px; 
-//   scroll-behavior: smooth; 
-// }
 
 /* For Webkit browsers (Chrome, Edge, Safari) */
 .scroll-container::-webkit-scrollbar {
@@ -279,4 +272,16 @@ select {
 }
 .ant-form-item-required::before{
   content:''!important
+}
+
+.ant-modal .ant-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none!important;
+  pointer-events: auto;
+  padding:0!important;
+  width: 488px;
 }

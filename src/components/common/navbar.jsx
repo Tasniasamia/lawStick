@@ -6,12 +6,21 @@ import { IoMdClose } from "react-icons/io";
 import { Dropdown } from "antd";
 import { FaAngleDown } from "react-icons/fa";
 import logo from "./../../../public/images/logo.png";
+import { useModal } from "../../context/modalContext";
+import SignUp1 from "../modal/signup1";
+import SignUp2 from "../modal/signup2";
 const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState(false);
+  const { isLoginModalOpen, openSignUp1, signUp1Modal,signUp2Modal }= useModal();
+
+  console.log("signup1",signUp1Modal);
+  console.log("signup2",signUp2Modal);
+  console.log("login",isLoginModalOpen);
+
   const dropdownContent = (
     <div className="bg-white shadow-sm flex flex-col items-start w-[100px] h-fit"
-     
+    
     >
       {/* <p > */}
         <Link to="/blog" className={`${location?.pathname === '/blog'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
@@ -123,7 +132,7 @@ const Navbar = () => {
           </div>
           {/* Right Section */}
           <div className="flex items-center gap-3">
-            <Link to="/signup"><Button>Get Appointed</Button></Link>
+          <Button onClick={()=>{openSignUp1()}}>Get Appointed</Button>
 
             {/*droppings*/}
             <div className="relative">
@@ -208,6 +217,8 @@ const Navbar = () => {
           </div>
         )}
       </nav>
+      {signUp1Modal && <SignUp1/>}
+      {signUp2Modal && <SignUp2/>}
     </header>
   );
 };

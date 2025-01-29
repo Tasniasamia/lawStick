@@ -1,6 +1,8 @@
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { PublicRoutes } from "./routes/publicRoutes";
 import PublicLayouts from "./layout/publicLayout";
+import { ModalProvider } from "./context/modalContext";
+import SignUp1 from "./components/modal/signup1";
 
 
 const AppRoutes = () => {
@@ -8,7 +10,7 @@ const AppRoutes = () => {
     return (
         
                         <BrowserRouter>
-                      
+                        <ModalProvider>
                                 <Routes>
                                     {/* Public Layout */}
                                     <Route path="/" element={<PublicLayouts />}>
@@ -20,13 +22,9 @@ const AppRoutes = () => {
                                                 element={<route.component />}
                                             />
                                         ))}
-
-                                    
-
-                                     </Route> 
-                                 
-                                </Routes>
-                         
+                                     </Route>                               
+                                </Routes>                
+                                </ModalProvider>
                         </BrowserRouter>
                     
     );

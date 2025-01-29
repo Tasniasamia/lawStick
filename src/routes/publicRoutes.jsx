@@ -5,7 +5,6 @@ import Blogdetails from "../pages/blogdetails";
 import CaseStudy from "../pages/caseStudy";
 import ContactUs from "../pages/contact";
 import Service from "../pages/service";
-import SignUp from "../pages/signup";
 
 
 export const PublicRoutes = [
@@ -36,9 +35,5 @@ export const PublicRoutes = [
     {
         path:'/contact',
         component:ContactUs
-    },
-    {
-        path:'/signup',
-        component:SignUp
     }
 ];
