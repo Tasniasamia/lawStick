@@ -1,10 +1,11 @@
 import { IoClose } from "react-icons/io5";
 import Button from "../common/button";
-import { Form, Modal } from "antd";
+import { Form, Input, Modal } from "antd";
 import { TbArrowRightToArc } from "react-icons/tb";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import FormPassword from "../common/form/password";
 import { useModal } from "../../context/modalContext";
+import { useState } from "react";
 
 const SignUp2 = () => {
   const [form] = Form.useForm();
@@ -21,11 +22,11 @@ const SignUp2 = () => {
   } = useModal();
 
   const handleFinish = async (values) => {
-    console.log("Form Values:", values);
-    closeLoginModal();
-    closeSignUp2();
-    closeSignUp1();
+    console.log("Form Values:", values, password);
+
   };
+  console.log("password is ", form.getFieldValue("password"));
+  const [password, setPassword] = useState('');
 
   return (
     <Modal
@@ -79,15 +80,37 @@ const SignUp2 = () => {
             name="password"
             checkPassword={true}
             label="Password"
-            required={true}
             min={8}
+            password={password}
+            setPassword={setPassword}
           />
-          <FormPassword
-            name="confirm_password"
-            checkPassword={false}
-            label="Repeat Password"
-            confirm
-          />
+          <Form.Item
+            name={"confirm_password"}
+            label={
+              <p className="text-base font-medium text-[#242628]">
+                {"Repeat Password"}
+              </p>
+            }
+            rules={[
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value) {
+                    return Promise.reject("Please confirm your password!");
+                  }
+                  if (password !== value) {
+                    return Promise.reject("The two passwords do not match!");
+                  }
+                  return Promise.resolve();
+                },
+              }),
+            ]}
+          >
+            <Input.Password
+              placeholder={"**************"}
+              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+              iconRender={(visible) => (visible ?  <FiEyeOff  size={16} style={{color:"#9CA3AF"}}/>: <FiEye size={16} style={{color:"#9CA3AF"}}/>)}
+            />
+          </Form.Item>
 
           {/* Sign Up Button */}
           <Button className={"w-full  my-[16px]"} type="submit">
