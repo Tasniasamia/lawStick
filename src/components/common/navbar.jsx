@@ -7,16 +7,14 @@ import { Dropdown } from "antd";
 import { FaAngleDown } from "react-icons/fa";
 import logo from "./../../../public/images/logo.png";
 import { useModal } from "../../context/modalContext";
-import SignUp1 from "../modal/signup1";
-import SignUp2 from "../modal/signup2";
+import SignUp from "../modal/signup";
+
 const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState(false);
-  const { isLoginModalOpen, openSignUp1, signUp1Modal,signUp2Modal }= useModal();
+  const { isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal }= useModal();
 
-  console.log("signup1",signUp1Modal);
-  console.log("signup2",signUp2Modal);
-  console.log("login",isLoginModalOpen);
+
 
   const dropdownContent = (
     <div className="bg-white shadow-sm flex flex-col items-start w-[100px] h-fit"
@@ -132,7 +130,7 @@ const Navbar = () => {
           </div>
           {/* Right Section */}
           <div className="flex items-center gap-3">
-          <Button onClick={()=>{openSignUp1()}}>Get Appointed</Button>
+          <Button onClick={()=>{openSignUp()}}>Get Appointed</Button>
 
             {/*droppings*/}
             <div className="relative">
@@ -217,8 +215,7 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      {signUp1Modal && <SignUp1/>}
-      {signUp2Modal && <SignUp2/>}
+      {signUpModal && <SignUp/>}
     </header>
   );
 };

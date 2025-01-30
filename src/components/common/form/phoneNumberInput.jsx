@@ -26,7 +26,7 @@ const PhoneNumberInput = ({ name, label, required = false, initialValue = '', ru
             rules={[...initRules, ...rules]}
             className=''
         >
-            <PhoneInput international onChange={onChange} defaultCountry="BD" readOnly={readOnly}
+            <PhoneInput international onChange={onChange} defaultCountry="BD" readOnly={readOnly} placeholder={placeholder}
               className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"/>
               </Form.Item>
     )
