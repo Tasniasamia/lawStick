@@ -10,18 +10,23 @@ import { FaYoutube } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { HiMiniChevronDown } from "react-icons/hi2";
 import { HiMiniChevronUp } from "react-icons/hi2";
-
-import { useState } from "react";
+import { IoMdSend } from "react-icons/io";
+import { useRef, useState } from "react";
 
 const Footer = () => {
   let [active, setActive] = useState(false);
   let [selectedLanguage, setSelectedLanguage] = useState("English");
   let languages = ["English", "French", "Spanish"];
+  const emailref = useRef(null);
 
   let handleLanguageSelect = (language) => {
     setSelectedLanguage(language);
     setActive(false);
   };
+  const handleSubscribe = async (event) => {
+    event.preventDefault();
+
+};
   return (
     <div
       className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069]
@@ -154,7 +159,24 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+        <div className="flex justify-center items-center sm:max-w-[400px] max-w-[250px] mx-auto mb-[60px]">
+                <form onSubmit={handleSubscribe} className="w-full  relative">
+                    <input
+                        ref={emailref}
+                        placeholder={"Your Email"}
+                        name="email"
+                        className="bg-transparent border-b outline-none w-full h-[40px] pl-[10px] text-[#E8E8E8] placeholder:text-[#dbdbdb]"
+                        type="email"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        className="text-primary text-opacity-80 hover:text-opacity-100 text-xl absolute top-[50%] right-[10px] translate-y-[-50%]"
+                    >
+                        <IoMdSend />
+                    </button>
+                </form>{" "}
+            </div>
         <div className="flex md:flex-row flex-col gap-5 md:justify-between">
           <p className="text-center md:text-left">
             2024 © All rights reserved by <br className="sm:hidden block" />
