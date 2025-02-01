@@ -77,6 +77,27 @@ font-family: var(--font-sans);
   }
 }
 
+.tab-btn {
+  border-top-left-radius: 8px; 
+  border-top-right-radius: 8px; 
+  padding: 0.5rem 1rem; 
+  font-weight: 500;
+  white-space: nowrap;
+  width: auto;
+  height: 56px; 
+  font-size: 1rem; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  
+
+  
+  @media (min-width: 1024px) {
+    padding: 0.75rem 2rem; 
+    width: 138px;
+    font-size: 1.125rem;
+  }
+}
 //topbar
 .topbar{
   background-color:var(--topbar-bg);
@@ -258,7 +279,7 @@ font-family: var(--font-sans);
   }
 }
 
-.lawyer , .testimonial , .service , .testimonialCard , .serviceCard , .about-section ,  .button , .case-study , .searchBar ,.mySwiper , .link{
+.lawyer , .testimonial , .service , .testimonialCard , .serviceCard , .about-section ,  .button , .case-study , .searchBar ,.mySwiper , .link {
   font-family: var(--font-sans); 
  }
 

@@ -7,7 +7,7 @@ const OurCaseDetails = () => {
 
   return (
     <div className="min-h-fit work-sans text-white relative">
-      <div className="custom-container xl:mb-[150px] md:mb-14 mb-[29px] text-black">
+      <div className="custom-container mb-[60px] text-black">
         {/* xl:mb-[150px] md:mb-14 mb-[29px] */}
         <img src={caseStudy2Image} alt="" />
 
