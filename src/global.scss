@@ -33,6 +33,50 @@ font-family: var(--font-sans);
 .button_overwrite{
   border-radius: 40px!important;
 }
+.primary-btn {
+  background-color: #B68C5A; 
+  border-radius: 0.5rem; 
+  font-weight: 500; 
+  white-space: nowrap; 
+  max-width: 142px; 
+  font-size: 0.75rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 6px; 
+  color: white;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.75rem;
+  margin-top: 1.75rem; 
+  font-family: 'Work Sans', sans-serif; 
+
+  
+  @media (min-width: 640px) {
+    max-width: 160px; 
+    height: 44px; 
+    font-size: 0.875rem; 
+    padding: 0.5rem 1rem; 
+  }
+
+  
+  @media (min-width: 768px) {
+    max-width: 190px; 
+    height: 50px; 
+    font-size: 1rem; 
+    gap: 10px; 
+    padding: 0.75rem 1.5rem;
+  }
+
+  
+  @media (min-width: 1024px) {
+    max-width: 228px; 
+    height: 56px; 
+    font-size: 1.125rem;
+    gap: 10px; 
+    padding: 1rem 2rem; 
+  }
+}
+
 //topbar
 .topbar{
   background-color:var(--topbar-bg);
@@ -100,7 +144,6 @@ font-family: var(--font-sans);
   }
 }
 //header section 
-/* Base styles for all screen sizes */
 .header-1 {
   font-family: 'EB Garamond', serif;
   font-size: 30px;
@@ -136,6 +179,22 @@ font-family: var(--font-sans);
   @media (min-width: 768px) {
     font-size: 21px;
     margin-bottom: 1.5rem;
+  }
+}
+
+.semi-header {
+  font-size: 28px;
+  font-weight: 500; 
+  color: #242628;
+  /* margin-bottom: 1.5rem; */
+  font-family: 'EB Garamond', serif;
+
+  @media (min-width: 640px) { 
+    font-size: 32px;
+  }
+
+  @media (min-width: 1024px) { 
+    line-height: 41px;
   }
 }
 
@@ -186,7 +245,7 @@ font-family: var(--font-sans);
   height: 500px;
 }
 }
-.hero-title , .blog-header {
+.hero-title , .blog-header ,.font-ebgramond{
  font-family: var(--font-garamond);
   
  }

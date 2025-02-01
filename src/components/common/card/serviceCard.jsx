@@ -1,4 +1,5 @@
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({data}) => {
     return (
@@ -26,10 +27,11 @@ const ServiceCard = ({data}) => {
                         <p className="text-base line-clamp-3 !mb-[16px]">
                           {data?.description}
                         </p>
-        
+                       <Link to={`/service/${data?.id}`}>
                         <div className="h-10 w-10  rounded-full bg-[#F9EAF3] hover:bg-white  flex justify-center items-center  duration-700 transition-all cursor-pointer">
                           <MdOutlineArrowRightAlt className="text-primary text-2xl"></MdOutlineArrowRightAlt>
                         </div>
+                        </Link>
                       </div>
                       </div>
     );
