@@ -8,9 +8,9 @@ import { useModal } from "../../context/modalContext";
 import { useState } from "react";
 import PhoneNumberInput from "./../common/form/phoneNumberInput";
 import FormCountrySelect from "../common/form/country";
-const SignUp = () => {
+import { Link } from "react-router-dom";
+const Login = () => {
   const [form] = Form.useForm();
-  const [tab, setTab] = useState("step1");
 
   const {
     isLoginModalOpen,
@@ -19,37 +19,25 @@ const SignUp = () => {
     openSignUp,
     closeSignUp,
     signUpModal,
-    otpModal,
-    openOtpModal,
-    closeOtpModal,
-    isProfleUpdate1,
-    openUpdateProfile1,
-    closeUpdateProfile1,
-    isProfleUpdate2,
-    openUpdateProfile2,
-    closeUpdateProfile2,
   } = useModal();
 
   const handleFinish = async (values) => {
-    console.log("Form Values:", values, password);
-    closeSignUp();
-    openUpdateProfile1();
+    console.log("Form Values:", values);
   };
-  const [password, setPassword] = useState("");
   return (
     <Modal
       footer={null}
       className=" w-full !bg-transparent "
       closeIcon={false}
-      open={signUpModal}
-      onCancel={closeSignUp}
+      open={isLoginModalOpen}
+      onCancel={closeLoginModal}
     >
       <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">
         {/* Close Button */}
         <button
           className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute right-6 top-6 inline-flex justify-center items-center"
           onClick={() => {
-            closeSignUp();
+            closeLoginModal();
           }}
         >
           <IoClose
@@ -62,14 +50,13 @@ const SignUp = () => {
           <TbArrowRightToArc
             className="text-[33.33px] text-[#242628] cursor-pointer"
             onClick={() => {
-              closeSignUp();
-              openLoginModal();
+              closeLoginModal();
             }}
           />
         </div>
         {/* Form Header */}
         <h2 className="sm:leading-[32.84px] sm:text-[28px] text-base font-semibold text-[#242628] mb-[40px] ">
-          Sign Up
+          Sign in
         </h2>
 
         {/* Form Fields */}
@@ -95,33 +82,18 @@ const SignUp = () => {
               />
             </Form.Item>
 
-            <FormPassword
-              name="password"
-              checkPassword={true}
-              label="Password"
-              min={8}
-              password={password}
-              setPassword={setPassword}
-            />
             <Form.Item
-              name={"confirm_password"}
+              name={"password"}
               label={
                 <p className="text-base font-medium text-[#242628]">
-                  {"Repeat Password"}
+                  {"Password"}
                 </p>
               }
               rules={[
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value) {
-                      return Promise.reject("Please confirm your password!");
-                    }
-                    if (password !== value) {
-                      return Promise.reject("The two passwords do not match!");
-                    }
-                    return Promise.resolve();
-                  },
-                }),
+                {
+                  required: true,
+                  message: "Please enter your password",
+                },
               ]}
             >
               <Input.Password
@@ -136,10 +108,17 @@ const SignUp = () => {
                 }
               />
             </Form.Item>
-
+            <div className="grid place-content-end">
+              <Link
+                to="/forget-password"
+                className="text-primary hover:text-primary hover:underline text-base font-medium -mt-3 !mb-[24px]"
+              >
+                Forget Password?
+              </Link>
+            </div>
             {/* Sign Up Button */}
             <Button className={"w-full  my-[16px] "} type="submit">
-              Sign Up
+              Log In
             </Button>
           </>
         </Form>
@@ -152,20 +131,20 @@ const SignUp = () => {
               alt="Google"
               className="w-6 h-6"
             />
-            Sign Up With Google
+            Log In With Google
           </button>
 
           {/* Login Link */}
           <p className="text-center text-base capitalize text-[#242628] pt-[24px] link font-medium">
-            Already Have An Account?{" "}
+            Do not have an account?{" "}
             <span
-              className="text-[#C4976A] hover:underline cursor-pointer font-medium hover:text-primary link"
+              className="text-[#C4976A] hover:underline cursor-pointer hover:text-primary link font-medium "
               onClick={() => {
-                openLoginModal();
-                closeSignUp();
+                openSignUp();
+                closeLoginModal();
               }}
             >
-              Sign In
+              Sign Up
             </span>
           </p>
         </div>
@@ -174,4 +153,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;

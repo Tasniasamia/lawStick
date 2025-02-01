@@ -8,34 +8,64 @@ import { FaAngleDown } from "react-icons/fa";
 import logo from "./../../../public/images/logo.png";
 import { useModal } from "../../context/modalContext";
 import SignUp from "../modal/signup";
+import Login from "../modal/login";
+import OtpModal from "../modal/otpmodal";
+import UpdateProfile1 from "../modal/updateProfile1";
+import UpdateProfile2 from "../modal/updateProfile2";
 
 const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState(false);
-  const { isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal }= useModal();
-
-
+  const {
+    isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal, otpModal,openOtpModal,closeOtpModal,isProfleUpdate1,openUpdateProfile1,closeUpdateProfile1,isProfleUpdate2,openUpdateProfile2,closeUpdateProfile2  } = useModal();
 
   const dropdownContent = (
-    <div className="bg-white shadow-sm flex flex-col items-start w-[100px] h-fit"
-    
-    >
+    <div className="bg-white shadow-sm flex flex-col items-start w-[100px] h-fit">
       {/* <p > */}
-        <Link to="/blog" className={`${location?.pathname === '/blog'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
-          Blog
-        </Link>
+      <Link
+        to="/blog"
+        className={`${
+          location?.pathname === "/blog"
+            ? "bg-primary text-white"
+            : "bg-white text-textColor"
+        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
+      >
+        Blog
+      </Link>
       {/* </p> */}
       {/* <p > */}
-      <Link to="/faq" className={`${location?.pathname === '/term'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
-          Faq
-        </Link>
+      <Link
+        to="/faq"
+        className={`${
+          location?.pathname === "/term"
+            ? "bg-primary text-white"
+            : "bg-white text-textColor"
+        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
+      >
+        Faq
+      </Link>
       {/* </p> */}
       {/* <p> */}
-      <Link to="/contact" className={`${location?.pathname === '/contact'?'bg-primary text-white':"bg-white text-textColor"} hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}>
-          Contact
-        </Link>
+      <Link
+        to="/contact"
+        className={`${
+          location?.pathname === "/contact"
+            ? "bg-primary text-white"
+            : "bg-white text-textColor"
+        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
+      >
+        Contact
+      </Link>
+      <p
+        className={` hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full cursor-pointer`}
+        onClick={() => {
+          openOtpModal();
+          console.log("clicked");
+        }}
+      >
+        OTP
+      </p>
       {/* </p> */}
-    
     </div>
   );
 
@@ -107,21 +137,22 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <Link to={`/contact`}>
-                <li
-                  className={`hover:text-primary cursor-pointer ${
-                    location?.pathname === "/contact" ? "text-primary" : ""
-                  }`}
-                >
-                  Contact Us
-                </li>
+                  <li
+                    className={`hover:text-primary cursor-pointer ${
+                      location?.pathname === "/contact" ? "text-primary" : ""
+                    }`}
+                  >
+                    Contact Us
+                  </li>
                 </Link>
-                <li
-                  className={`hover:text-primary cursor-pointer`}
-                >
-                  <Dropdown overlay={dropdownContent} trigger={["hover"]} >
-                    <a onClick={(e) => e.preventDefault()} className="flex items-center gap-2">
+                <li className={`hover:text-primary cursor-pointer`}>
+                  <Dropdown overlay={dropdownContent} trigger={["hover"]}>
+                    <a
+                      onClick={(e) => e.preventDefault()}
+                      className="flex items-center gap-2"
+                    >
                       Pages
-                      <FaAngleDown className="text-sm"/>
+                      <FaAngleDown className="text-sm" />
                     </a>
                   </Dropdown>
                 </li>
@@ -130,7 +161,13 @@ const Navbar = () => {
           </div>
           {/* Right Section */}
           <div className="flex items-center gap-3">
-          <Button onClick={()=>{openSignUp()}}>Get Appointed</Button>
+            <Button
+              onClick={() => {
+                openLoginModal();
+              }}
+            >
+              Get Appointed
+            </Button>
 
             {/*droppings*/}
             <div className="relative">
@@ -144,7 +181,10 @@ const Navbar = () => {
           </div>
         </div>
         {active && (
-          <div className="absolute top-[-30px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white"style={{zIndex:"150"}}>
+          <div
+            className="absolute top-[-30px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white"
+            style={{ zIndex: "150" }}
+          >
             <ul className="flex flex-col items-center gap-8">
               <div>
                 <Link to={`/`}>
@@ -193,16 +233,17 @@ const Navbar = () => {
               >
                 Contact Us
               </li>
-              <li
-                  className={`hover:text-primary cursor-pointer`}
-                >
-                  <Dropdown overlay={dropdownContent} trigger={["hover"]} >
-                    <a onClick={(e) => e.preventDefault()} className="flex items-center gap-2">
-                      Pages
-                      <FaAngleDown className="text-sm"/>
-                    </a>
-                  </Dropdown>
-                </li>
+              <li className={`hover:text-primary cursor-pointer`}>
+                <Dropdown overlay={dropdownContent} trigger={["hover"]}>
+                  <a
+                    onClick={(e) => e.preventDefault()}
+                    className="flex items-center gap-2"
+                  >
+                    Pages
+                    <FaAngleDown className="text-sm" />
+                  </a>
+                </Dropdown>
+              </li>
             </ul>
             <div className="absolute right-[2rem] top-[1rem]">
               <div
@@ -215,7 +256,11 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      {signUpModal && <SignUp/>}
+      {signUpModal && <SignUp />}
+      {isLoginModalOpen && <Login />}
+      {otpModal && <OtpModal />}
+      {isProfleUpdate1 && <UpdateProfile1/>}
+      {isProfleUpdate2 && <UpdateProfile2/>}
     </header>
   );
 };

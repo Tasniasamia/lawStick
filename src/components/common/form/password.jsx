@@ -54,7 +54,7 @@ const FormPassword = ({password, setPassword, noCurrent, required, min, confirm,
 
             {/* Password Strength Indicator */}
             {password && !confirm && (
-                <div className="space-y-1 pt-[12px]">
+                <div className="space-y-1 pt-[12px] w-full">
                     <div className="flex gap-4 h-[6px]">
                         {[...Array(3)].map((_, index) => (
                             <div
