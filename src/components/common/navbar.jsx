@@ -1,10 +1,10 @@
-import { FaRegChartBar } from "react-icons/fa6";
+import { FaBell, FaRegChartBar, FaRegUser } from "react-icons/fa6";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./button";
 import { IoMdClose } from "react-icons/io";
-import { Dropdown } from "antd";
-import { FaAngleDown } from "react-icons/fa";
+import { Avatar, Badge, Dropdown } from "antd";
+import { FaAngleDown, FaUser } from "react-icons/fa";
 import logo from "./../../../public/images/logo.png";
 import { useModal } from "../../context/modalContext";
 import SignUp from "../modal/signup";
@@ -12,16 +12,35 @@ import Login from "../modal/login";
 import OtpModal from "../modal/otpmodal";
 import UpdateProfile1 from "../modal/updateProfile1";
 import UpdateProfile2 from "../modal/updateProfile2";
+import { FiLogOut, FiSettings } from "react-icons/fi";
+import { TfiCommentAlt } from "react-icons/tfi";
+import { RxDash, RxDashboard } from "react-icons/rx";
 
 const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState(false);
   const {
-    isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal, otpModal,openOtpModal,closeOtpModal,isProfleUpdate1,openUpdateProfile1,closeUpdateProfile1,isProfleUpdate2,openUpdateProfile2,closeUpdateProfile2  } = useModal();
+    isLoginModalOpen,
+    openLoginModal,
+    closeLoginModal,
+    openSignUp,
+    closeSignUp,
+    signUpModal,
+    otpModal,
+    openOtpModal,
+    closeOtpModal,
+    isProfleUpdate1,
+    openUpdateProfile1,
+    closeUpdateProfile1,
+    isProfleUpdate2,
+    openUpdateProfile2,
+    closeUpdateProfile2,
+  } = useModal();
+  const [user, setUser] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const dropdownContent = (
     <div className="bg-white shadow-sm flex flex-col items-start w-[150px] h-fit ">
-      {/* <p > */}
       <Link
         to="/blog"
         className={`${
@@ -42,8 +61,7 @@ const Navbar = () => {
       >
         Team
       </Link>
-      {/* </p> */}
-      {/* <p > */}
+
       <Link
         to="/faq"
         className={`${
@@ -54,8 +72,6 @@ const Navbar = () => {
       >
         Faq
       </Link>
-      {/* </p> */}
-      {/* <p> */}
       <Link
         to="/contact"
         className={`${
@@ -75,13 +91,16 @@ const Navbar = () => {
       >
         OTP
       </p>
-      {/* </p> */}
     </div>
   );
 
   return (
     <header
-      className="w-full absolute bg-transparent  text-white z-20  pt-[30px] pb-[27.66px] border-b border-b-amber-900"
+      className={`w-full absolute bg-transparent  ${
+        location.pathname.match("/user/gi" || "/atonny/gi" || "/admin/gi")
+          ? "text-textColor"
+          : "text-white"
+      }  z-20  pt-[30px] pb-[27.66px] border-b border-b-amber-900`}
       id="navbar"
     >
       <nav className="flex justify-between items-center custom-container relative">
@@ -171,13 +190,121 @@ const Navbar = () => {
           </div>
           {/* Right Section */}
           <div className="flex items-center gap-3">
-            <Button
-              onClick={() => {
-                openLoginModal();
-              }}
-            >
-              Get Appointed
-            </Button>
+            {user ? (
+              <div className="flex gap-[20px] items-center">
+                <TfiCommentAlt className={`text-[18px]`} />
+                <Badge count={5} size="small">
+                  <FaBell
+                    className={`text-[18px] ${
+                      location.pathname.match(
+                        "/user/gi" || "/atonny/gi" || "/admin/gi"
+                      )
+                        ? "text-textColor"
+                        : "text-white"
+                    }`}
+                  />
+                </Badge>
+                <div className="relative dropdown-container">
+                  <div
+                    className="cursor-pointer"
+                    aria-label="User Profile"
+                    onClick={() => setIsDropdownOpen((prev) => !prev)}
+                  >
+                    {user?.image ? (
+                      <img
+                        src={user?.image}
+                        alt="User"
+                        className="object-cover w-[56px] h-[56px] rounded-full"
+                      />
+                    ) : (
+                      <Avatar
+                        name={user?.name}
+                        className="w-[40px] h-[40px]"
+                        bgColor="bg-secondary"
+                        icon={<FaUser className="text-[20px]" />}
+                      />
+                    )}
+                  </div>
+
+                  {/* Dropdown Menu */}
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 z-50  mt-2 transition-all duration-300 bg-white  shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
+                      <div className="" role="menu" aria-orientation="vertical">
+                        {/* Profile */}
+                        <Link
+                          to={
+                            user?.role === "admin"
+                              ? "/admin/profile"
+                              : user?.role === "attorney"
+                              ? "/attorney/profile"
+                              : "/user/profile"
+                          }
+                          className={`block ${
+                            location?.pathname ===
+                            ("/user/profile" ||
+                              "/attorney/profile" ||
+                              "/admin/profile")
+                              ? "bg-primary text-white"
+                              : ""
+                          } px-4 py-2 text-sm text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
+                          role="menuitem"
+                        >
+                          <div className="flex items-center gap-2">
+                            <FaRegUser />
+                            <span>Profile</span>
+                          </div>
+                        </Link>
+
+                        {/* Dashboard */}
+                        <Link
+                          to={
+                            user?.role === "admin"
+                              ? "/admin/dashboard"
+                              : user?.role === "attorney"
+                              ? "/attorney/dashboard"
+                              : "/user/dashboard"
+                          }
+                          className={`block ${
+                            location?.pathname ===
+                            ("/user/dashboard" ||
+                              "/attorney/dashboard" ||
+                              "/admin/dashboard")
+                              ? "bg-primary text-white"
+                              : ""
+                          } px-4 py-2 text-sm text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
+                          role="menuitem"
+                        >
+                          <div className="flex items-center gap-2">
+                            <RxDashboard />
+                            <span>Dashboard</span>
+                          </div>
+                        </Link>
+
+                        {/* Logout */}
+                        <div
+                          // onClick={handleLogout}
+                          className="block px-4 py-2 text-sm text-textColor transition duration-200 rounded-md cursor-pointer hover:bg-primary hover:text-white"
+                          role="menuitem"
+                        >
+                          <div className="flex items-center gap-2">
+                            <FiLogOut />
+                            <span>Logout</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <Button
+                onClick={() => {
+                  openLoginModal();
+                }}
+              >
+                Get Appointed
+              </Button>
+            )}
 
             {/*droppings*/}
             <div className="relative">
@@ -269,8 +396,8 @@ const Navbar = () => {
       {signUpModal && <SignUp />}
       {isLoginModalOpen && <Login />}
       {otpModal && <OtpModal />}
-      {isProfleUpdate1 && <UpdateProfile1/>}
-      {isProfleUpdate2 && <UpdateProfile2/>}
+      {isProfleUpdate1 && <UpdateProfile1 />}
+      {isProfleUpdate2 && <UpdateProfile2 />}
     </header>
   );
 };
