@@ -170,7 +170,8 @@ const AboutUs = () => {
         </div>
       </div>
       {videoOpen && (
-        <div className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black bg-opacity-70">
+        <div className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black bg-opacity-70"      style={{position:"fixed",zIndex:"200",left:"0",top:"0",width:"100%",height:"100%",background:"rgba(0, 0, 0, 0.7)",display:"flex",alignItems:"center",justifyContent:"center"}}
+        >
           <div className="mx-auto w-full max-w-[550px] bg-white">
             <>
               <video

@@ -103,7 +103,7 @@ const CaseStudy = () => {
        </Swiper>
         </div>
         <div className="flex justify-center text-center md:mt-[50px] mt-[27px]">
-          <Button>
+          <Button link="/caseStudy">
             View All
           </Button>
         </div>

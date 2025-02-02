@@ -1,16 +1,26 @@
 import hammer from "./../../../public/images/hammer.png";
 import daripalla from "./../../../public/images/daripalla.png";
 import house from "./../../../public/images/house.png";
-
+import Pagination from "./../common/pagination";
 import practiceCivil from "./../../../public/images/Practicecivil.png";
 import practiceEmployee from "./../../../public/images/Practiceemployee.png";
 import practiceEducation from "./../../../public/images/Practiceeducation.png";
 import practiceCorporate from "./../../../public/images/Practicecorporate.png";
 import ServiceCard from "../common/card/serviceCard";
+import { useState } from "react";
 
 const OurService = () => {
 
-  const data = [
+  const data = 
+  {
+    error: false,
+    msg: "Catches fetched successfully",
+    data: {
+        page: 1,
+        limit: 8,
+        totalDocs: 17,
+        totalPages: 3,
+        docs:[
     {
       image: daripalla,
       name: "Law Family",
@@ -59,7 +69,30 @@ const OurService = () => {
       description:
         " Safeguarding businesses with expert legal guidance, integrity,and proactive risk management.",
     },
-  ];
+    
+  ] ,   
+  hasNextPage: true,
+  hasPrevPage: false
+}
+}
+
+const [currentPage, setCurrentPage] = useState(data?.data?.page)
+const [services, getServices] = useState(data?.data?.docs || [])
+const [totalPages, setTotalPages] = useState(data?.data?.totalPages) 
+const handlePageChange = async (page) => {
+  try {
+    const response = await fetch(`/api/products?page=${page}&limit=8`)
+    const data = await response.json()
+
+    if (!data.error) {
+      getServices(data?.data?.docs)
+      setCurrentPage(data?.data?.page)
+      setTotalPages(data?.data?.totalPages)
+    }
+  } catch (error) {
+    console.error("Error fetching products:", error)
+  }
+}
 
   return (
     <div className=" text-white relative service  xl:mb-[150px] md:mb-14 mb-[29px]">
@@ -90,13 +123,15 @@ const OurService = () => {
            className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-[24px]"
           >
             
-              {data?.map((i, index) => {
+              {services?.map((i, index) => {
                 return (<ServiceCard data={i} key={index}/> )
               })}
             
           </div>
         </div>
-      
+        <div className="flex justify-center mt-8">
+        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+      </div>
       </div>
     </div>
   );

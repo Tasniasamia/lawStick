@@ -2,6 +2,7 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { PublicRoutes } from "./routes/publicRoutes";
 import PublicLayouts from "./layout/publicLayout";
 import { ModalProvider } from "./context/modalContext";
+import NotFound from "./pages/NotFound";
 
 
 const AppRoutes = () => {
@@ -21,7 +22,9 @@ const AppRoutes = () => {
                                                 element={<route.component />}
                                             />
                                         ))}
-                                     </Route>                               
+                                     </Route>    
+                                     <Route path="*" element={<NotFound />} />
+                           
                                 </Routes>                
                                 </ModalProvider>
                         </BrowserRouter>

@@ -1,5 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../common/button';
 const AboutUS = () => {
+  const navigate=useNavigate();
   return (
     <div className="relative about-section">
       <div className="hidden 2xl:block absolute bottom-0 about-statu">
@@ -118,7 +120,7 @@ const AboutUS = () => {
               </div>
             </div>
             <div className="flex sm:justify-start justify-center xl:px-5 md:px-7 smaller:px-8 small:px-4 xl:pb-0 pb-10">
-              <Button>
+              <Button link={'/about'}>
                 Read More
               </Button>
             </div>

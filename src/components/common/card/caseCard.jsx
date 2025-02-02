@@ -20,12 +20,11 @@ const CaseCard = ({ data }) => {
         <p className=" lg:text-base text-sm text-[#3A3D3F] lg:leading-7 text-ellipsis line-clamp-3">
           {data?.description}
         </p>
-        <Link to={`/caseStudy/${data?.id}`}>
-        <Button className="flex items-center gap-[10px]">
+        
+        <Button className="flex items-center gap-[10px]"link={`/caseStudy/${data?.id}`}>
           READ MORE <RxBorderSolid className="rotate-90" />{" "}
           <FaLongArrowAltRight />
         </Button>
-        </Link>
       </div>
     </div>
   );

@@ -87,6 +87,7 @@ const Contact = () => {
             <Button
               className="flex items-center gap-[10px] mt-[50px]"
               type='submit'
+              
             >
               <FiSend size={18.36} />
               Send Message
@@ -95,7 +96,7 @@ const Contact = () => {
           {/* div 2 */}
           <div className="md:basis-1/2 basis-full    text-center text-white md:mt-0 mt-7 order-1 ">
             <div className="flex justify-center">
-              <Button className={"button_overwrite mb-[40px]"}>
+              <Button className={"button_overwrite mb-[40px]"} link={'/contact'}>
                 Contact Us
               </Button>
             </div>

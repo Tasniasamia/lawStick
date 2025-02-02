@@ -40,8 +40,9 @@ const legalServices = [
       title: "Paternity Cases",
       description1: "Establishing legal paternity to secure parental rights and obligations.",
       description2: "Addressing disputes regarding custody and child support."
-    }
-  ];
+    }];
+
+
   
   export default legalServices;
   

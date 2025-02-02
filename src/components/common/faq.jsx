@@ -8,6 +8,7 @@ export default function FAQ({data}) {
     const [openIndex, setOpenIndex] = useState();
 
   return (
+      
       <div className="flex flex-col gap-4 !pt-[16px]">
           {data?.map((faq, index) => (
          <div className="relative" key={index}>

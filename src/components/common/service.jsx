@@ -169,7 +169,7 @@ const Service = () => {
           </div>
         </div>
         <div className="flex md:justify-end justify-center md:pt-[50px] pt-[38px] cursor-pointer">
-          <Button>See all Service</Button>
+          <Button link={"/service"}>See all Service</Button>
         </div>
       </div>
     </div>

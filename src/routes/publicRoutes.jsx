@@ -5,8 +5,11 @@ import Blogdetails from "../pages/blogdetails";
 import CaseDetails from "../pages/casedetails";
 import CaseStudy from "../pages/caseStudy";
 import ContactUs from "../pages/contact";
+import FaqPage from "../pages/faq";
 import Service from "../pages/service";
 import ServiceDetails from "../pages/servicedetails";
+import Team from "../pages/team";
+import TeamDetails from "../pages/teamdetails";
 
 
 export const PublicRoutes = [
@@ -45,5 +48,17 @@ export const PublicRoutes = [
     {
         path:'/contact',
         component:ContactUs
+    },
+    {
+        path:"/team",
+        component:Team
+    },
+    {
+        path:"/team/:id",
+        component:TeamDetails
+    },
+    {
+        path:"/faq",
+        component:FaqPage
     }
 ];

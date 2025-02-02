@@ -20,7 +20,7 @@ const Navbar = () => {
     isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal, otpModal,openOtpModal,closeOtpModal,isProfleUpdate1,openUpdateProfile1,closeUpdateProfile1,isProfleUpdate2,openUpdateProfile2,closeUpdateProfile2  } = useModal();
 
   const dropdownContent = (
-    <div className="bg-white shadow-sm flex flex-col items-start w-[100px] h-fit">
+    <div className="bg-white shadow-sm flex flex-col items-start w-[150px] h-fit ">
       {/* <p > */}
       <Link
         to="/blog"
@@ -32,12 +32,22 @@ const Navbar = () => {
       >
         Blog
       </Link>
+      <Link
+        to="/team"
+        className={`${
+          location?.pathname === "/team"
+            ? "bg-primary text-white"
+            : "bg-white text-textColor"
+        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
+      >
+        Team
+      </Link>
       {/* </p> */}
       {/* <p > */}
       <Link
         to="/faq"
         className={`${
-          location?.pathname === "/term"
+          location?.pathname === "/faq"
             ? "bg-primary text-white"
             : "bg-white text-textColor"
         } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}

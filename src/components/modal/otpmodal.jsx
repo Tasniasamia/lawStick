@@ -46,6 +46,8 @@ const OtpModal = () => {
       closeIcon={false}
       open={otpModal}
       onCancel={closeOtpModal}
+      style={{position:"relative",zIndex:"200"}}
+
     >
       <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">
         {/* Close Button */}
