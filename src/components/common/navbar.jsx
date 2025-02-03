@@ -38,7 +38,7 @@ const Navbar = () => {
   } = useModal();
   const [user, setUser] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const findPath = location.pathname.match(/user|atonny|admin/gi) || [];
   const dropdownContent = (
     <div className="bg-white shadow-sm flex flex-col items-start w-[150px] h-fit ">
       <Link
@@ -93,14 +93,13 @@ const Navbar = () => {
       </p>
     </div>
   );
-
   return (
     <header
       className={`w-full absolute bg-transparent  ${
-        location.pathname.match("/user/gi" || "/atonny/gi" || "/admin/gi")
-          ? "text-textColor"
-          : "text-white"
-      }  z-20  pt-[30px] pb-[27.66px] border-b border-b-amber-900`}
+        findPath && findPath[0] === "user"
+          ? "text-textColor border-[#EDEDED]"
+          : "text-white border-b-amber-900"
+      }  z-20  pt-[30px] pb-[27.66px] border-b `}
       id="navbar"
     >
       <nav className="flex justify-between items-center custom-container relative">
@@ -196,11 +195,7 @@ const Navbar = () => {
                 <Badge count={5} size="small">
                   <FaBell
                     className={`text-[18px] ${
-                      location.pathname.match(
-                        "/user/gi" || "/atonny/gi" || "/admin/gi"
-                      )
-                        ? "text-textColor"
-                        : "text-white"
+                      findPath[0] === "user" ? "text-textColor" : "text-white"
                     }`}
                   />
                 </Badge>
@@ -256,14 +251,13 @@ const Navbar = () => {
                         </Link>
 
                         {/* Dashboard */}
-                        <Link
-                          to={
-                            user?.role === "admin"
+                        {/* user?.role === "admin"
                               ? "/admin/dashboard"
                               : user?.role === "attorney"
                               ? "/attorney/dashboard"
-                              : "/user/dashboard"
-                          }
+                              : "/user/dashboard" */}
+                        <Link
+                          to={user && "/user/dashboard"}
                           className={`block ${
                             location?.pathname ===
                             ("/user/dashboard" ||

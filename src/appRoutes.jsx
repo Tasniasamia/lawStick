@@ -3,6 +3,8 @@ import { PublicRoutes } from "./routes/publicRoutes";
 import PublicLayouts from "./layout/publicLayout";
 import { ModalProvider } from "./context/modalContext";
 import NotFound from "./pages/NotFound";
+import UserDashboardLayout from "./layout/userDashboardLayout";
+import { UserRoutes } from "./routes/userRoutes";
 
 
 const AppRoutes = () => {
@@ -22,6 +24,20 @@ const AppRoutes = () => {
                                                 element={<route.component />}
                                             />
                                         ))}
+                                          {/* User Dashboard Layout */}
+                                          <Route
+                                            path="user/"
+                                            element={<UserDashboardLayout />}
+                                        >
+                                            {/* User routes */}
+                                            {UserRoutes.map((route, index) => (
+                                                <Route
+                                                    key={index}
+                                                    path={route.path}
+                                                    element={<route.component />}
+                                                />
+                                            ))}
+                                        </Route>
                                      </Route>    
                                      <Route path="*" element={<NotFound />} />
                            

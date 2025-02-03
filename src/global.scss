@@ -108,6 +108,25 @@ font-family: var(--font-sans);
 .navbar{
 font-family: var(--font-sans);
 }
+@media screen and (min-width:1024px) {
+  .ant-drawer{
+    display: none!important;
+  }
+}
+.ant-drawer .ant-drawer-content {
+
+  width: 290px!important;
+
+}
+.ant-drawer .ant-drawer-content-wrapper {
+max-width: 290px!important;
+}
+.ant-drawer .ant-drawer-body {
+padding: 0!important; 
+}
+.ant-drawer .ant-drawer-header {
+  display: none!important;
+  }
 //section-subtitle
 .section-subtitle {
   font-size: 16px; 
@@ -164,7 +183,22 @@ font-family: var(--font-sans);
     font-size: 1rem!important
   }
 }
-//header section 
+//header and title section 
+.dashboard-title{
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600; 
+  font-size: 28px;
+  color: #242628; 
+  line-height: 32px; 
+}
+.sidebar-title{
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500; 
+  font-size: 1.125rem; 
+  
+  line-height: 21px;
+}
+
 .header-1 {
   font-family: 'EB Garamond', serif;
   font-size: 30px;
@@ -219,7 +253,12 @@ font-family: var(--font-sans);
   }
 }
 
-
+.case-numbers {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600; 
+  font-size: 28px; 
+  line-height: 36px; 
+}
 //hero section 
 .hero-banner{
   font-family: var(--font-sans);
