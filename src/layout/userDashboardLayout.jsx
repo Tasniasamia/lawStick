@@ -23,6 +23,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { SlBadge } from "react-icons/sl";
 import profileImage from "../../public/images/Alina.png";
 import UserDashboardSkeleton from "../components/skeleton/userDashboardSkeleton";
+import { FaClockRotateLeft } from "react-icons/fa6";
 
 const UserDashboardLayout = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const UserDashboardLayout = () => {
   const menuItems = [
     { id: 1, name: "Dashboard", href: "/user/dashboard", icon: <MdOutlineDashboard /> },
     { id: 2, name: "Services", href: "/user/activity", icon: <MdLocalActivity /> },
-    { id: 3, name: "Service Notices", href: "/user/service_notice", icon: <FaBell /> },
+    { id: 3, name: "Case History", href: "/user/case-history", icon: <FaClockRotateLeft /> },
     { id: 4, name: "Package", href: "/user/user_package", icon: <SlBadge /> },
     { id: 5, name: "Events", href: "/user/events", icon: <MdEmojiEvents /> },
     { id: 6, name: "Order History", href: "/user/order-history", icon: <FaTruckArrowRight /> },

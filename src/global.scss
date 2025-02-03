@@ -184,12 +184,26 @@ padding: 0!important;
   }
 }
 //header and title section 
+.simple-text{
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500; 
+  font-size: 16px;
+}
 .dashboard-title{
   font-family: 'Work Sans', sans-serif;
   font-weight: 600; 
   font-size: 28px;
   color: #242628; 
   line-height: 32px; 
+}
+@media  screen and (max-width:576px) {
+  .dashboard-title{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600; 
+    font-size: 21px;
+    color: #242628; 
+    line-height: 32px; 
+  }
 }
 .sidebar-title{
   font-family: 'Work Sans', sans-serif;
