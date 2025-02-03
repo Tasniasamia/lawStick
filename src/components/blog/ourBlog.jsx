@@ -7,7 +7,7 @@ import Pagination from "../common/pagination";
 const NewsBlog = () => {
   const data =  {
     error: false,
-    msg: "Catches fetched successfully",
+    msg: "Blog fetched successfully",
     data: {
         page: 1,
         limit: 8,

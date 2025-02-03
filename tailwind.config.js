@@ -11,6 +11,8 @@ module.exports = {
         primary:'#C7A87D',
         textColor:'#3A3D3F',
         borderColor:'#1B3A57',
+        secondary : '#3A3D3F',
+
       }
     }, // Customize the default Tailwind theme if needed
   },
