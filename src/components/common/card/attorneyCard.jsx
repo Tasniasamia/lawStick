@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Appointment } from "../../../pages/user/attorney/appointment";
 import { useModal } from "../../../context/modalContext";
 
 const AttorneyCard = ({ data }) => {

@@ -374,7 +374,7 @@ padding: 0!important;
 
 
 
-/* For Webkit browsers (Chrome, Edge, Safari) */
+/* ScrollBar CSS*/
 .scroll-container::-webkit-scrollbar {
   width: 8px; /* Scrollbar width */
   background: transparent;
@@ -407,6 +407,7 @@ select {
   content:''!important
 }
 
+//  Modal CSS
  .auth .ant-modal .ant-modal-content {
     position: relative;
     background-color: #ffffff;
@@ -419,14 +420,12 @@ select {
     width: 488px!important;
   }
  
-/* Default Modal Styling */
 .custom-appointment-modal .ant-modal .ant-modal-content {
   width: 872px !important;
   margin: auto !important;
 
 }
 
-/* Responsive for Tablets and Larger Screens */
 @media screen and (min-width: 320px) and (max-width: 1440px) {
   .custom-appointment-modal .ant-modal .ant-modal-content {
     width: 100% !important;
@@ -437,7 +436,6 @@ select {
   }
 }
 
-/* Responsive for Small Screens (Mobile) */
 @media screen and (max-width: 600px) {
   .custom-appointment-modal .ant-modal .ant-modal-content {
     width: 100% !important;
@@ -459,10 +457,17 @@ select {
 
 
 }
-
 .ant-modal .ant-modal-content {
   margin-inline: auto!important;
 }
+.upload-file{
+  .ant-upload-wrapper .ant-upload-drag .ant-upload {
+    /* padding: 16px; */
+    padding-block:8px!important;
+    padding-inline: 16px!important;
+  }
+}
+
 // .ant-modal-root .ant-modal-mask {
 //   position: fixed;
 //   inset: 0;
@@ -482,82 +487,4 @@ select {
 
 
 
-
-
-/* Calendar Custom Styles */
-// .ant-picker-calendar {
-//   border: none !important;
-//   background: transparent;
-// }
-
-// .ant-picker-calendar .ant-picker-panel {
-//   border: none !important;
-// }
-
-// .ant-picker-calendar .ant-picker-header {
-//   border: none;
-//   padding: 8px 0;
-// }
-
-// .ant-picker-calendar .ant-picker-header-super-next-btn,
-// .ant-picker-calendar .ant-picker-header-super-prev-btn {
-//   display: none;
-// }
-
-// .ant-picker-calendar .ant-picker-header button {
-//   color: #000;
-//   font-size: 16px;
-// }
-
-// .ant-picker-calendar .ant-picker-content th {
-//   font-weight: normal;
-//   color: #666;
-//   padding: 8px 0;
-//   font-size: 14px;
-// }
-
-// .ant-picker-calendar .ant-picker-content td {
-//   font-size: 14px;
-//   color: #000;
-// }
-
-// .ant-picker-calendar .ant-picker-cell-in-view {
-//   color: #000 !important;
-// }
-
-// .ant-picker-calendar .ant-picker-cell-selected .ant-picker-calendar-date {
-//   background: transparent;
-// }
-
-// .ant-picker-calendar .ant-picker-cell-selected .ant-picker-calendar-date-value {
-//   color: #fff;
-//   background: #1677ff;
-//   border-radius: 50%;
-//   width: 24px;
-//   height: 24px;
-//   line-height: 24px;
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin: 0 auto;
-// }
-
-// .ant-picker-calendar .ant-picker-calendar-date {
-//   margin: 0;
-//   padding: 4px;
-//   border: none;
-// }
-
-// .ant-picker-calendar .ant-picker-calendar-date-value {
-//   width: 24px;
-//   height: 24px;
-//   line-height: 24px;
-//   border-radius: 50%;
-//   margin: 0 auto;
-//   transition: background-color 0.3s;
-// }
-
-// .ant-picker-calendar .ant-picker-calendar-date:hover .ant-picker-calendar-date-value {
-//   background: #f0f0f0;
-// }
 

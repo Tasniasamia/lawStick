@@ -76,7 +76,7 @@ const data = [
           </div>
         </div>
       </PageTitle>
-      <div className="pt-[40px] px-[24px]">
+      <div className="py-[40px] px-[24px]">
             <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 ">
               {data.map((attorney, idx) => (
                 <AttorneyCard key={idx} data={attorney}></AttorneyCard>

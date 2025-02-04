@@ -15,7 +15,6 @@ import UpdateProfile2 from "../modal/updateProfile2";
 import { FiLogOut, FiSettings } from "react-icons/fi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { RxDash, RxDashboard } from "react-icons/rx";
-import { Appointment } from "../../pages/user/attorney/appointment";
 
 const Navbar = () => {
   const location = useLocation();
