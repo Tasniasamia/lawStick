@@ -74,11 +74,14 @@ const Appointment = () => {
           setIsCaseDetailsOpen={setIsCaseDetailsOpen}
         />
       )}
-      {isCaseDetaiOpen && (
+      {(isCaseDetaiOpen && selectDate && selectSlot) && (
         <CaseDetailsModal
           isCaseDetaiOpen={isCaseDetaiOpen}
           setIsCaseDetailsOpen={setIsCaseDetailsOpen}
           setCasedetailsValue={setCasedetailsValue}
+          setselectDate={setselectDate}
+          setSelectSlot={setSelectSlot}
+
         />
       )}
     </div>

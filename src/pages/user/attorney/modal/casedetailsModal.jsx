@@ -9,7 +9,11 @@ const CaseDetailsModal = ({
   isCaseDetaiOpen,
   setIsCaseDetailsOpen,
   setCasedetailsValue,
+  setselectDate,
+  setSelectSlot
 }) => {
+  setselectDate={setselectDate}
+  setSelectSlot={setSelectSlot}
   return (
     <Modal
       wrapClassName="custom-appointment-modal"
