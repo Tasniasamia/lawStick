@@ -52,6 +52,7 @@ const data = [
       image: "https://i.ibb.co.com/jvN1vRy0/ex-Attorney.png"
     }
   ];
+  
    
   return (
     <div >

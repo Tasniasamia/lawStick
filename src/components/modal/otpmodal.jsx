@@ -42,11 +42,13 @@ const OtpModal = () => {
   return (
     <Modal
       footer={null}
-      className=" w-full !bg-transparent "
+      className=" w-full !bg-transparent auth"
       closeIcon={false}
       open={otpModal}
       onCancel={closeOtpModal}
       style={{position:"relative",zIndex:"200"}}
+      wrapClassName="auth"
+
 
     >
       <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">

@@ -9,6 +9,7 @@ export const ModalProvider = ({ children }) => {
   const [otpModal,setOtpModal]=useState(false);
   const [isProfleUpdate1,setIsProfileUpdate1]=useState(false);
   const [isProfleUpdate2,setIsProfileUpdate2]=useState(false);
+  const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
   const openLoginModal = () => setLoginModalOpen(true);
   const closeLoginModal = () => setLoginModalOpen(false);
@@ -29,7 +30,7 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider
-      value={{ isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal, otpModal,openOtpModal,closeOtpModal,isProfleUpdate1,openUpdateProfile1,closeUpdateProfile1,isProfleUpdate2,openUpdateProfile2,closeUpdateProfile2}}
+      value={{isAppointmentOpen, setIsAppointmentOpen, isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal, otpModal,openOtpModal,closeOtpModal,isProfleUpdate1,openUpdateProfile1,closeUpdateProfile1,isProfleUpdate2,openUpdateProfile2,closeUpdateProfile2}}
     >
       {children}
     </ModalContext.Provider>

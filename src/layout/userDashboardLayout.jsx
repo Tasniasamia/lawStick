@@ -25,6 +25,8 @@ import profileImage from "../../public/images/Alina.png";
 import UserDashboardSkeleton from "../components/skeleton/userDashboardSkeleton";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { GiClawHammer } from "react-icons/gi";
+import { Appointment } from "../pages/user/attorney/appointment";
+import { useModal } from "../context/modalContext";
 
 const UserDashboardLayout = () => {
   const navigate = useNavigate();
@@ -32,10 +34,10 @@ const UserDashboardLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
-
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const showDrawer = () => setOpen(true);
   const onClose = () => setOpen(false);
+  const {isAppointmentOpen,setIsAppointmentOpen}=useModal();
 
   const menuItems = [
     { id: 1, name: "Dashboard", href: "/user/dashboard", icon: <MdOutlineDashboard /> },
@@ -79,6 +81,8 @@ const UserDashboardLayout = () => {
           </div>
         </div>
       </div>
+      {isAppointmentOpen && (<Appointment />
+      )}
     </section>
   );
 };
@@ -118,6 +122,7 @@ const SidebarContent = ({menuItems}) => (
         </div>
       </nav>
     </div>
+   
   </div>
 );
 
