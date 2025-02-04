@@ -56,9 +56,13 @@ export const Appointment = () => {
         </button>
         <div className="flex lg:flex-row flex-col">
           <div className="lg:w-1/2 w-full">
-            <h3 className="font-medium leading-[23.46px] md:text-[20px] text-base pb-[24px] text-[#191930] font-sans">
+            <h3 className="font-medium leading-[23.46px] text-[20px]  pb-[24px] text-[#191930] font-ebgramond ">
               Book Appointment
             </h3>
+            <div>
+           {/* adjust here */}
+
+            </div>
           </div>
           <div className="h-[455px] w-[1px] bg-[#D9D9D9] lg:block hidden my-auto" />
           <div className="lg:w-1/2 w-full lg:ps-[40px]">
