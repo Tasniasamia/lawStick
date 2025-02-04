@@ -86,7 +86,7 @@ const Details = () => {
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-[32px]">
         {/* Sidebar Section */}
         <div className="col-span-1 xl:w-[393px] w-full">
-          <SearchBar />
+          <SearchBar wrapperClassName={'xl:w-[393px] w-full'}/>
           {/* post  */}
           <div className="mb-[40px]">
             <h2 className="header-2">Recent Post</h2>
