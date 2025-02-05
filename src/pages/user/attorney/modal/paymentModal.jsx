@@ -1,4 +1,4 @@
-import { Form, Modal, Radio } from "antd";
+import { Form, Grid, Modal, Radio } from "antd";
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import stripe from "./../../../../../public/images/stripe.png";
@@ -46,19 +46,36 @@ const PaymentModal = ({
       setIsSuccessModal(true);
     }
   };
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint(); // Use the hook correctly
+  const getModalWidth = () => {
+    if (screens.xxl) {
+      return 792;
+    } else if (screens.xl) {
+      return 792;
+    } else if (screens.lg) {
+      return 600;
+    } else if (screens.md) {
+      return 650;
+    } else if (screens.sm) {
+      return 500;
+    } else {
+      return "100%";
+    }
+  };
   return (
     <Modal
-      wrapClassName="custom-payment-modal"
       className="!bg-transparent"
       footer={null}
       closeIcon={false}
       open={isPaymentModal}
       onCancel={() => setIsPaymentModal(false)}
       style={{ position: "relative", zIndex: "200" }}
+      width={getModalWidth()}
     >
-      <div className="lg:max-w-[872px] w-full mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative ">
+      <div className="lg:max-w-[872px] w-full mx-auto bg-white rounded-[20px] p-[10px] relative ">
         <button
-          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute right-5 top-5 inline-flex justify-center items-center"
+          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:top-0 top-[2px] sm:right-0 right-[2px] inline-flex justify-center items-center"
           onClick={() => {
             setIsPaymentModal(false);
           }}

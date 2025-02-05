@@ -420,27 +420,7 @@ select {
     width: 488px!important;
   }
  
-.custom-appointment-modal .ant-modal .ant-modal-content {
-  width: 872px !important;
-  margin: auto !important;
 
-}
-
-@media screen and (min-width: 320px) and (max-width: 1440px) {
-  .custom-appointment-modal .ant-modal .ant-modal-content {
-    width: 100% !important;
-    border-radius: 8px;
-    padding: 0 !important;
-    background-color: #ffffff;
-    box-shadow: none !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .custom-appointment-modal .ant-modal .ant-modal-content {
-    width: 100% !important;
-  }
-}
 
 @media screen and (max-width:600px) {
   .ant-modal .ant-modal-content {
@@ -457,27 +437,27 @@ select {
 
 
 }
-.custom-payment-modal .ant-modal .ant-modal-content {
-  width: 792px !important;
-  margin: auto !important;
+// .custom-payment-modal .ant-modal .ant-modal-content {
+//   width: 792px !important;
+//   margin: auto !important;
 
-}
+// }
 
-@media screen and (min-width: 320px) and (max-width: 1440px) {
-  .custom-payment-modal .ant-modal .ant-modal-content {
-    width: 100% !important;
-    border-radius: 8px;
-    padding: 0 !important;
-    background-color: #ffffff;
-    box-shadow: none !important;
-  }
-}
+// @media screen and (min-width: 320px) and (max-width: 1440px) {
+//   .custom-payment-modal .ant-modal .ant-modal-content {
+//     width: 100% !important;
+//     border-radius: 8px;
+//     padding: 0 !important;
+//     background-color: #ffffff;
+//     box-shadow: none !important;
+//   }
+// }
 
-@media screen and (max-width: 600px) {
-  .custom-payment-modal .ant-modal .ant-modal-content {
-    width: 100% !important;
-  }
-}
+// @media screen and (max-width: 600px) {
+//   .custom-payment-modal .ant-modal .ant-modal-content {
+//     width: 100% !important;
+//   }
+// }
 
   
  .phone{
@@ -524,10 +504,13 @@ select {
 
 
 
-
-
-
-
+.ant-picker-cell-inner:focus, 
+.ant-picker-cell-selected .ant-picker-cell-inner:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 3px solid red!important;
+  display: none !important;
+}
 
 
 

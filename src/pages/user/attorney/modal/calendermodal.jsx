@@ -55,7 +55,6 @@ const CalendarModal = ({
   };
   return (
     <Modal
-      wrapClassName="custom-appointment-modal"
       className="!bg-transparent"
       footer={null}
       closeIcon={false}
@@ -66,10 +65,11 @@ const CalendarModal = ({
         setselectDate("");
       }}
       style={{ position: "relative", zIndex: "200" }}
+      width="800px"
     >
-      <div className=" w-full mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative ">
+      <div className=" w-full mx-auto bg-white rounded-[20px] p-[10px] relative ">
         <button
-          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute right-6 top-6 inline-flex justify-center items-center"
+          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:right-0 right-[2px] top-[2px] sm:top-0 inline-flex justify-center items-center"
           onClick={() => {
             setIsAppointmentOpen(false);
             setSelectSlot("");

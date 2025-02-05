@@ -12,9 +12,9 @@ const SuccessModal = ({ isSuccessModal, setIsSuccessModal }) => {
       onCancel={() => setIsSuccessModal(false)}
       style={{ position: "relative", zIndex: "200" }}
     >
-      <div className=" w-full mx-auto bg-white rounded-[20px] p-7 sm:p-10 relative ">
+      <div className=" w-full mx-auto bg-white rounded-[20px] p-[10px] relative ">
         <button
-          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:right-5 sm:top-5 top-[2px] right-[2px] inline-flex justify-center items-center"
+          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:right-0 sm:top-0 top-[2px] right-[2px] inline-flex justify-center items-center"
           onClick={() => {
             setIsSuccessModal(false);
           }}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Modal } from "antd";
+import { Form, Grid, Modal } from "antd";
 import { IoClose } from "react-icons/io5";
 import { useModal } from "../../../../context/modalContext";
 import dayjs from "dayjs";
@@ -15,19 +15,36 @@ const CaseDetailsModal = ({
 }) => {
   setselectDate = { setselectDate };
   setSelectSlot = { setSelectSlot };
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint(); // Use the hook correctly
+  const getModalWidth = () => {
+    if (screens.xxl) {
+      return 892;
+    } else if (screens.xl) {
+      return 710;
+    } else if (screens.lg) {
+      return 700;
+    } else if (screens.md) {
+      return 600;
+    } else if (screens.sm) {
+      return 500;
+    } else {
+      return "100%";
+    }
+  };
   return (
     <Modal
-      wrapClassName="custom-appointment-modal"
       className="!bg-transparent"
       footer={null}
       closeIcon={false}
       open={isCaseDetaiOpen}
       onCancel={() => setIsCaseDetailsOpen(false)}
       style={{ position: "relative", zIndex: "200" }}
-    >
-      <div className="lg:max-w-[872px] w-full mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative ">
+      width={getModalWidth()}
+     >
+      <div className="lg:max-w-[872px] w-full mx-auto bg-white rounded-[20px] p-[10px] relative ">
         <button
-          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute right-6 top-6 inline-flex justify-center items-center"
+          className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:top-0 top-[2px] right-[2px]  sm:right-0 inline-flex justify-center items-center"
           onClick={() => {
             setIsCaseDetailsOpen(false);
           }}

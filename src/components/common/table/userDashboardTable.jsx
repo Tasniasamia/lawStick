@@ -97,9 +97,7 @@ const UserDashboardTable = ({
 
     return (
         <div
-            className={`table-arabic w-full bg-white ${
-                shadow ? "shadow-lg" : ""
-            } rounded-md mb-6`}
+            className={`table-arabic w-full   rounded-md mb-6`}
         >
             {/* {!noHeader && (
                 <header className="flex flex-wrap items-center justify-between gap-3 px-6 pt-4 pb-3 border-b border-gray-200">
@@ -127,7 +125,7 @@ const UserDashboardTable = ({
             <div className="relative px-6 py-4">
                 <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
-                        <thead className="text-xs font-semibold text-left text-gray-500 uppercase bg-gray-50">
+                        <thead className="text-xs font-semibold text-left text-gray-500 uppercase ">
                             <tr>
                                 {indexed && (
                                     <th className="p-3 whitespace-nowrap">
