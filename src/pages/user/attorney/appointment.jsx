@@ -3,14 +3,18 @@ import { useState } from "react";
 import { useModal } from "../../../context/modalContext";
 import CalendarModal from "./modal/calendermodal";
 import CaseDetailsModal from "./modal/casedetailsModal";
+import PaymentModal from "./modal/paymentModal";
+import RecommendAttorney from "./modal/recommendedModal";
 
 const Appointment = () => {
   const { isAppointmentOpen, setIsAppointmentOpen } = useModal();
   const [selectDate, setselectDate] = useState("");
   const [selectSlot, setSelectSlot] = useState("");
-  const [casedetailsValue,setCasedetailsValue]=useState({});
-
+  const [casedetailsValue, setCasedetailsValue] = useState({});
+  const [isPaymentModal, setIsPaymentModal] = useState(false);
+  const [paymentValue, setPaymentValue] = useState({});
   const [isCaseDetaiOpen, setIsCaseDetailsOpen] = useState(false);
+  const [isRecommended, setIsRecommended] = useState(false);
   const slotTime = [
     {
       date: "04/02/2025",
@@ -60,7 +64,13 @@ const Appointment = () => {
       ],
     },
   ];
-  console.log("selectdate selectSlot", selectDate, selectSlot,casedetailsValue);
+  console.log(
+    "selectdate selectSlot",
+    selectDate,
+    selectSlot,
+    casedetailsValue,
+    paymentValue
+  );
 
   return (
     <div>
@@ -74,14 +84,29 @@ const Appointment = () => {
           setIsCaseDetailsOpen={setIsCaseDetailsOpen}
         />
       )}
-      {(isCaseDetaiOpen && selectDate && selectSlot) && (
+      {isCaseDetaiOpen && selectDate && selectSlot && (
         <CaseDetailsModal
           isCaseDetaiOpen={isCaseDetaiOpen}
           setIsCaseDetailsOpen={setIsCaseDetailsOpen}
           setCasedetailsValue={setCasedetailsValue}
           setselectDate={setselectDate}
           setSelectSlot={setSelectSlot}
+          setIsPaymentModal={setIsPaymentModal}
+        />
+      )}
+      {isPaymentModal && (
+        <PaymentModal
+          setPaymentValue={setPaymentValue}
+          isPaymentModal={isPaymentModal}
+          setIsPaymentModal={setIsPaymentModal}
+          setIsRecommended={setIsRecommended}
 
+        />
+      )}
+      {isRecommended && (
+        <RecommendAttorney
+          isRecommended={isRecommended}
+          setIsRecommended={setIsRecommended}
         />
       )}
     </div>

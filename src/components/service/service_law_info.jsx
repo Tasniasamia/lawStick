@@ -1,5 +1,5 @@
 import { AiOutlineFilePdf } from "react-icons/ai";
-import pdffile from '../../../../../Downloads/assignment.pdf';
+import pdffile from '../../../../../Downloads/cv.pdf';
 
 const Service_LawInfo = ({ info }) => {
   let { number, title, description1, description2 } = info;

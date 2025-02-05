@@ -15,7 +15,7 @@ const CalendarModal = ({
 }) => {
   const { isAppointmentOpen, setIsAppointmentOpen } = useModal();
   const [viewDate, setViewDate] = useState(dayjs().format("dddd, D MMMM YYYY"));
-  const [pageCount, setPageCount] = useState(1); // Pagination state
+  const [pageCount, setPageCount] = useState(1); 
   const findSlot = slotTime?.find((item) => item?.date === selectDate);
 
   const slotsPerPage = 9;

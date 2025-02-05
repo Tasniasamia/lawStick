@@ -10,7 +10,8 @@ const CaseDetailsModal = ({
   setIsCaseDetailsOpen,
   setCasedetailsValue,
   setselectDate,
-  setSelectSlot
+  setSelectSlot,
+  setIsPaymentModal
 }) => {
   setselectDate={setselectDate}
   setSelectSlot={setSelectSlot}
@@ -43,6 +44,8 @@ const CaseDetailsModal = ({
         <Form
           onFinish={async (values) => {
             setCasedetailsValue({ ...values });
+            setIsCaseDetailsOpen(false);
+            setIsPaymentModal(true);
           }}
           layout="vertical"
         >
