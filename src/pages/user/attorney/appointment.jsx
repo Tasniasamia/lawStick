@@ -5,6 +5,7 @@ import CalendarModal from "./modal/calendermodal";
 import CaseDetailsModal from "./modal/casedetailsModal";
 import PaymentModal from "./modal/paymentModal";
 import RecommendAttorney from "./modal/recommendedModal";
+import SuccessModal from "./modal/successModal";
 
 const Appointment = () => {
   const { isAppointmentOpen, setIsAppointmentOpen } = useModal();
@@ -15,6 +16,7 @@ const Appointment = () => {
   const [paymentValue, setPaymentValue] = useState({});
   const [isCaseDetaiOpen, setIsCaseDetailsOpen] = useState(false);
   const [isRecommended, setIsRecommended] = useState(false);
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
   const slotTime = [
     {
       date: "04/02/2025",
@@ -100,13 +102,19 @@ const Appointment = () => {
           isPaymentModal={isPaymentModal}
           setIsPaymentModal={setIsPaymentModal}
           setIsRecommended={setIsRecommended}
-
+          setIsSuccessModal={setIsSuccessModal}
         />
       )}
-      {isRecommended && (
+      {/* {isRecommended && (
         <RecommendAttorney
           isRecommended={isRecommended}
           setIsRecommended={setIsRecommended}
+        />
+      )} */}
+      {isSuccessModal && (
+        <SuccessModal
+          isSuccessModal={isSuccessModal}
+          setIsSuccessModal={setIsSuccessModal}
         />
       )}
     </div>

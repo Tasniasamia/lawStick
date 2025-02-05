@@ -1,10 +1,5 @@
-import { Form, Modal, Radio } from "antd";
-import { useState } from "react";
+import { Modal } from "antd";
 import { IoClose } from "react-icons/io5";
-import stripe from "./../../../../../public/images/stripe.png";
-import molie from "./../../../../../public/images/molie.png";
-import ray from "./../../../../../public/images/ray.png";
-import payoner from "./../../../../../public/images/payoner.png";
 import AttorneyCard from "../../../../components/common/card/attorneyCard";
 
 const RecommendAttorney = ({

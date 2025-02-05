@@ -11,6 +11,7 @@ const PaymentModal = ({
   setIsPaymentModal,
   setPaymentValue,
   setIsRecommended,
+  setIsSuccessModal
 }) => {
   const style = {
     display: "flex",
@@ -40,8 +41,9 @@ const PaymentModal = ({
     console.log("values", values);
     if (tab === "card" || tab === "paypal") {
       setPaymentValue(values);
-      setIsRecommended(true);
+      // setIsRecommended(true);
       setIsPaymentModal(false);
+      setIsSuccessModal(true);
     }
   };
   return (
@@ -72,10 +74,10 @@ const PaymentModal = ({
         </h3>
         <div className="flex gap-x-8 items-center border-b border-b-[#E0E0E0] mb-[44px]">
           <button
-            className={`text-base font-medium font-sans pb-[10px]  ${
+            className={`text-base font-medium font-sans pb-[10px]   ${
               tab === "card"
                 ? "text-primary border-b-primary  border-b-2"
-                : "text-textColor border-b-0"
+                : "text-textColor border-b-transparent"
             }`}
             onClick={() => {
               setTab("card");
@@ -87,7 +89,7 @@ const PaymentModal = ({
             className={`text-base font-medium font-sans border-b-2 pb-[10px]  ${
               tab === "paypal"
                 ? "text-primary border-b-primary  border-b-2"
-                : "text-textColor border-b-0"
+                : "text-textColor border-b-transparent"
             }`}
             onClick={() => {
               setTab("paypal");
@@ -96,10 +98,10 @@ const PaymentModal = ({
             Paypal
           </button>
           <button
-            className={`text-base font-medium font-sans border-b-2 pb-[10px]  ${
+            className={`text-base font-medium font-sans border-b-2 pb-[10px]   ${
               tab === "other"
                 ? "text-primary border-b-primary  border-b-2"
-                : "text-textColor border-b-0"
+                : "text-textColor border-b-transparent"
             }`}
             onClick={() => {
               setTab("other");
@@ -146,7 +148,8 @@ const PaymentModal = ({
                 className={`border-2 bg-primary  button text-white hover:bg-transparent hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm w-full  mt-[24px]`}
                 onClick={() => {
                   setIsPaymentModal(false);
-                  setIsRecommended(true);
+                  // setIsRecommended(true);
+                  setIsSuccessModal(true);
                 }}
               >
                 Continue
