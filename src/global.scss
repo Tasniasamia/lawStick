@@ -480,10 +480,24 @@ select {
 }
 
   
+ .phone{
+  .ant-form-item-label {
+    padding: 0 0 8px;
+    margin: 0;
+    white-space: initial;
+    margin-top: 3.5px!important; 
+    text-align: start;
+  }
   
+ } 
 
-
-
+ .datepick {
+  .ant-picker-outlined {
+   padding-inline: 20px!important;
+   padding-block:18px!important;
+   width:100%!important;
+  }
+ }
 
 
 
@@ -537,6 +551,10 @@ select {
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   background-color: #C7A87D!important;
   border: white !important;
+}
+
+.upload-image .ant-upload-wrapper .ant-upload-select {
+  display:block!important;
 }
 // .ant-modal-root .ant-modal-mask {
 //   position: fixed;

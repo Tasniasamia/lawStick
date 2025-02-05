@@ -3,7 +3,7 @@ import { Form } from "antd"
 import countryList from "react-select-country-list"
 import { IoChevronDown } from "react-icons/io5"
 
-const FormCountrySelect = ({name,label,required}) => {
+const FormCountrySelect = ({name,label,required,disabled}) => {
   const [value, setValue] = useState("")
   const options = useMemo(() => countryList().getData(), [])
   const handleChange = (event) => {
@@ -25,6 +25,7 @@ const FormCountrySelect = ({name,label,required}) => {
         <select
           value={value}
           onChange={handleChange}
+          disabled={disabled}
           className="appearance-none w-full bg-white border border-[#E0E0E0] text-[#242628] rounded-[10px] px-[20px] py-[18px] focus:outline-none focus:border-[#d9d9d9] focus:ring-1 focus:ring-[#d9d9d9]"
         >
           <option value="" disabled>

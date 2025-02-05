@@ -5,6 +5,8 @@ import { TfiAngleRight, TfiAngleLeft } from "react-icons/tfi";
 import { useModal } from "../../../../context/modalContext";
 import dayjs from "dayjs";
 import Button from "../../../../components/common/button";
+import { FaRegCalendarAlt } from "react-icons/fa";
+
 const CalendarModal = ({
   slotTime,
   selectDate,
@@ -15,7 +17,7 @@ const CalendarModal = ({
 }) => {
   const { isAppointmentOpen, setIsAppointmentOpen } = useModal();
   const [viewDate, setViewDate] = useState(dayjs().format("dddd, D MMMM YYYY"));
-  const [pageCount, setPageCount] = useState(1); 
+  const [pageCount, setPageCount] = useState(1);
   const findSlot = slotTime?.find((item) => item?.date === selectDate);
 
   const slotsPerPage = 9;
@@ -91,8 +93,8 @@ const CalendarModal = ({
               Select Available Date
             </h3>
             <div className="flex justify-between items-center">
-              <h3 className="font-medium text-base pb-[24px] font-sans text-[#242628]">
-                {viewDate}
+              <h3 className="font-medium text-base pb-[24px] font-sans text-[#242628] flex items-center gap-1">
+                <FaRegCalendarAlt /> {viewDate}
               </h3>
               {selectDate && (
                 <button
@@ -140,7 +142,11 @@ const CalendarModal = ({
                           <button
                             key={index}
                             disabled={isPastTime(time)}
-                            className={`px-4 py-2 m-1 border rounded-[8px] text-sm text-[#242628] border-[#E0E0E0] 
+                            className={`px-4 py-2 m-1 border rounded-[8px] ${
+                              time === selectSlot
+                                ? "bg-primary bg-opacity-10 text-primary border-primary transition"
+                                : "text-[#242628] border-[#E0E0E0] "
+                            } text-sm 
             ${
               isPastTime(time)
                 ? "bg-gray-200 text-gray-400 cursor-not-allowed"

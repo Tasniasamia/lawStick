@@ -4,17 +4,17 @@ import { IoClose } from "react-icons/io5";
 import { useModal } from "../../../../context/modalContext";
 import dayjs from "dayjs";
 import Button from "../../../../components/common/button";
-import FileUploader from "../../../../components/common/form/fileUpload";
+import UploadFileComponent from "../../../../components/common/form/fileUpload";
 const CaseDetailsModal = ({
   isCaseDetaiOpen,
   setIsCaseDetailsOpen,
   setCasedetailsValue,
   setselectDate,
   setSelectSlot,
-  setIsPaymentModal
+  setIsPaymentModal,
 }) => {
-  setselectDate={setselectDate}
-  setSelectSlot={setSelectSlot}
+  setselectDate = { setselectDate };
+  setSelectSlot = { setSelectSlot };
   return (
     <Modal
       wrapClassName="custom-appointment-modal"
@@ -99,14 +99,20 @@ const CaseDetailsModal = ({
             />
           </Form.Item>
           <Form.Item
-            name="Evidence"
+            name="evidence"
             label={
               <p className="text-base font-medium text-[#242628] mb-[12px]">
                 Evidence <span className="text-[#818B8F] ms-1">(optional)</span>
               </p>
             }
           >
-            <FileUploader />
+            <div className="">
+              <UploadFileComponent
+                name="evidence"
+                className={"upload-image"}
+                childClassName={"px-[24px] py-[8px] "}
+              />
+            </div>
           </Form.Item>
           <button
             type="submit"
