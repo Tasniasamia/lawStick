@@ -46,8 +46,8 @@ export const UserRoutes = [
     path:'/user/message',
     component:MedicalChat
   },
-  {
-    path:'/user/chart',
-    component:AttorneyDashBoard
-  }
+  // {
+  //   path:'/user/chart',
+  //   component:AttorneyDashBoard
+  // }
 ];

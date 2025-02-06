@@ -39,7 +39,7 @@ const Navbar = () => {
   } = useModal();
   const [user, setUser] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const findPath = location.pathname.match(/user|atonny|admin/gi) || [];
+  const findPath = location.pathname.match(/user|attorney|admin/gi) || [];
   const dropdownContent = (
     <div className="bg-white shadow-sm flex flex-col items-start w-[150px] h-fit ">
       <Link
@@ -96,13 +96,13 @@ const Navbar = () => {
   );
   return (
     <header
-      className={`w-full absolute bg-transparent  ${
-        findPath && findPath[0] === "user"
-          ? "text-textColor border-[#EDEDED]"
-          : "text-white border-b-amber-900"
-      }  z-20  pt-[30px] pb-[27.66px] border-b `}
-      id="navbar"
-    >
+    className={`w-full absolute bg-transparent  ${
+      findPath && (findPath[0] === "user" || findPath[0] === "attorney")
+        ? "text-textColor border-[#EDEDED]"
+        : "text-white border-b-amber-900"
+    } z-20 pt-[30px] pb-[27.66px] border-b`}
+    id="navbar">
+    
       <nav className="flex justify-between items-center custom-container relative">
         {/* 1st */}
         <a href="#">
@@ -113,8 +113,8 @@ const Navbar = () => {
           />
         </a>
         {/* 2nd */}
-        <div className="flex items-center gap-[100px]">
-          <div className="hidden lg:block">
+        <div className={` items-center gap-[100px] flex`}>
+          <div className={` ${ (findPath && findPath[0]) === "attorney" ?"hidden":"hidden lg:block"}`}>
             <div
               className={`flex gap-9 text-lg font-medium transition-all  w-full items-center`}
             >
@@ -192,11 +192,13 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             {user ? (
               <div className="flex gap-[20px] items-center">
-                <TfiCommentAlt className={`text-[18px]`} />
+                <TfiCommentAlt  className={`text-[18px] ${
+                    findPath && (findPath[0] === "user" || findPath[0] === "attorney") ? "text-textColor" : "text-white"
+                    }`} />
                 <Badge count={5} size="small">
                   <FaBell
                     className={`text-[18px] ${
-                      findPath[0] === "user" ? "text-textColor" : "text-white"
+                      findPath && (findPath[0] === "user" || findPath[0] === "attorney") ? "text-textColor" : "text-white"
                     }`}
                   />
                 </Badge>
@@ -314,7 +316,7 @@ const Navbar = () => {
         </div>
         {active && (
           <div
-            className="absolute top-[-30px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white"
+            className={`absolute top-[-30px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white`}
             style={{ zIndex: "150" }}
           >
             <ul className="flex flex-col items-center gap-8">
