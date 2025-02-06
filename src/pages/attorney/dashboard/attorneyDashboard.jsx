@@ -69,7 +69,7 @@ const AttorneyDashBoard = () => {
   ];
 
   return (
-    <div className="  xl:pb-0 pb-[20px]">
+    <div className="  xl:pb-0 pb-[20px] ">
       <h1 className="dashboard-title md:py-[38px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] border-b-2">
         Dashboard
       </h1>
@@ -151,7 +151,7 @@ const AttorneyDashBoard = () => {
           <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px]">
             <p className="text-sans-500-16 mb-4">Clients</p>
 
-            <div className="overflow-y-auto max-h-[200px]">
+            <div className="overflow-y-auto max-h-[200px] custom-scrollbar">
               <div className="flex flex-col gap-4">
                 {clients.map((client, idx) => (
                   <Clients_progress key={idx} client={client} />
@@ -161,10 +161,10 @@ const AttorneyDashBoard = () => {
           </div>
 
           {/* Second inner div */}
-          <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px]">
+          <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px] ">
             <p className="text-sans-500-16 mb-4">Next Appointment’s</p>
 
-            <div className="overflow-y-auto max-h-[200px] ">
+            <div className="overflow-y-auto max-h-[200px] custom-scrollbar">
               <div className="flex flex-col gap-4 ">
                 {nextAppointment.map((singleAppointment, idx) => (
                   <NextAppointment
@@ -180,7 +180,7 @@ const AttorneyDashBoard = () => {
           <div className="xl:col-span-6 col-span-12 px-4 py-4 border rounded-[10px] shadow-lg h-[276px]">
             <p className="text-sans-500-16 mb-[28px]">Message</p>
 
-            <div className="overflow-y-auto max-h-[200px] ">
+            <div className="overflow-y-auto max-h-[200px] custom-scrollbar">
               <div className="flex flex-col gap-4 ">
                 {messages.map((message, idx) => (
                   <SingleMessage key={idx} message={message} />
@@ -231,7 +231,7 @@ export const Clients_progress = ({ client }) => {
       <img className="h-10 w-10" src={image} alt={name} />
       <div className="w-full">
         <Flex vertical gap="small" className="w-full">
-          <Progress percent={progressPercent} size="small" className="w-full" />
+          <Progress percent={progressPercent} size="small" className="w-full"showInfo={false}  />
         </Flex>
         <p className="text-sans-500-14 text-[#818B8F]">{caseNumber} Cases</p>
       </div>
