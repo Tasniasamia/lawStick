@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  useNavigate, Outlet, Link } from "react-router-dom";
+import {  useNavigate, Outlet, Link, useLocation } from "react-router-dom";
 import { Drawer, Space } from "antd";
 
 import {
@@ -8,8 +8,7 @@ import {
 import {
 MdOutlineDashboard,
 } from "react-icons/md";
-import {  IoSettingsOutline } from "react-icons/io5";
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import {  IoInformationCircleOutline, IoSettingsOutline } from "react-icons/io5";
 import { HiOutlineLogout } from "react-icons/hi";
 import profileImage from "../../public/images/Alina.png";
 import UserDashboardSkeleton from "../components/skeleton/userDashboardSkeleton";
@@ -18,8 +17,10 @@ import { GiClawHammer } from "react-icons/gi";
 import { useModal } from "../context/modalContext";
 import Appointment from "../pages/user/attorney/appointment";
 import { TbMessage } from "react-icons/tb";
-import { LuCalendarClock } from "react-icons/lu";
+import { LuCalendarClock,LuCalendarDays } from "react-icons/lu";
 import { VscFiles } from "react-icons/vsc";
+import { GoLaw } from "react-icons/go";
+import { RiUserSearchLine } from "react-icons/ri";
 
 const AttorneyDashboardLayout = () => {
   const [user, setUser] = useState(true);
@@ -28,7 +29,8 @@ const AttorneyDashboardLayout = () => {
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const showDrawer = () => setOpen(true);
   const onClose = () => setOpen(false);
-  // const {isAppointmentOpen,setIsAppointmentOpen}=useModal();
+  const location = useLocation();
+
 
   const menuItems = [
     {
@@ -37,26 +39,33 @@ const AttorneyDashboardLayout = () => {
       href: "/attorney/dashboard",
       icon: <MdOutlineDashboard />,
     },
-    { id: 2, name: "Attorney", href: "/user/attorney", icon: <GiClawHammer /> },
+    { id: 2, name: "My Cases", href: "/attorney/cases", icon: <GiClawHammer /> },
+    
     {
-      id: 3,
-      name: "Case History",
-      href: "/user/case-history",
-      icon: <FaClockRotateLeft />,
+      id:3,
+      name:"Case Request",
+      href:"/attorney/case-request",
+      icon:<GoLaw/>
     },
     {
-      id: 4,
+      id:4,
+      name:"Booking",
+      href:"/attorney/booking",
+      icon:<LuCalendarDays/>
+    },
+    {
+      id: 5,
       name: "Availability",
       href: "/attorney/availablity",
       icon: <LuCalendarClock />,
     },
     {
-      id: 4,
-      name: "Files",
-      href: "/user/files",
-      icon: <VscFiles />,
+      id: 6,
+      name: "Client's",
+      href: "/attorney/clients",
+      icon: <RiUserSearchLine />,
     },
-    { id: 7, name: "Message", href: "/user/message", icon: <TbMessage /> },
+    { id: 7, name: "Message", href: "/attorney/message", icon: <TbMessage /> },
 
     {
       id: 8,
@@ -96,7 +105,7 @@ const AttorneyDashboardLayout = () => {
          
           {/* Large Screen Sidebar */}
           <div className="hidden lg:block lg:w-1/4 w-full border rounded-[20px] pb-[113px] shadow-md overflow-hidden">
-            <SidebarContent menuItems={menuItems} />
+            <SidebarContent menuItems={menuItems} location={location}/>
           </div>
 
           {/* Backdrop for Small Screens */}
@@ -118,7 +127,7 @@ const AttorneyDashboardLayout = () => {
   );
 };
 
-const SidebarContent = ({ menuItems }) => (
+const SidebarContent = ({ menuItems ,location}) => (
   <div className="">
     <div className="bg-[#EDEDED]">
       <div className="flex justify-start ps-4 items-center gap-[10px] py-[34px]">
@@ -142,7 +151,7 @@ const SidebarContent = ({ menuItems }) => (
             key={index}
             to={item.href}
             className={`flex items-center gap-[15px] ${
-              location.pathname === item.href
+              location?.pathname === item.href
                 ? "text-[#B68C5A]"
                 : "text-[#242628]"
             }`}
@@ -155,13 +164,13 @@ const SidebarContent = ({ menuItems }) => (
           <Link
             to="/user/help"
             className={`flex items-center gap-[15px] ${
-              location.pathname === "/user/help"
+              location?.pathname === "/user/help"
                 ? "text-[#B68C5A]"
                 : "text-[#242628]"
             }`}
           >
             <span className="text-[24px]">
-              <IoIosInformationCircleOutline />
+              <IoInformationCircleOutline />
             </span>
             <span className="sidebar-title">Help & Info</span>
           </Link>

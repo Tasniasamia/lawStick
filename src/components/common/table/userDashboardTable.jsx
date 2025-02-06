@@ -122,10 +122,10 @@ const UserDashboardTable = ({
                     {action}
                 </header>
             )} */}
-            <div className="relative px-6 py-4">
+            <div className="relative  py-4">
                 <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
-                        <thead className="text-xs font-semibold text-left text-gray-500 uppercase ">
+                        <thead className="text-[18px] font-medium leading-[21.11px] font-sans text-left text-[#818B8F] capitalize ">
                             <tr>
                                 {indexed && (
                                     <th className="p-3 whitespace-nowrap">
@@ -146,7 +146,7 @@ const UserDashboardTable = ({
                                 ))}
                             </tr>
                         </thead>
-                        <tbody className="text-sm text-gray-700 divide-y divide-gray-200">
+                        <tbody className="text-base font-sans text-gray-700 divide-y divide-gray-200">
                             {loading ? (
                                 <tr>
                                     <td colSpan={cols.length} className="py-16">

@@ -1,7 +1,8 @@
 
 import  { useState, useRef, useEffect } from "react";
 import { FiSend, FiChevronLeft, FiPaperclip } from "react-icons/fi";
-
+import MultipleImageInput from '../../../components/common/form/multipleImge';
+import UploadFileComponent from '../../../components/common/form/fileUpload';
 // import {
 //   useAction,
 //   useActionConfirm,
@@ -26,10 +27,8 @@ import { Form, Modal, Image as AntImage } from "antd";
 // import UploadFileComponent from '../../../../../(dashboard)/components/form/pdfUpload'
 dayjs.extend(relativeTime);
 import { Loader } from "../../../components/common/loader";
-import { chatList, users } from "./chartList";
+import { chatList, users } from "../../user/message/chartList";
 import messageImge from "../../../../public/images/message.png";
-import UploadFileComponent from "../../../components/common/form/fileUpload";
-import MultipleImageInput from "../../../components/common/form/multipleImge";
 export default function MedicalChat() {
   const [imageForm] = Form.useForm();
   // const [users, getUsers] = useFetch(userListMessaged)

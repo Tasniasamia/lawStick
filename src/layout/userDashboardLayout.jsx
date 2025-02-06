@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { Drawer, Space } from "antd";
 
 import {
@@ -25,6 +25,7 @@ const UserDashboardLayout = () => {
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const showDrawer = () => setOpen(true);
   const onClose = () => setOpen(false);
+  const location=useLocation();
   // const {isAppointmentOpen,setIsAppointmentOpen}=useModal();
 
   const menuItems = [
@@ -80,7 +81,7 @@ const UserDashboardLayout = () => {
               onClose={onClose}
               open={open}
             >
-              <SidebarContent menuItems={menuItems} />
+              <SidebarContent menuItems={menuItems} location={location}/>
             </Drawer>
           </div>
 
@@ -108,7 +109,8 @@ const UserDashboardLayout = () => {
   );
 };
 
-const SidebarContent = ({ menuItems }) => (
+const SidebarContent = ({ menuItems,location }) => (
+  
   <div className="">
     <div className="bg-[#EDEDED]">
       <div className="flex justify-start ps-4 items-center gap-[10px] py-[34px]">
@@ -132,7 +134,7 @@ const SidebarContent = ({ menuItems }) => (
             key={index}
             to={item.href}
             className={`flex items-center gap-[15px] ${
-              location.pathname === item.href
+              location?.pathname === item?.href
                 ? "text-[#B68C5A]"
                 : "text-[#242628]"
             }`}
@@ -145,7 +147,7 @@ const SidebarContent = ({ menuItems }) => (
           <Link
             to="/user/help"
             className={`flex items-center gap-[15px] ${
-              location.pathname === "/user/help"
+              location?.pathname === "/user/help"
                 ? "text-[#B68C5A]"
                 : "text-[#242628]"
             }`}
