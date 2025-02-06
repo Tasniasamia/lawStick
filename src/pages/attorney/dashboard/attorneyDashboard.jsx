@@ -129,7 +129,7 @@ const AttorneyDashBoard = () => {
       </h1>
 
       <div className="lg:px-10 px-5 mt-10 mb-10">
-        <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">
+        <div className="flex gap-6">
           {/* 1 */}
           <DashboardCard
             title="Active Case"
@@ -303,7 +303,7 @@ export default AttorneyDashBoard;
 
 export const DashboardCard = ({ bgColor, icon, title, number }) => {
   return (
-    <div className="lg:w-[208px] w-full h-[132px] p-6 border rounded-[10px] shadow-lg">
+    <div className="lg:w-[200px] w-full h-[132px] p-6 border rounded-[10px] shadow-lg">
       <div className="flex items-center gap-3">
         <div
           className={`rounded-full text-[24px] h-10 w-10  flex justify-center items-center text-white`}
