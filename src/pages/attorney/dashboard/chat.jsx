@@ -31,7 +31,7 @@ const RadialBarChart = () => {
   const series = [80, 60, 40];
 
   return (
-    <div className="w-full sm:h-full h-[310px] flex justify-center items-center  absolute bottom-[-100px]">
+    <div className="w-full sm:h-full h-[310px] flex justify-center items-center  absolute sm:bottom-[-100px] bottom-[-120px] mx-[2px]  ">
       <Chart options={options} series={series} type="radialBar" width="100%" height="100%" />
     </div>
   );

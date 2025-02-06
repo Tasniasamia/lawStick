@@ -4,6 +4,8 @@ import { LuArrowLeftRight } from "react-icons/lu";
 import { ImHammer2 } from "react-icons/im";
 import { GoLaw } from "react-icons/go";
 import { AiOutlineMail } from "react-icons/ai";
+import { TbPointFilled } from "react-icons/tb";
+
 const AttorneyDashBoard = () => {
   const clients = [
     {
@@ -110,27 +112,68 @@ const AttorneyDashBoard = () => {
 
         <div className="mt-6 grid xl:grid-cols-[232px_240px_1fr] sm:grid-cols-2 grid-cols-1    gap-6">
           {/* First inner div */}
-          <div className=" border rounded-[10px] shadow-lg  relative overflow-hidden h-[276px]">
-            <p className="text-sans-500-16">Case Overview</p>
+          <div className=" border rounded-[10px] shadow-lg  relative overflow-hidden h-[276px] ">
+            <div className="px-[24px] pt-[24px]">
+              <p className="font-sans text-base font-medium text-[#242628] ">
+                Case Overview
+              </p>
+              <div className="flex justify-between pt-[16px]  items-center">
+                <div className="flex  gap-[2px]">
+                  <TbPointFilled className="text-base font-medium text-[#E29400] mt-[1px]" />
+                  <div className="flex flex-col">
+                    <p className="text-base font-semibold text-[#E29400] font-sans">
+                      60%
+                    </p>
+                    <p className="text-xs font-medium text-[#818B8F]">
+                      pending
+                    </p>
+                  </div>
+                </div>
+                <div className="flex  gap-[2px]">
+                  <TbPointFilled className="text-base font-medium text-[#4CAF50] mt-[1px]" />
+                  <div className="flex flex-col">
+                    <p className="text-base font-semibold text-[#4CAF50] font-sans">
+                      40%
+                    </p>
+                    <p className="text-xs font-medium text-[#818B8F]">Active</p>
+                  </div>
+                </div>
+                <div className="flex  gap-[2px]">
+                  <TbPointFilled className="text-base font-medium text-[#2196F3] mt-[1px]" />
+                  <div className="flex flex-col">
+                    <p className="text-base font-semibold text-[#2196F3] font-sans">
+                      10%
+                    </p>
+                    <p className="text-xs font-medium text-[#818B8F]">
+                      Request
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <RadialBarChart />
           </div>
 
           {/* Second inner div */}
           <div className="border px-4 py-6 rounded-[10px] shadow-lg  ">
-            <p className="text-sans-500-16 mb-4">Upcoming Hearing</p>
+            <p className="font-sans text-base font-medium mb-4 text-[#242628]">
+              Upcoming Hearing
+            </p>
 
             <div className="mb-4">
-              <p className="case-numbers text-blue-700 flex flex-col gap-[8px]">
+              <p className="text-[28px] leading-[36.54px] font-ebgramond text-[#039AB7] flex flex-col gap-[8px] font-bold">
                 10{" "}
-                <span className="text-sans-500-16 text-[#818B8F]">
+                <span className="text-base font-sans text-[#818B8F] font-medium">
                   December
                 </span>
               </p>
             </div>
 
             <div>
-              <p className="text-sans-500-16 mb-3">Case Description</p>
-              <p className="work-sans text-sm text-[#3A3D3F]">
+              <p className="font-sans text-base font-medium mb-3 text-[#242628]">
+                Case Description
+              </p>
+              <p className="font-sans text-sm text-[#3A3D3F]">
                 Disputes over individual rights, responsibilities, and private
                 relations.
               </p>
@@ -139,7 +182,9 @@ const AttorneyDashBoard = () => {
 
           {/* Third inner div */}
           <div className=" px-[17px] py-6 border rounded-[10px] shadow-lg">
-            <p className="text-sans-500-16 mb-[28px]">Case Request level</p>
+            <p className="text-[#242628] text-base font-medium mb-[28px]">
+              Case Request level
+            </p>
             {/* charts starts */}
             <div className="overflow-x-auto sm:overflow-x-hidden"></div>
           </div>
@@ -149,7 +194,9 @@ const AttorneyDashBoard = () => {
         <div className="mt-6 grid grid-cols-12 gap-6">
           {/* First inner div */}
           <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px]">
-            <p className="text-sans-500-16 mb-4">Clients</p>
+            <p className="font-sans text-base font-medium text-[#242628] mb-4">
+              Clients
+            </p>
 
             <div className="overflow-y-auto max-h-[200px] custom-scrollbar">
               <div className="flex flex-col gap-4">
@@ -162,7 +209,9 @@ const AttorneyDashBoard = () => {
 
           {/* Second inner div */}
           <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px] ">
-            <p className="text-sans-500-16 mb-4">Next Appointment’s</p>
+            <p className="font-sans text-base font-medium text-[#242628] mb-4">
+              Next Appointment’s
+            </p>
 
             <div className="overflow-y-auto max-h-[200px] custom-scrollbar">
               <div className="flex flex-col gap-4 ">
@@ -178,7 +227,9 @@ const AttorneyDashBoard = () => {
 
           {/* Third inner div */}
           <div className="xl:col-span-6 col-span-12 px-4 py-4 border rounded-[10px] shadow-lg h-[276px]">
-            <p className="text-sans-500-16 mb-[28px]">Message</p>
+            <p className="font-sans text-base font-medium text-[#242628] mb-[28px]">
+              Message
+            </p>
 
             <div className="overflow-y-auto max-h-[200px] custom-scrollbar">
               <div className="flex flex-col gap-4 ">
@@ -231,7 +282,12 @@ export const Clients_progress = ({ client }) => {
       <img className="h-10 w-10" src={image} alt={name} />
       <div className="w-full">
         <Flex vertical gap="small" className="w-full">
-          <Progress percent={progressPercent} size="small" className="w-full"showInfo={false}  />
+          <Progress
+            percent={progressPercent}
+            size="small"
+            className="w-full"
+            showInfo={false}
+          />
         </Flex>
         <p className="text-sans-500-14 text-[#818B8F]">{caseNumber} Cases</p>
       </div>
@@ -246,8 +302,8 @@ const NextAppointment = ({ singleAppointment }) => {
     <div className="flex gap-[8px] items-center w-full">
       <img className="h-10 w-10" src={image} alt={name} />
       <div className="w-full">
-        <p className="text-sans-500-16">{name}</p>
-        <p className="text-sans-500-14 text-[#818B8F]">{designation}</p>
+        <p className="text-base text-[#242628] font-medium font-sans">{name}</p>
+        <p className="text-xs font-medium font-sans text-[#818B8F]">{designation}</p>
       </div>
     </div>
   );
@@ -261,8 +317,8 @@ export const SingleMessage = ({ message }) => {
       <img className="h-10 w-10" src={image} alt={name} />
       <div className="w-full flex justify-between items-center">
         <div>
-          <p className="text-sans-500-16">{name}</p>
-          <p className="text-sans-500-14 text-[#818B8F]">Send you a message</p>
+          <p className="text-base text-[#242628] font-medium font-sans">{name}</p>
+          <p className="text-xs font-medium font-sans text-[#818B8F]">Send you a message</p>
         </div>
         <div>
           <p>{time} min ago</p>
