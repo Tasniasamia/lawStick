@@ -5,6 +5,7 @@ import { ImHammer2 } from "react-icons/im";
 import { GoLaw } from "react-icons/go";
 import { AiOutlineMail } from "react-icons/ai";
 import { TbPointFilled } from "react-icons/tb";
+import { TbHammer } from "react-icons/tb";
 
 const AttorneyDashBoard = () => {
   const clients = [
@@ -71,15 +72,14 @@ const AttorneyDashBoard = () => {
   ];
   const series = [
     {
-      name: "STOCK ABC",
+      name: "Cases",
       data: [
-        [1510704000000, 8000], [1510790400000, 8100], [1510876800000, 8300],
-        [1510963200000, 8500], [1511049600000, 8600], [1511136000000, 8700],
-        [1511222400000, 8800], [1511308800000, 8850], [1511395200000, 8900],
-        [1511481600000, 9000], [1511568000000, 9100], [1511654400000, 9150],
-        [1511740800000, 9200], [1511827200000, 9150], [1511913600000, 9100],
-        [1512000000000, 9050], [1512086400000, 9000], [1512172800000, 9100],
-        [1512259200000, 9300], [1512345600000, 9400], [1512432000000, 9500],
+        { x: "Jan", y: 100 },
+        { x: "Feb", y: 200 },
+        { x: "Mar", y: 300 },  
+        { x: "Apr", y: 400 },  
+        { x: "May", y: 500 },  
+        { x: "Jun", y: 600 },  
       ],
     },
   ];
@@ -88,12 +88,13 @@ const AttorneyDashBoard = () => {
     chart: {
       type: "area",
       height: 350,
+      toolbar: { show: false },
       zoom: { enabled: false },
     },
     dataLabels: { enabled: false },
     stroke: {
       curve: "smooth",
-      width: 3,
+      width: 1,
       colors: ["#007BFF"],
     },
     fill: {
@@ -106,20 +107,21 @@ const AttorneyDashBoard = () => {
       },
     },
     xaxis: {
-      type: "datetime",
-      labels: { format: "dd MMM" },
+      type: "category", // ✅ Changed from "month" to "category"
+      categories: ["Jan", "Feb", "Mar", "Apr","May","Jun"], // ✅ Explicitly set categories
     },
     yaxis: {
       opposite: false,
       labels: { formatter: (value) => value.toFixed(0) },
     },
     tooltip: {
-      x: { format: "dd MMM yyyy" },
+      x: { show: false }, // ✅ Removed date format since it's categorical data
     },
     legend: {
       horizontalAlign: "left",
     },
   };
+  
   return (
     <div className="  xl:pb-0 pb-[20px] ">
       <h1 className="dashboard-title md:py-[38px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] border-b-2">
@@ -130,37 +132,37 @@ const AttorneyDashBoard = () => {
         <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">
           {/* 1 */}
           <DashboardCard
-            title="Ongoing Case"
-            number={12}
-            bgColor="#6C757D"
-            icon={<LuArrowLeftRight className="rotate-90" />}
+            title="Active Case"
+            number={"05"}
+            bgColor="#4CAF50"
+            icon={<TbHammer className="-rotate-90" />}
           />
           {/* 2 */}
           <DashboardCard
-            title="Total Case"
+            title="Pending Case"
             number={12}
-            bgColor="#0056B3"
-            icon={<ImHammer2 />}
+            bgColor="#E29400"
+            icon={<ImHammer2 className="rotate-90"/>}
           />
 
           {/* 3 */}
           <DashboardCard
-            title="Success Case"
+            title="Case Request"
             number={12}
-            bgColor="#1E7E34"
+            bgColor="#2196F3"
             icon={<GoLaw />}
           />
 
           {/* 4 */}
           <DashboardCard
-            title="Message's"
-            number={12}
+            title="New Message"
+            number={20}
             bgColor="#FF5722"
             icon={<AiOutlineMail />}
           />
         </div>
 
-        <div className="mt-6 grid xl:grid-cols-[232px_240px_1fr] sm:grid-cols-2 grid-cols-1    gap-6">
+        <div className="mt-6 grid xl:grid-cols-[232px_240px_1fr] sm:grid-cols-2 grid-cols-1 h-fit   gap-6">
           {/* First inner div */}
           <div className=" border rounded-[10px] shadow-lg  relative overflow-hidden h-[276px] ">
             <div className="px-[24px] pt-[24px]">
@@ -231,12 +233,12 @@ const AttorneyDashBoard = () => {
           </div>
 
           {/* Third inner div */}
-          <div className=" px-[17px] py-6 border rounded-[10px] shadow-lg">
-            <p className="text-[#242628] text-base font-medium mb-[28px]">
+          <div className=" px-[17px] py-6 border rounded-[10px] shadow-lg h-[276px] xl:col-span-1 sm:col-span-2 col-span-1">
+            <p className="text-[#242628] text-base font-medium ">
               Case Request level
             </p>
             {/* charts starts */}
-            <div className="overflow-x-auto sm:overflow-x-hidden">
+            <div className="h-full">
             <AreaChartComponent options={options} series={series} type="area" height={188} />
             </div>
           </div>

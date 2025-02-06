@@ -43,10 +43,9 @@ export const RadialBarChart = () => {
 // import Chart from "react-apexcharts";
 // import { ApexOptions } from "apexcharts";
 
-export const AreaChartComponent = ({ options, series, type = "area", height = 350 }) => {
+export const AreaChartComponent = ({ options, series, type = "area", height = 188 }) => {
   return (
-    <div>
-      <h2>Sales Chart</h2>
+    <div className="">
       <Chart options={options} series={series} type={type} height={height} />
     </div>
   );
