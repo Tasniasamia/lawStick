@@ -28,6 +28,8 @@ import { GiClawHammer } from "react-icons/gi";
 import { useModal } from "../context/modalContext";
 import Appointment from "../pages/user/attorney/appointment";
 import { TbMessage } from "react-icons/tb";
+import { LuCalendarClock } from "react-icons/lu";
+import { VscFiles } from "react-icons/vsc";
 
 const UserDashboardLayout = () => {
   const navigate = useNavigate();
@@ -53,6 +55,18 @@ const UserDashboardLayout = () => {
       name: "Case History",
       href: "/user/case-history",
       icon: <FaClockRotateLeft />,
+    },
+    {
+      id: 4,
+      name: "Appointment",
+      href: "/user/appointment",
+      icon: <LuCalendarClock />,
+    },
+    {
+      id: 4,
+      name: "Files",
+      href: "/user/files",
+      icon: <VscFiles />,
     },
     { id: 7, name: "Message", href: "/user/message", icon: <TbMessage /> },
     {

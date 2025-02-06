@@ -81,11 +81,52 @@ const CalendarModal = ({
             className="text-[#242628] text-[12px] cursor-pointer"
           />
         </button>
-        <div className="flex xl:flex-row flex-col">
+        <div className="flex xl:flex-row flex-col gap-x-0 gap-y-10">
           <div className="xl:w-1/2 w-full">
             <h3 className="font-medium leading-[23.46px] text-[20px] pb-[24px] text-[#191930] font-ebgramond ">
               Book Appointment
             </h3>
+            <div className="pe-[40px]">
+            <div className="flex items-center gap-3 mb-8 border-b pb-[25px] ">
+              <img
+                className="h-16 w-16"
+                src={"https://i.ibb.co.com/jvN1vRy0/ex-Attorney.png"}
+                alt={"attorney"}
+              />
+              <div>
+                <p className="font-medium text-lg text-[#242628]">
+                  William Scott
+                </p>
+                <p className="font-medium text-[#3A3D3F]">Criminal Lawer</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 !text-base">
+              <p className=" max-w-[356px]">
+                <span className="font-medium">Biography:</span>{" "}
+                <span className="text-[#3A3D3F]">
+                  Alina Gain is an experienced attorney specializing in family
+                  law, providing dedicated, personalized legal solutions with
+                  integrity
+                </span>
+              </p>
+              <p>
+                <span className="font-medium">Degree:</span>{" "}
+                <span className="text-[#3A3D3F]">
+                  Juris Doctor JD: Oxford University
+                </span>
+              </p>
+              <p>
+                <span className="font-medium">Experience:</span>{" "}
+                <span className="text-[#3A3D3F]">4 years</span>
+              </p>
+              <p>
+                <span className="font-medium">Qualification:</span>{" "}
+                <span className="text-[#3A3D3F]">
+                  LL.M in Taxation: Columbia University
+                </span>
+              </p>
+            </div>
+            </div>
           </div>
           <div className="h-[455px] w-[1px] bg-[#D9D9D9] xl:block hidden my-auto" />
           <div className="xl:w-1/2 w-full lg:ps-[40px]">

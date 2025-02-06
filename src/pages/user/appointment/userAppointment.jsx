@@ -3,7 +3,7 @@ import UserDashboardTable from "../../../components/common/table/userDashboardTa
 import PageTitle from "../../../components/common/title/pageTitle";
 import { IoEyeOutline } from "react-icons/io5";
 
-const CaseHistory = () => {
+const UserAppointment = () => {
   const navigate = useNavigate();
   const data = {
     error: false,
@@ -65,36 +65,6 @@ const CaseHistory = () => {
   const columns = [
     { text: "Case Type", dataField: "caseType" },
     { text: "Attorney", dataField: "attorney" },
-    {
-      text: "Case Status",
-      dataField: "status",
-      formatter: (_, d) => {
-        return (
-          <div className="flex items-center gap-2">
-            {d?.status === "pending" && (
-              <p className="w-[88px] h-[34px] rounded-[50px] text-white bg-[#EAB308] flex items-center justify-center">
-                {d?.status}
-              </p>
-            )}
-            {d?.status === "ongoing" && (
-              <p className="w-[88px] h-[34px] rounded-[50px] text-white bg-[#6C757D] flex items-center justify-center">
-                {d?.status}
-              </p>
-            )}
-            {d?.status === "success" && (
-              <p className="w-[88px] h-[34px] rounded-[50px] text-white bg-[#22C55E] flex items-center justify-center">
-                {d?.status}
-              </p>
-            )}
-            {d?.status === "closed" && (
-              <p className="w-[88px] h-[34px] rounded-[50px] text-white bg-[#F05454] flex items-center justify-center">
-                {d?.status}
-              </p>
-            )}
-          </div>
-        );
-      },
-    },
     { text: "Hearing Date", dataField: "hearing_date" },
     {
       text: "Action",
@@ -104,7 +74,7 @@ const CaseHistory = () => {
           <div
             className="grid cursor-pointer place-content-center w-[40px] h-[40px] hover:bg-primary hover:text-white text-[24px] rounded-[10px] border hover:border-primary border-[#E0E0E0]"
             onClick={() => {
-              navigate("/user/case-history/1");
+              navigate("/user/appointment/1");
             }}
           >
             <IoEyeOutline />
@@ -117,7 +87,7 @@ const CaseHistory = () => {
     <div>
       <PageTitle>
         <div className="flex sm:flex-row flex-col justify-between items-center sm:gap-0 gap-6">
-          <h1 className="dashboard-title">Case History</h1>
+          <h1 className="dashboard-title">Appointment</h1>
           <div>
             <select
               id="casetype"
@@ -141,4 +111,4 @@ const CaseHistory = () => {
   );
 };
 
-export default CaseHistory;
+export default UserAppointment;
