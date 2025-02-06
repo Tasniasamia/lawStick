@@ -575,8 +575,31 @@ select {
   background: transparent; /* Hover effect */
 }
 
-  
+.attorney{
+  .ant-picker-calendar {
+  background-color: #ededed !important; /* Background for entire calendar */
+
+}
+
+.ant-picker-panel {
+  background-color: #ededed !important; /* Background for date cells */
+  height: 388px !important;
+  // padding-inline:20px!important;
+}
 
 
+} 
+
+.ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-selected:not(.ant-picker-cell-disabled) .ant-picker-cell-inner, :where(.css-dev-only-do-not-override-1htoz2s).ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-disabled) .ant-picker-cell-inner, :where(.css-dev-only-do-not-override-1htoz2s).ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-disabled) .ant-picker-cell-inner {
+  color: #B68C5A !important;
+  background-color: rgba(182, 140, 90, 0.1) !important; /* 50% opacity */
+  border:1px solid #B68C5A!important;
+  border-radius: 4px!important;
+
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #B68C5A !important;
+  border-color: #B68C5A !important;
+}
 
 

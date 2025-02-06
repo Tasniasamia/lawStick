@@ -46,8 +46,8 @@ const AttorneyDashboardLayout = () => {
     },
     {
       id: 4,
-      name: "Appointment",
-      href: "/user/appointment",
+      name: "Availability",
+      href: "/attorney/availablity",
       icon: <LuCalendarClock />,
     },
     {

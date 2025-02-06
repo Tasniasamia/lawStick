@@ -129,20 +129,20 @@ const AttorneyDashBoard = () => {
       </h1>
 
       <div className="lg:px-10 px-5 mt-10 mb-10">
-        <div className="flex gap-6">
+        <div className="2xl:flex gap-6 flex-row grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 ">
           {/* 1 */}
           <DashboardCard
             title="Active Case"
             number={"05"}
             bgColor="#4CAF50"
-            icon={<TbHammer className="-rotate-90" />}
+            icon={<TbHammer className="-rotate-90 text-[24px]" />}
           />
           {/* 2 */}
           <DashboardCard
             title="Pending Case"
             number={12}
             bgColor="#E29400"
-            icon={<ImHammer2 className="rotate-90"/>}
+            icon={<ImHammer2 className="rotate-90 text-[24px]"/>}
           />
 
           {/* 3 */}
@@ -303,10 +303,10 @@ export default AttorneyDashBoard;
 
 export const DashboardCard = ({ bgColor, icon, title, number }) => {
   return (
-    <div className="lg:w-[200px] w-full h-[132px] p-6 border rounded-[10px] shadow-lg">
+    <div className="2xl:w-[200px] w-full h-[132px] p-5 border rounded-[10px] shadow-lg">
       <div className="flex items-center gap-3">
         <div
-          className={`rounded-full text-[24px] h-10 w-10  flex justify-center items-center text-white`}
+          className={`rounded-full !text-[24px] h-10 w-10  flex justify-center items-center text-white`}
           style={{ backgroundColor: bgColor }}
         >
           {icon}
