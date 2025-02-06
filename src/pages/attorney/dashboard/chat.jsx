@@ -1,7 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
-
-const RadialBarChart = () => {
+export const RadialBarChart = () => {
   const options = {
     chart: {
       type: "radialBar",
@@ -37,4 +36,18 @@ const RadialBarChart = () => {
   );
 };
 
-export default RadialBarChart;
+
+
+
+// import React from "react";
+// import Chart from "react-apexcharts";
+// import { ApexOptions } from "apexcharts";
+
+export const AreaChartComponent = ({ options, series, type = "area", height = 350 }) => {
+  return (
+    <div>
+      <h2>Sales Chart</h2>
+      <Chart options={options} series={series} type={type} height={height} />
+    </div>
+  );
+};

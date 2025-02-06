@@ -1,5 +1,5 @@
 import { Flex, Progress } from "antd";
-import RadialBarChart from "./chat";
+import { AreaChartComponent, RadialBarChart} from "./chat";
 import { LuArrowLeftRight } from "react-icons/lu";
 import { ImHammer2 } from "react-icons/im";
 import { GoLaw } from "react-icons/go";
@@ -69,7 +69,57 @@ const AttorneyDashBoard = () => {
       time: 6,
     },
   ];
-
+  const series = [
+    {
+      name: "STOCK ABC",
+      data: [
+        [1510704000000, 8000], [1510790400000, 8100], [1510876800000, 8300],
+        [1510963200000, 8500], [1511049600000, 8600], [1511136000000, 8700],
+        [1511222400000, 8800], [1511308800000, 8850], [1511395200000, 8900],
+        [1511481600000, 9000], [1511568000000, 9100], [1511654400000, 9150],
+        [1511740800000, 9200], [1511827200000, 9150], [1511913600000, 9100],
+        [1512000000000, 9050], [1512086400000, 9000], [1512172800000, 9100],
+        [1512259200000, 9300], [1512345600000, 9400], [1512432000000, 9500],
+      ],
+    },
+  ];
+  
+  const options = {
+    chart: {
+      type: "area",
+      height: 350,
+      zoom: { enabled: false },
+    },
+    dataLabels: { enabled: false },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#007BFF"],
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shadeIntensity: 0.3,
+        opacityFrom: 0.7,
+        opacityTo: 0.2,
+        stops: [0, 90, 100],
+      },
+    },
+    xaxis: {
+      type: "datetime",
+      labels: { format: "dd MMM" },
+    },
+    yaxis: {
+      opposite: false,
+      labels: { formatter: (value) => value.toFixed(0) },
+    },
+    tooltip: {
+      x: { format: "dd MMM yyyy" },
+    },
+    legend: {
+      horizontalAlign: "left",
+    },
+  };
   return (
     <div className="  xl:pb-0 pb-[20px] ">
       <h1 className="dashboard-title md:py-[38px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] border-b-2">
@@ -186,7 +236,9 @@ const AttorneyDashBoard = () => {
               Case Request level
             </p>
             {/* charts starts */}
-            <div className="overflow-x-auto sm:overflow-x-hidden"></div>
+            <div className="overflow-x-auto sm:overflow-x-hidden">
+            <AreaChartComponent options={options} series={series} type="area" height={188} />
+            </div>
           </div>
         </div>
 
