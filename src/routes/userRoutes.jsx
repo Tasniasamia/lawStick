@@ -1,3 +1,4 @@
+import AttorneyDashBoard from "../pages/attorney/dashboard/attorneyDashboard";
 import AppointmentDetails from "../pages/user/appointment/appointmentdetails";
 import UserAppointment from "../pages/user/appointment/userAppointment";
 import Attorney from "../pages/user/attorney/attorney";
@@ -44,5 +45,9 @@ export const UserRoutes = [
   {
     path:'/user/message',
     component:MedicalChat
+  },
+  {
+    path:'/user/chart',
+    component:AttorneyDashBoard
   }
 ];

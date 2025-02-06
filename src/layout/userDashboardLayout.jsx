@@ -70,6 +70,8 @@ const UserDashboardLayout = () => {
     },
     { id: 7, name: "Message", href: "/user/message", icon: <TbMessage /> },
     {
+      id:9,name:'char',href:'/user/chart', icon: <TbMessage /> },
+    {
       id: 8,
       name: "Settings",
       href: "/user/profile",
