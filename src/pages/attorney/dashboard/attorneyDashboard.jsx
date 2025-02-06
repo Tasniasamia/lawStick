@@ -110,7 +110,7 @@ const AttorneyDashBoard = () => {
 
         <div className="mt-6 grid xl:grid-cols-[232px_240px_1fr] sm:grid-cols-2 grid-cols-1    gap-6">
           {/* First inner div */}
-          <div className=" border rounded-[10px] shadow-lg  ">
+          <div className=" border rounded-[10px] shadow-lg  relative overflow-hidden h-[276px]">
             <p className="text-sans-500-16">Case Overview</p>
             <RadialBarChart />
           </div>

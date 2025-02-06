@@ -8,8 +8,8 @@ const RadialBarChart = () => {
     },
     plotOptions: {
       radialBar: {
-        startAngle: -100, // Starts from the left side
-        endAngle: 100, // Ends on the right side
+        startAngle: -100,
+        endAngle: 100, 
         hollow: {
           size: "20%", // Adjusts the thickness of the bars
         },
@@ -31,7 +31,7 @@ const RadialBarChart = () => {
   const series = [80, 60, 40];
 
   return (
-    <div className="w-full sm:h-full h-[310px] flex justify-center items-center pt-[20px] ">
+    <div className="w-full sm:h-full h-[310px] flex justify-center items-center  absolute bottom-[-100px]">
       <Chart options={options} series={series} type="radialBar" width="100%" height="100%" />
     </div>
   );
