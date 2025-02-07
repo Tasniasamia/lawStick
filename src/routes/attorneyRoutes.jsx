@@ -5,6 +5,7 @@ import MyCase from "../pages/attorney/cases/myCase";
 import Clients from "../pages/attorney/client/client";
 import AttorneyDashBoard from "../pages/attorney/dashboard/attorneyDashboard";
 import MedicalChat from "../pages/attorney/messsage/message";
+import AttorneyProfileSettings from "../pages/attorney/settings/settings";
 
 
 export const AttorneyRoutes = [
@@ -35,6 +36,10 @@ export const AttorneyRoutes = [
   {
     path:"/attorney/message",
     component:MedicalChat
+  },
+  {
+    path:"/attorney/profile",
+    component:AttorneyProfileSettings
   }
   
 ];

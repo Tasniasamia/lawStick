@@ -70,7 +70,7 @@ const AttorneyDashboardLayout = () => {
     {
       id: 8,
       name: "Settings",
-      href: "/user/profile",
+      href: "/attorney/profile",
       icon: <IoSettingsOutline />,
     },
   ];
