@@ -3,6 +3,7 @@ import SearchBar from "../../../components/common/searchBar";
 import UserDashboardTable from "../../../components/common/table/userDashboardTable";
 import PageTitle from "../../../components/common/title/pageTitle";
 import { FaRegFilePdf } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const MyCase = () => {
     const data = {
@@ -100,6 +101,7 @@ const MyCase = () => {
           },
         },
       ];
+      const navigate=useNavigate();
   return (
     <div>
       <PageTitle>

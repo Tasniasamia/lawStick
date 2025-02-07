@@ -3,8 +3,10 @@ import SearchBar from "../../../components/common/searchBar";
 import UserDashboardTable from "../../../components/common/table/userDashboardTable";
 import PageTitle from "../../../components/common/title/pageTitle";
 import { FaRegFilePdf } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const CaseRequest = () => {
+    const navigate = useNavigate();
     const data = {
         error: false,
         msg: "cases fetched successfully",
@@ -98,7 +100,7 @@ const CaseRequest = () => {
               <div
                 className="grid cursor-pointer place-content-center w-[40px] h-[40px] hover:bg-primary hover:text-white text-[24px] rounded-[10px] border hover:border-primary border-[#E0E0E0]"
                 onClick={() => {
-                  navigate("/user/case-history/1");
+                  navigate("/attorney/caseRequst/1");
                 }}
               >
                 <IoEyeOutline />
