@@ -41,7 +41,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const findPath = location.pathname.match(/user|attorney|admin/gi) || [];
   const dropdownContent = (
-    <div className="bg-white shadow-sm flex flex-col items-start w-[150px] h-fit ">
+    <div className="bg-white  flex flex-col items-start w-[150px] h-fit shadow-xl ">
       <Link
         to="/blog"
         className={`${

@@ -19,7 +19,7 @@ const Appointment = () => {
   const [isSuccessModal, setIsSuccessModal] = useState(false);
   const slotTime = [
     {
-      date: "04/02/2025",
+      date: "08/02/2025",
       slot: [
         "6.00PM",
         "7.00PM",
@@ -36,20 +36,19 @@ const Appointment = () => {
       ],
     },
     {
-      date: "05/02/2025",
+      date: "09/02/2025",
       slot: [
         "6.00PM",
         "7.00PM",
         "8.00AM",
         "9.00PM",
-        "7.00PM",
         "8.00PM",
         "9.00AM",
         "10.00AM",
       ],
     },
     {
-      date: "06/02/2025",
+      date: "12/02/2025",
       slot: [
         "6.00PM",
         "7.00PM",

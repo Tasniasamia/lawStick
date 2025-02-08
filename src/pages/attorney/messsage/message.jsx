@@ -29,6 +29,7 @@ dayjs.extend(relativeTime);
 import { Loader } from "../../../components/common/loader";
 import { chatList, users } from "../../user/message/chartList";
 import messageImge from "../../../../public/images/message.png";
+import { AiOutlineDownload } from "react-icons/ai";
 export default function MedicalChat() {
   const [imageForm] = Form.useForm();
   // const [users, getUsers] = useFetch(userListMessaged)
@@ -489,7 +490,10 @@ export default function MedicalChat() {
                 name="pdf"
                 required
                 className="w-full"
-              />
+              >
+                  <AiOutlineDownload />
+                  <p>Upload Your File</p>
+              </UploadFileComponent>
             ) : (
               <MultipleImageInput
                 label="Choose Image"

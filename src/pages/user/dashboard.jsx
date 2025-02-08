@@ -4,6 +4,7 @@ import { ImHammer2 } from "react-icons/im";
 import { GoLaw } from "react-icons/go";
 import { AiOutlineMail } from "react-icons/ai";
 import userPick from '../../../public/images/Alina.png';
+import { Link } from "react-router-dom";
 const UserDashBoard = () => {
     return (
         <div>
@@ -13,15 +14,15 @@ const UserDashBoard = () => {
             <div className="lg:px-10 px-5 pt-10">
             <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">
               {/* 1 */}
-             <DashboardCard title='Ongoing Case' number={12} bgColor='#6C757D'icon={<LuArrowLeftRight className="rotate-90"/>}/>
+             <DashboardCard title='Ongoing Case' number={12} bgColor='#6C757D'icon={<LuArrowLeftRight className="rotate-90"/>} href="/user/case-history"/>
               {/* 2 */}
-              <DashboardCard title='Total Case' number={12} bgColor='#0056B3'icon={<ImHammer2/>}/>
+              <DashboardCard title='Total Case' number={12} bgColor='#0056B3'icon={<ImHammer2/>} href="/user/case-history"/>
 
               {/* 3 */}
-              <DashboardCard title='Success Case' number={12} bgColor='#1E7E34'icon={<GoLaw/>}/>
+              <DashboardCard title='Success Case' number={12} bgColor='#1E7E34'icon={<GoLaw/>} href="/user/case-history"/>
 
               {/* 4 */}
-              <DashboardCard title="Message's" number={12} bgColor='#FF5722'icon={<AiOutlineMail/>}/>
+              <DashboardCard title="Message's" number={12} bgColor='#FF5722'icon={<AiOutlineMail/>} href="/user/message"/>
 
             </div>
 
@@ -72,9 +73,11 @@ export default UserDashBoard;
 
 
 
-export const DashboardCard=({bgColor,icon,title,number})=>{
+export const DashboardCard=({bgColor,icon,title,number,href})=>{
     return (
-        <div className="lg:w-[208px] w-full h-[132px] p-6 border rounded-[10px] shadow-lg">
+        <Link to={href}>
+        <div className="lg:w-[208px] w-full h-[132px] p-6 border rounded-[10px] shadow-lg cursor-pointer">
+
         <div className="flex items-center gap-3">
           <div className={`rounded-full text-[24px] h-10 w-10  flex justify-center items-center text-white`} style={{backgroundColor:bgColor}}>
             {icon}
@@ -85,5 +88,6 @@ export const DashboardCard=({bgColor,icon,title,number})=>{
         </div>
         <p className={`case-numbers  ml-10`} style={{color:bgColor}}>{number}</p>
       </div>
+      </Link>
     )
 }

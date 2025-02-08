@@ -8,6 +8,8 @@ import Button from "../../../components/common/button";
 import UploadFileComponent from "../../../components/common/form/fileUpload";
 import { useState } from "react";
 import { Form, Modal } from "antd";
+import { LuUpload } from "react-icons/lu";
+
 const CaseFile = () => {
   const navigate = useNavigate();
   const [isUpload, setIsUpload] = useState(false);
@@ -117,7 +119,7 @@ const CaseFile = () => {
               setIsUpload(true);
             }}
           >
-            <AiOutlineDownload />
+            <LuUpload />
             Upload you file
           </Button>
         </div>
@@ -136,7 +138,7 @@ const CaseFile = () => {
       >
         <div className=" w-full mx-auto bg-white rounded-[20px] p-[10px] relative ">
           <button
-            className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:right-0 sm:top-0 top-[2px] right-[2px] inline-flex justify-center items-center"
+            className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute sm:top-[-10px] sm:right-[-10px] top-[-5px] right-[-5px] inline-flex justify-center items-center"
             onClick={() => {
               setIsUpload(false);
             }}
@@ -188,16 +190,20 @@ const CaseFile = () => {
               <div className="">
                 <UploadFileComponent
                   name="evidence"
-                  className={"upload-image"}
-                  childClassName={"px-[24px] py-[8px] "}
-                />
+                  className={""}
+                  childClassName={"upload border py-[18px] px-[20px] text-[#242628] sm:text-base text-xs font-medium"}
+                >
+                 
+                  <LuUpload />
+                  <p >Upload Your File   <span className="font-normal  text-[#818B8F] sm:ps-[24px] ps-[5px]">No file choosen</span></p>
+              </UploadFileComponent>
               </div>
             </Form.Item>
             <button
               type="submit"
               className={`border-2 bg-primary flex gap-2 justify-center items-center  button text-white hover:bg-transparent hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm `}
             >
-              <AiOutlineDownload />
+              <LuUpload />
               Upload file
             </button>
           </Form>

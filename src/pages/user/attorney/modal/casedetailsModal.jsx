@@ -5,6 +5,7 @@ import { useModal } from "../../../../context/modalContext";
 import dayjs from "dayjs";
 import Button from "../../../../components/common/button";
 import UploadFileComponent from "../../../../components/common/form/fileUpload";
+import { LuUpload } from "react-icons/lu";
 const CaseDetailsModal = ({
   isCaseDetaiOpen,
   setIsCaseDetailsOpen,
@@ -126,9 +127,13 @@ const CaseDetailsModal = ({
             <div className="">
               <UploadFileComponent
                 name="evidence"
-                className={"upload-image"}
-                childClassName={"px-[24px] py-[8px] "}
-              />
+                // className={"upload-image"}
+                childClassName={"upload border py-[18px] px-[20px] text-[#242628] text-base font-medium"}
+                >
+             
+                  <LuUpload />
+                  <p>Upload Your File</p>
+              </UploadFileComponent>
             </div>
           </Form.Item>
           <button

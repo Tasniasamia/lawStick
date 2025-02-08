@@ -21,6 +21,8 @@ import { LuCalendarClock,LuCalendarDays } from "react-icons/lu";
 import { VscFiles } from "react-icons/vsc";
 import { GoLaw } from "react-icons/go";
 import { RiUserSearchLine } from "react-icons/ri";
+import NewCaseRequest from "../pages/attorney/dashboard/modal/newCaseRequest";
+import AppointmentRequest from "../pages/attorney/dashboard/modal/appointmentRequest";
 
 const AttorneyDashboardLayout = () => {
   const [user, setUser] = useState(true);
@@ -30,7 +32,7 @@ const AttorneyDashboardLayout = () => {
   const showDrawer = () => setOpen(true);
   const onClose = () => setOpen(false);
   const location = useLocation();
-
+ const {isCaseRequest,setIsCaseRequest,isAppointmentRequest,setIsAppointmentRequest}=useModal();
 
   const menuItems = [
     {
@@ -105,7 +107,7 @@ const AttorneyDashboardLayout = () => {
          
           {/* Large Screen Sidebar */}
           <div className="hidden lg:block lg:w-1/4 w-full border rounded-[20px] pb-[113px] shadow-md overflow-hidden">
-            <SidebarContent menuItems={menuItems} location={location}/>
+            <SidebarContent menuItems={menuItems} location={location} setIsCaseRequest={setIsCaseRequest} setIsAppointmentRequest={setIsAppointmentRequest}/>
           </div>
 
           {/* Backdrop for Small Screens */}
@@ -123,11 +125,17 @@ const AttorneyDashboardLayout = () => {
         </div>
       </div>
       <Appointment />
+      {
+        isCaseRequest && <NewCaseRequest/>
+      }
+      {
+        isAppointmentRequest && <AppointmentRequest/>
+      }
     </section>
   );
 };
 
-const SidebarContent = ({ menuItems ,location}) => (
+const SidebarContent = ({ menuItems ,location,setIsCaseRequest,setIsAppointmentRequest}) => (
   <div className="">
     <div className="bg-[#EDEDED]">
       <div className="flex justify-start ps-4 items-center gap-[10px] py-[34px]">
@@ -161,20 +169,24 @@ const SidebarContent = ({ menuItems ,location}) => (
           </Link>
         ))}
         <div className="pt-[50px] space-y-[27px]">
-          <Link
+          {/* <Link
             to="/user/help"
-            className={`flex items-center gap-[15px] ${
+            className={`flex items-center gap-[15px] 
+             ${
               location?.pathname === "/user/help"
                 ? "text-[#B68C5A]"
                 : "text-[#242628]"
-            }`}
-          >
-            <span className="text-[24px]">
+            }
+            `}
+          > */}
+             <div className="flex items-center gap-[15px]">
+            <span className="text-[24px]" onClick={()=>{setIsAppointmentRequest(true)}}>
               <IoInformationCircleOutline />
             </span>
             <span className="sidebar-title">Help & Info</span>
-          </Link>
-          <a className="flex items-center gap-[15px] cursor-pointer" href="#">
+            </div>
+          {/* </Link> */}
+          <a href="#" className="flex gap-[15px] items-center" onClick={()=>{setIsCaseRequest(true)}}>
             <HiOutlineLogout className="h-6 w-6 hover:text-[#B68C5A] text-[#242628]" />
             <span className="sidebar-title">Logout</span>
           </a>

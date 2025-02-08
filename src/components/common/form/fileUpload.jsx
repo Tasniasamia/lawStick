@@ -1,7 +1,7 @@
 import { Upload } from "antd";
 import { AiOutlineDownload } from "react-icons/ai";
 
-const UploadFileComponent = ({ className,max = 1, name = "file" ,childClassName}) => {
+const UploadFileComponent = ({children, className,max = 1, name = "file" ,childClassName}) => {
   const props = {
     name: name,
     accept: ".pdf",
@@ -18,9 +18,8 @@ const UploadFileComponent = ({ className,max = 1, name = "file" ,childClassName}
 
   return (
     <Upload {...props} className={className}>
-      <div className={`flex gap-2 items-center text-base font-sans border w-full ${childClassName}`}>
-        <AiOutlineDownload />
-        <p>Upload Your File</p>
+      <div className={`flex gap-2 items-center text-base font-sans rounded-[10px]   ${childClassName}`} >
+      {children}
       </div>
     </Upload>
   );

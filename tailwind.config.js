@@ -13,6 +13,10 @@ module.exports = {
         borderColor:'#1B3A57',
         secondary : '#3A3D3F',
 
+      },
+      screen:{
+        xs:"426px"
+        
       }
     }, // Customize the default Tailwind theme if needed
   },

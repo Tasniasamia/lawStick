@@ -47,7 +47,7 @@ const Contact = () => {
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-4 md:h-[72px] h-[50px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 md:h-[56px] h-[50px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Enter your name"
               name="name"
               required
@@ -56,7 +56,7 @@ const Contact = () => {
             {/* email */}
             <label
               htmlFor="email"
-              className="block font-medium text-lg mb-2 mt-6"
+              className="block font-medium text-lg mb-2 mt-3"
             >
               Your email
             </label>
@@ -64,7 +64,7 @@ const Contact = () => {
               type="email"
               name="email"
               id="email"
-              className="w-full px-4 py-4 md:h-[72px] h-[50px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-4 md:h-[56px] h-[50px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Enter your email"
               required
             />

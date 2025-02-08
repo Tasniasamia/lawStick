@@ -121,10 +121,9 @@ const AttorneyDashBoard = () => {
       horizontalAlign: "left",
     },
   };
-  
   return (
     <div className="  xl:pb-0 pb-[20px] ">
-      <h1 className="dashboard-title md:py-[38px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] border-b-2">
+      <h1 className="dashboard-title md:py-[38px] py-[17px] md:px-12 sm:px-8 px-[22px] border-b-2">
         Dashboard
       </h1>
 
@@ -295,6 +294,9 @@ const AttorneyDashBoard = () => {
           </div>
         </div>
       </div>
+      {
+
+      }
     </div>
   );
 };

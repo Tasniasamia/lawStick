@@ -30,6 +30,7 @@ import { chatList, users } from "./chartList";
 import messageImge from "../../../../public/images/message.png";
 import UploadFileComponent from "../../../components/common/form/fileUpload";
 import MultipleImageInput from "../../../components/common/form/multipleImge";
+import { AiOutlineDownload } from "react-icons/ai";
 export default function MedicalChat() {
   const [imageForm] = Form.useForm();
   // const [users, getUsers] = useFetch(userListMessaged)
@@ -490,7 +491,11 @@ export default function MedicalChat() {
                 name="pdf"
                 required
                 className="w-full"
-              />
+              >
+            
+                <AiOutlineDownload />
+                <p>Upload Your File</p>
+            </UploadFileComponent>
             ) : (
               <MultipleImageInput
                 label="Choose Image"

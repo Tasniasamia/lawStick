@@ -323,7 +323,7 @@ padding: 0!important;
     height:700px;
   }
   .hero-image-shape{
-    height:580px!important;
+    height:592px!important;
   }
 }
 @media screen and  (min-width:768px) and (max-width:1023px){
@@ -331,7 +331,7 @@ padding: 0!important;
     height:600px;
   }
   .hero-image-shape{
-    height:482px!important;
+    height:492px!important;
   }
 }
 
@@ -427,7 +427,21 @@ select {
 .ant-form-item-required::before{
   content:''!important
 }
+// .file .ant-modal .ant-modal-content {
+//   padding:40px!important
+// }
+// @media screen and (max-width:600px) {
+//   .file .ant-modal .ant-modal-content {
+//     padding:10px!important
 
+//   }
+
+
+// }
+
+.attorneySection .ant-modal .ant-modal-content {
+  padding:0!important
+}
 //  Modal CSS
  .auth .ant-modal .ant-modal-content {
     position: relative;
@@ -545,21 +559,31 @@ select {
 .ant-modal .ant-modal-content {
   margin-inline: auto!important;
 }
-.upload-file{
-  .ant-upload-wrapper .ant-upload-drag .ant-upload {
-    /* padding: 16px; */
-    padding-block:8px!important;
-    padding-inline: 16px!important;
-  }
-}
+// .upload-file{
+//   .ant-upload-wrapper .ant-upload-drag .ant-upload {
+//     /* padding: 16px; */
+//     padding-block:8px!important;
+//     padding-inline: 16px!important;
+//     display:block!important;
+//     width: 100%!important;
+//   }
+// }
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   background-color: #C7A87D!important;
   border: white !important;
 }
+.upload{
+  width:100%!important;
 
-.upload-image .ant-upload-wrapper .ant-upload-select {
-  display:block!important;
 }
+.ant-upload-wrapper .ant-upload-select {
+  display: block!important;
+}
+// .upload-image .ant-upload-wrapper .ant-upload-select {
+//   display:block!important;
+//   width: 100%!important;
+// }
+
 // .ant-modal-root .ant-modal-mask {
 //   position: fixed;
 //   inset: 0;

@@ -134,6 +134,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <DatePicker
               format={"DD MMM YYYY"}
               onChange={(date, dateString) => console.log(dateString)}
+              disabled={!isEdit}
             />
           </Form.Item>
           <PhoneNumberInput
