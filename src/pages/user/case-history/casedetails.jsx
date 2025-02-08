@@ -34,7 +34,7 @@ const CaseDetails = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col sm:gap-6 gap-3">
                   <p className="font-medium work-sans break-all">
                     <span className="text-[#818B8F]">Email:</span>{" "}
                     Abdullah@lawstick.com
@@ -46,7 +46,7 @@ const CaseDetails = () => {
                     <span className="text-[#818B8F]">Experience:</span> 4 years
                   </p>
                   <p className="font-medium work-sans">
-                    <span className="text-[#818B8F] leading-[27px]">
+                    <span className="text-[#818B8F] leading-[27px] break-all">
                       Qualification:
                     </span>{" "}
                     Qualification Juris Doctor (JD): Earned from oxford
@@ -65,7 +65,7 @@ const CaseDetails = () => {
                   Case Info
                 </h1>
 
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col sm:gap-6 gap-3">
                   <p className="font-medium work-sans">
                     <span className="text-[#818B8F]">Case Type:</span> Murder
                   </p>

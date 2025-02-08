@@ -26,11 +26,10 @@ const FormCountrySelect = ({name,label,required,disabled}) => {
           value={value}
           onChange={handleChange}
           disabled={disabled}
-          className="appearance-none w-full bg-white border border-[#E0E0E0] text-[#242628] rounded-[10px] px-[20px] py-[18px] focus:outline-none focus:border-[#d9d9d9] focus:ring-1 focus:ring-[#d9d9d9]"
+          placeholder="Select Country"
+          className="appearance-none w-full bg-white border border-[#E0E0E0] text-[#242628] rounded-[10px] px-[20px]  focus:outline-none focus:border-[#d9d9d9] focus:ring-1 focus:ring-[#d9d9d9] h-[56px]"
         >
-          <option value="" disabled>
-            Select country
-          </option>
+       
           {options?.map((country,index) => (
             <option key={index} value={country?.value}>
               {country?.label}

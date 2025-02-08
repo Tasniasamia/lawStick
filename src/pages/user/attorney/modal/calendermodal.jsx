@@ -129,7 +129,7 @@ const CalendarModal = ({
             </div>
           </div>
           <div className="h-[455px] w-[1px] bg-[#D9D9D9] xl:block hidden my-auto" />
-          <div className="xl:w-1/2 w-full lg:ps-[40px]">
+          <div className="xl:w-1/2 w-full xl:ps-[40px]">
             <h3 className="font-medium leading-[23.46px] md:text-[20px] text-base pb-[24px] text-[#191930] font-sans ">
               Select Available Date
             </h3>

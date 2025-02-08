@@ -154,6 +154,7 @@ const CaseFile = () => {
           <Form
             onFinish={async (values) => {
              console.log("values",values);
+             navigate("/about");
             }}
             layout="vertical"
           >
@@ -175,14 +176,40 @@ const CaseFile = () => {
               <input
                 placeholder="File Name"
                 type="text"
-                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               />
             </Form.Item>
-
+            <Form.Item
+      label={<p className="text-base font-medium text-[#242628]">Send To</p>}
+      name={"attorney"}
+      rules={[
+        {
+          required: true,
+          message: "Please select a country!",
+        },
+      ]}
+    >
+      <div className="relative">
+        <select
+         
+          className="appearance-none w-full bg-white border border-[#E0E0E0] text-[#242628] rounded-[10px] px-[20px] h-[56px] focus:outline-none focus:border-[#d9d9d9] focus:ring-1 focus:ring-[#d9d9d9] "
+        >
+          <option value="Tasnia" >
+          Tasnia
+          </option>
+          <option value="Alina" >
+          Alina
+          </option>
+        </select>
+        {/* <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+          <IoChevronDown size={20} />
+        </div> */}
+      </div>
+    </Form.Item>
             <Form.Item
               name="evidence"
               label={
-                <p className="text-base font-medium text-[#242628] mb-[12px]">
+                <p className="text-base font-medium text-[#242628] ">
                   Upload File
                 </p>
               }
@@ -191,7 +218,7 @@ const CaseFile = () => {
                 <UploadFileComponent
                   name="evidence"
                   className={""}
-                  childClassName={"upload border py-[18px] px-[20px] text-[#242628] sm:text-base text-xs font-medium"}
+                  childClassName={"upload border py-[18px] px-[20px] text-[#242628] sm:text-base text-xs font-medium h-[56px]"}
                 >
                  
                   <LuUpload />
@@ -201,7 +228,7 @@ const CaseFile = () => {
             </Form.Item>
             <button
               type="submit"
-              className={`border-2 bg-primary flex gap-2 justify-center items-center  button text-white hover:bg-transparent hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm `}
+              className={`border-2 bg-primary flex gap-x-2 justify-center items-center  button text-white hover:bg-transparent hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm `}
             >
               <LuUpload />
               Upload file

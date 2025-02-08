@@ -9,7 +9,6 @@ import { useState } from "react";
 import PhoneNumberInput from "./../common/form/phoneNumberInput";
 import FormCountrySelect from "../common/form/country";
 const SignUp = () => {
-  const [form] = Form.useForm();
   const [tab, setTab] = useState("step1");
 
   const {
@@ -31,9 +30,11 @@ const SignUp = () => {
   } = useModal();
 
   const handleFinish = async (values) => {
-    console.log("Form Values:", values, password);
-    closeSignUp();
-    openUpdateProfile1();
+    console.log("Form Values:", values);
+    if (values) {
+      closeSignUp();
+      openUpdateProfile1();
+    }
   };
   const [password, setPassword] = useState("");
   return (
@@ -43,10 +44,10 @@ const SignUp = () => {
       className=" w-full !bg-transparent auth"
       closeIcon={false}
       open={signUpModal}
-      onCancel={closeSignUp}
-      style={{position:"relative",zIndex:"200"}}
-      
-
+      onCancel={() => {
+        closeSignUp();
+      }}
+      style={{ position: "relative", zIndex: "200" }}
     >
       <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">
         {/* Close Button */}
@@ -77,7 +78,7 @@ const SignUp = () => {
         </h2>
 
         {/* Form Fields */}
-        <Form form={form} layout="vertical" onClick={handleFinish}>
+        <Form layout="vertical" onFinish={handleFinish}>
           <>
             <Form.Item
               label={
@@ -95,7 +96,7 @@ const SignUp = () => {
               <input
                 placeholder="Example@lawstick.com"
                 type="email"
-                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               />
             </Form.Item>
 
@@ -106,6 +107,7 @@ const SignUp = () => {
               min={8}
               password={password}
               setPassword={setPassword}
+              className="h-[56px]"
             />
             <Form.Item
               name={"confirm_password"}
@@ -130,21 +132,26 @@ const SignUp = () => {
             >
               <Input.Password
                 placeholder={"**************"}
-                className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
                 iconRender={(visible) =>
                   visible ? (
-                    <FiEyeOff size={16} style={{ color: "#9CA3AF" }} />
-                  ) : (
                     <FiEye size={16} style={{ color: "#9CA3AF" }} />
+                  ) : (
+                    <FiEyeOff size={16} style={{ color: "#9CA3AF" }} />
                   )
                 }
               />
             </Form.Item>
 
             {/* Sign Up Button */}
-            <Button className={"w-full  my-[16px] "} type="submit">
+            <button
+              className={
+                "border-2 mb-4 bg-primary  button text-white hover:bg-transparent w-full hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm"
+              }
+              type="submit"
+            >
               Sign Up
-            </Button>
+            </button>
           </>
         </Form>
         {/* Google Sign Up Button */}

@@ -48,7 +48,7 @@ const FormPassword = ({password, setPassword, noCurrent, required, min, confirm,
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
-                    {showPassword ? <FiEyeOff size={16} /> : <FiEye size={16} />}
+                    {showPassword ?<FiEye size={16} />  : <FiEyeOff size={16} />}
                 </button>
             </div>
 

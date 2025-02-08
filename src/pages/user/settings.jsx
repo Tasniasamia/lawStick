@@ -96,7 +96,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
               placeholder="Martha Uilson"
               disabled={!isEdit}
               type="text"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] pt-[19px] pb-[18px] w-full "
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] pt-[19px] pb-[18px] w-full h-[56px]"
             />
           </Form.Item>
           <Form.Item
@@ -113,7 +113,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
               placeholder="uilson@email.com"
               disabled={!isEdit}
               type="email"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
             />
           </Form.Item>
           <Form.Item
@@ -124,7 +124,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             }
             name="dob"
             rules={[{ required: true, message: "Please enter your dob!" }]}
-            className="datepick"
+            className="datepick h-[56px]"
           >
             {/* <input
               type="date"
@@ -134,6 +134,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <DatePicker
               format={"DD MMM YYYY"}
               onChange={(date, dateString) => console.log(dateString)}
+           
               disabled={!isEdit}
             />
           </Form.Item>
@@ -157,7 +158,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <input
               placeholder="20 Cooper Square, New York, USA"
               type="text"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               disabled={!isEdit}
             />
           </Form.Item>
@@ -174,7 +175,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <input
               placeholder="20 Cooper Square, New York, USA"
               type="text"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               disabled={!isEdit}
             />
           </Form.Item>
@@ -191,7 +192,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <input
               placeholder="9300"
               type="number"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               disabled={!isEdit}
             />
           </Form.Item>
@@ -269,7 +270,7 @@ export const PasswordUpdate = ({ setTab }) => {
           >
             <Input.Password
               placeholder={"**************"}
-              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               iconRender={(visible) =>
                 visible ? (
                   <FiUnlock size={16} style={{ color: "#9CA3AF" }} />
@@ -295,7 +296,7 @@ export const PasswordUpdate = ({ setTab }) => {
           >
             <Input.Password
               placeholder={"**************"}
-              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               iconRender={(visible) =>
                 visible ? (
                   <FiUnlock size={16} style={{ color: "#9CA3AF" }} />

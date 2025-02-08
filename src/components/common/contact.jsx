@@ -56,7 +56,7 @@ const Contact = () => {
             {/* email */}
             <label
               htmlFor="email"
-              className="block font-medium text-lg mb-2 mt-3"
+              className="block font-medium text-lg mb-2 mt-5"
             >
               Your email
             </label>
@@ -72,7 +72,7 @@ const Contact = () => {
             {/* message */}
             <label
               htmlFor="message"
-              className="block font-medium text-lg mb-2 mt-6"
+              className="block font-medium text-lg mb-2 mt-5"
             >
               Your message
             </label>
@@ -80,7 +80,7 @@ const Contact = () => {
               name={"message"}
               type="text"
               id="message"
-              className="w-full px-4 py-2 lg:h-36 md:h-[5.5rem] h-[4rem] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent "
+              className="w-full px-4 py-2 h-36   border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent "
               placeholder="Enter your message"
               required
             />

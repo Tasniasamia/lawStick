@@ -13,7 +13,21 @@ const UpdateProfile2 = () => {
   const [user, setUser] = useState(true);
 
   const {
-    isLoginModalOpen, openLoginModal, closeLoginModal,openSignUp,closeSignUp,signUpModal, otpModal,openOtpModal,closeOtpModal,isProfleUpdate1,openUpdateProfile1,closeUpdateProfile1,isProfleUpdate2,openUpdateProfile2,closeUpdateProfile2
+    isLoginModalOpen,
+    openLoginModal,
+    closeLoginModal,
+    openSignUp,
+    closeSignUp,
+    signUpModal,
+    otpModal,
+    openOtpModal,
+    closeOtpModal,
+    isProfleUpdate1,
+    openUpdateProfile1,
+    closeUpdateProfile1,
+    isProfleUpdate2,
+    openUpdateProfile2,
+    closeUpdateProfile2,
   } = useModal();
 
   const handleFinish = async (values) => {
@@ -26,9 +40,8 @@ const UpdateProfile2 = () => {
       closeIcon={false}
       open={isProfleUpdate2}
       onCancel={closeUpdateProfile2}
-      style={{position:"relative",zIndex:"200"}}
+      style={{ position: "relative", zIndex: "200" }}
       wrapClassName="auth"
-
     >
       <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">
         {/* Close Button */}
@@ -76,11 +89,12 @@ const UpdateProfile2 = () => {
                   message: "Please enter your present address!",
                 },
               ]}
+           
             >
               <input
                 placeholder="20 Cooper Square, New York, USA"
                 type="text"
-                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               />
             </Form.Item>
             <Form.Item
@@ -90,6 +104,7 @@ const UpdateProfile2 = () => {
                 </p>
               }
               name="permanent_address"
+           
               rules={[
                 {
                   required: true,
@@ -100,7 +115,7 @@ const UpdateProfile2 = () => {
               <input
                 placeholder="20 Cooper Square, New York, USA"
                 type="text"
-                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               />
             </Form.Item>
             <FormCountrySelect
@@ -109,9 +124,14 @@ const UpdateProfile2 = () => {
               required={true}
             />
 
-            <Button className={"w-full  my-[16px] "} type="submit">
+            <button
+              className={
+                "border-2 mb-4 mt-[16px] bg-primary  button text-white hover:bg-transparent w-full hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm"
+              }
+              type="submit"
+            >
               Next
-            </Button>
+            </button>
           </>
         </Form>
       </div>

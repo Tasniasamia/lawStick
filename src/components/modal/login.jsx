@@ -32,7 +32,7 @@ const Login = () => {
       closeIcon={false}
       open={isLoginModalOpen}
       onCancel={closeLoginModal}
-      style={{position:"relative",zIndex:"200"}}
+      style={{ position: "relative", zIndex: "200" }}
     >
       <div className="sm:max-w-[488px]  w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">
         {/* Close Button */}
@@ -66,12 +66,12 @@ const Login = () => {
           <>
             <Form.Item
               label={
-                <p className="text-base font-medium text-[#242628] ">
+                <p className="text-base font-medium text-[#242628]  ">
                   Email Address
                 </p>
               }
               name="email"
-              className="w-full"
+              className="w-full "
               rules={[
                 { required: true, message: "Please enter your email!" },
                 { type: "email", message: "Enter a valid email!" },
@@ -80,12 +80,13 @@ const Login = () => {
               <input
                 placeholder="Example@lawstick.com"
                 type="email"
-                className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] px-[20px] pt-[19px] pb-[18px] w-full h-[56px] "
               />
             </Form.Item>
 
             <Form.Item
               name={"password"}
+              className=" w-full"
               label={
                 <p className="text-base font-medium text-[#242628]">
                   {"Password"}
@@ -100,12 +101,12 @@ const Login = () => {
             >
               <Input.Password
                 placeholder={"**************"}
-                className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+                className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
                 iconRender={(visible) =>
                   visible ? (
-                    <FiEyeOff size={16} style={{ color: "#9CA3AF" }} />
-                  ) : (
                     <FiEye size={16} style={{ color: "#9CA3AF" }} />
+                  ) : (
+                    <FiEyeOff size={16} style={{ color: "#9CA3AF" }} />
                   )
                 }
               />
@@ -119,9 +120,9 @@ const Login = () => {
               </Link>
             </div>
             {/* Sign Up Button */}
-            <Button className={"w-full  my-[16px] "} type="submit">
+            <button className={"border-2 mb-4 bg-primary  button text-white hover:bg-transparent w-full hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm"} type="submit">
               Log In
-            </Button>
+            </button>
           </>
         </Form>
         {/* Google Sign Up Button */}

@@ -48,7 +48,7 @@ const PhoneNumberInput = ({
         readOnly={readOnly}
         placeholder={placeholder}
         disabled={disabled}
-        className={`border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] `}
+        className={`border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]`}
       />
     </Form.Item>
   );
