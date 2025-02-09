@@ -209,7 +209,6 @@ padding: 0!important;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500; 
   font-size: 1.125rem; 
-  
   line-height: 21px;
 }
 
@@ -335,9 +334,14 @@ padding: 0!important;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px){
+@media screen and (min-width: 360px) and (max-width: 767px){
   .hero-banner{
-  height: 500px;
+  height: 800px;
+}
+}
+@media screen  and (min-width: 320px) and (max-width: 359px){
+  .hero-banner{
+  height: 850px;
 }
 }
 .hero-title , .blog-header ,.font-ebgramond{

@@ -14,8 +14,9 @@ module.exports = {
         secondary : '#3A3D3F',
 
       },
-      screen:{
-        xs:"426px"
+      screens:{
+        xs:"360px",
+   
         
       }
     }, // Customize the default Tailwind theme if needed
