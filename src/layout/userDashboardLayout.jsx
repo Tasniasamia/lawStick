@@ -63,7 +63,6 @@ const UserDashboardLayout = () => {
       icon: <IoSettingsOutline />,
     },
   ];
-
   return !user ? (
     <UserDashboardSkeleton />
   ) : (
@@ -81,7 +80,7 @@ const UserDashboardLayout = () => {
               onClose={onClose}
               open={open}
             >
-              <SidebarContent menuItems={menuItems} location={location}/>
+              <SidebarContent menuItems={menuItems} />
             </Drawer>
           </div>
 
@@ -109,9 +108,11 @@ const UserDashboardLayout = () => {
   );
 };
 
-const SidebarContent = ({ menuItems,location }) => (
-  
-  <div className="">
+const SidebarContent = ({ menuItems }) =>{ 
+  const location=useLocation();
+  console.log("location",location?.pathname);
+  return (
+  <div>
     <div className="bg-[#EDEDED]">
       <div className="flex justify-start ps-4 items-center gap-[10px] py-[34px]">
         <div className="rounded-full p-[3px] border border-black">
@@ -133,10 +134,10 @@ const SidebarContent = ({ menuItems,location }) => (
           <Link
             key={index}
             to={item.href}
-            className={`flex items-center gap-[15px] ${
+            className={`flex items-center gap-[15px]  ${
               location?.pathname === item?.href
-                ? "text-[#B68C5A]"
-                : "text-[#242628]"
+                ? "text-primary"
+                : "!text-[#242628]"
             }`}
           >
             <span className="text-[24px]">{item.icon}</span>
@@ -165,6 +166,6 @@ const SidebarContent = ({ menuItems,location }) => (
       </nav>
     </div>
   </div>
-);
+)};
 
 export default UserDashboardLayout;

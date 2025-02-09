@@ -15,6 +15,7 @@ import UpdateProfile2 from "../modal/updateProfile2";
 import { FiLogOut, FiSettings } from "react-icons/fi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { RxDash, RxDashboard } from "react-icons/rx";
+import { ImExit } from "react-icons/im";
 
 const Navbar = () => {
   const location = useLocation();
@@ -35,11 +36,69 @@ const Navbar = () => {
     isProfleUpdate2,
     openUpdateProfile2,
     closeUpdateProfile2,
-  
   } = useModal();
   const [user, setUser] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const findPath = location.pathname.match(/user|attorney|admin/gi) || [];
+  const dropdownContent2 = (
+    <div className="absolute right-0 z-50  mt-2 transition-all duration-300 bg-white  shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
+      <div className="">
+        {/* Profile */}
+        <Link
+          to={
+            user?.role === "admin"
+              ? "/admin/profile"
+              : user?.role === "attorney"
+              ? "/attorney/profile"
+              : "/user/profile"
+          }
+          className={`block ${
+            location?.pathname ===
+            ("/user/profile" || "/attorney/profile" || "/admin/profile")
+              ? "bg-primary text-white"
+              : ""
+          } px-4 py-2 text-lg text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
+        >
+          <div className="flex items-center gap-2">
+            <FaRegUser />
+            <span>Profile</span>
+          </div>
+        </Link>
+
+        {/* Dashboard */}
+        {/* user?.role === "admin"
+              ? "/admin/dashboard"
+              : user?.role === "attorney"
+              ? "/attorney/dashboard"
+              : "/user/dashboard" */}
+        <Link
+          to={user && "/user/dashboard"}
+          className={`block ${
+            location?.pathname ===
+            ("/user/dashboard" || "/attorney/dashboard" || "/admin/dashboard")
+              ? "bg-primary text-white"
+              : ""
+          } px-4 py-2 text-lg text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
+        >
+          <div className="flex items-center gap-2">
+            <RxDashboard />
+            <span>Dashboard</span>
+          </div>
+        </Link>
+
+        {/* Logout */}
+        <div
+          // onClick={handleLogout}
+          className="block px-4 py-2 text-lg text-textColor transition duration-200  cursor-pointer hover:bg-primary hover:text-white"
+        >
+          <div className="flex items-center gap-2">
+            <FiLogOut />
+            <span>Logout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
   const dropdownContent = (
     <div className="bg-white  flex flex-col items-start w-[150px] h-fit shadow-xl ">
       <Link
@@ -96,13 +155,13 @@ const Navbar = () => {
   );
   return (
     <header
-    className={`w-full absolute bg-transparent  ${
-      findPath && (findPath[0] === "user" || findPath[0] === "attorney")
-        ? "text-textColor border-[#EDEDED]"
-        : "text-white border-b-amber-900"
-    } z-20 pt-[30px] pb-[27.66px] border-b`}
-    id="navbar">
-    
+      className={`w-full absolute bg-transparent  ${
+        findPath && (findPath[0] === "user" || findPath[0] === "attorney")
+          ? "text-textColor border-[#EDEDED]"
+          : "text-white border-b-amber-900"
+      } z-20 pt-[30px] pb-[27.66px] border-b`}
+      id="navbar"
+    >
       <nav className="flex justify-between items-center custom-container relative">
         {/* 1st */}
         <a href="#">
@@ -114,7 +173,13 @@ const Navbar = () => {
         </a>
         {/* 2nd */}
         <div className={` items-center gap-[100px] flex`}>
-          <div className={` ${ (findPath && findPath[0]) === "attorney" ?"hidden":"hidden lg:block"}`}>
+          <div
+            className={` ${
+              (findPath && findPath[0]) === "attorney"
+                ? "hidden"
+                : "hidden lg:block"
+            }`}
+          >
             <div
               className={`flex gap-9 text-lg font-medium transition-all  w-full items-center`}
             >
@@ -192,105 +257,57 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             {user ? (
               <div className="flex gap-[20px] items-center">
-                <TfiCommentAlt  className={`text-[18px] ${
-                    findPath && (findPath[0] === "user" || findPath[0] === "attorney") ? "text-textColor" : "text-white"
-                    }`} />
+                {
+                  findPath &&
+                  (findPath[0] === "attorney") && (
+                    <Link to="/" target="_blank" className="flex items-center gap-1 hover:text-primary">
+                    <ImExit />
+                    <p className="whitespace-pre">Live Site</p>
+                </Link>
+                  ) }
+               
+                <TfiCommentAlt
+                  className={`text-[18px] ${
+                    findPath &&
+                    (findPath[0] === "user" || findPath[0] === "attorney")
+                      ? "text-textColor"
+                      : "text-white"
+                  }`}
+                />
                 <Badge count={5} size="small">
                   <FaBell
                     className={`text-[18px] ${
-                      findPath && (findPath[0] === "user" || findPath[0] === "attorney") ? "text-textColor" : "text-white"
+                      findPath &&
+                      (findPath[0] === "user" || findPath[0] === "attorney")
+                        ? "text-textColor"
+                        : "text-white"
                     }`}
                   />
                 </Badge>
                 <div className="relative dropdown-container">
-                  <div
-                    className="cursor-pointer"
-                    aria-label="User Profile"
-                    onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  >
-                    {user?.image ? (
-                      <img
-                        src={user?.image}
-                        alt="User"
-                        className="object-cover w-[56px] h-[56px] rounded-full"
-                      />
-                    ) : (
-                      <Avatar
-                        name={user?.name}
-                        className="w-[40px] h-[40px]"
-                        bgColor="bg-secondary"
-                        icon={<FaUser className="text-[20px]" />}
-                      />
-                    )}
-                  </div>
-
-                  {/* Dropdown Menu */}
-                  {isDropdownOpen && (
-                    <div className="absolute right-0 z-50  mt-2 transition-all duration-300 bg-white  shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
-                      <div className="" role="menu" aria-orientation="vertical">
-                        {/* Profile */}
-                        <Link
-                          to={
-                            user?.role === "admin"
-                              ? "/admin/profile"
-                              : user?.role === "attorney"
-                              ? "/attorney/profile"
-                              : "/user/profile"
-                          }
-                          className={`block ${
-                            location?.pathname ===
-                            ("/user/profile" ||
-                              "/attorney/profile" ||
-                              "/admin/profile")
-                              ? "bg-primary text-white"
-                              : ""
-                          } px-4 py-2 text-sm text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
-                          role="menuitem"
-                        >
-                          <div className="flex items-center gap-2">
-                            <FaRegUser />
-                            <span>Profile</span>
-                          </div>
-                        </Link>
-
-                        {/* Dashboard */}
-                        {/* user?.role === "admin"
-                              ? "/admin/dashboard"
-                              : user?.role === "attorney"
-                              ? "/attorney/dashboard"
-                              : "/user/dashboard" */}
-                        <Link
-                          to={user && "/user/dashboard"}
-                          className={`block ${
-                            location?.pathname ===
-                            ("/user/dashboard" ||
-                              "/attorney/dashboard" ||
-                              "/admin/dashboard")
-                              ? "bg-primary text-white"
-                              : ""
-                          } px-4 py-2 text-sm text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
-                          role="menuitem"
-                        >
-                          <div className="flex items-center gap-2">
-                            <RxDashboard />
-                            <span>Dashboard</span>
-                          </div>
-                        </Link>
-
-                        {/* Logout */}
-                        <div
-                          // onClick={handleLogout}
-                          className="block px-4 py-2 text-sm text-textColor transition duration-200 rounded-md cursor-pointer hover:bg-primary hover:text-white"
-                          role="menuitem"
-                        >
-                          <div className="flex items-center gap-2">
-                            <FiLogOut />
-                            <span>Logout</span>
-                          </div>
-                        </div>
-                      </div>
+                  <Dropdown overlay={dropdownContent2} trigger={["hover"]}>
+                    <div
+                      className="cursor-pointer"
+                      // aria-label="User Profile"
+                      // onClick={() => setIsDropdownOpen((prev) => !prev)}
+                    >
+                      {user?.image ? (
+                        <img
+                          src={user?.image}
+                          alt="User"
+                          className="object-cover w-[56px] h-[56px] rounded-full"
+                        />
+                      ) : (
+                        <Avatar
+                          name={user?.name}
+                          className="w-[40px] h-[40px]"
+                          bgColor="bg-secondary"
+                          icon={<FaUser className="text-[20px]" />}
+                        />
+                      )}
                     </div>
-                  )}
+                  </Dropdown>
+                  {/* Dropdown Menu */}
                 </div>
               </div>
             ) : (
@@ -304,6 +321,7 @@ const Navbar = () => {
             )}
 
             {/*droppings*/}
+            {  (findPath[0] !== "attorney") && (
             <div className="relative">
               <div
                 onClick={() => setActive((prev) => !prev)}
@@ -311,7 +329,7 @@ const Navbar = () => {
               >
                 <FaRegChartBar className="h-6 w-6" />
               </div>
-            </div>
+            </div>)}
           </div>
         </div>
         {active && (
@@ -395,7 +413,6 @@ const Navbar = () => {
       {otpModal && <OtpModal />}
       {isProfleUpdate1 && <UpdateProfile1 />}
       {isProfleUpdate2 && <UpdateProfile2 />}
-      
     </header>
   );
 };

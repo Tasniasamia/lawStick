@@ -78,7 +78,7 @@ export const PasswordUpdate = ({ setTab }) => {
           >
             <Input.Password
               placeholder={"**************"}
-              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               iconRender={(visible) =>
                 visible ? (
                   <FiUnlock size={16} style={{ color: "#9CA3AF" }} />
@@ -104,7 +104,7 @@ export const PasswordUpdate = ({ setTab }) => {
           >
             <Input.Password
               placeholder={"**************"}
-              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] ps-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               iconRender={(visible) =>
                 visible ? (
                   <FiUnlock size={16} style={{ color: "#9CA3AF" }} />

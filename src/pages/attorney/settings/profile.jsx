@@ -200,7 +200,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
                           placeholder="Enter Practice Title"
                           disabled={!isEdit}
                           type="text"
-                          className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
+                          className="border  border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
                         />
                       </Form.Item>
                       <Form.Item
@@ -260,7 +260,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <input
               placeholder="www.twitter.com"
               type="text"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               disabled={!isEdit}
             />
           </Form.Item>
@@ -275,7 +275,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <input
               placeholder="www.facebook.com"
               type="text"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               disabled={!isEdit}
             />
           </Form.Item>
@@ -290,7 +290,7 @@ export const ProfileUpdate = ({ isEdit, setIsEdit }) => {
             <input
               placeholder="www.linkedin.com"
               type="text"
-              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px]"
+              className="border border-[#E0E0E0] rounded-[10px] px-[20px] w-full pt-[19px] pb-[18px] h-[56px]"
               disabled={!isEdit}
             />
           </Form.Item>

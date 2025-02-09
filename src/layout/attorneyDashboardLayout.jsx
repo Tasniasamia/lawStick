@@ -107,7 +107,7 @@ const AttorneyDashboardLayout = () => {
          
           {/* Large Screen Sidebar */}
           <div className="hidden lg:block lg:w-1/4 w-full border rounded-[20px] pb-[113px] shadow-md overflow-hidden">
-            <SidebarContent menuItems={menuItems} location={location} setIsCaseRequest={setIsCaseRequest} setIsAppointmentRequest={setIsAppointmentRequest}/>
+            <SidebarContent menuItems={menuItems} setIsCaseRequest={setIsCaseRequest} setIsAppointmentRequest={setIsAppointmentRequest}/>
           </div>
 
           {/* Backdrop for Small Screens */}
@@ -135,7 +135,10 @@ const AttorneyDashboardLayout = () => {
   );
 };
 
-const SidebarContent = ({ menuItems ,location,setIsCaseRequest,setIsAppointmentRequest}) => (
+const SidebarContent = ({ menuItems,setIsCaseRequest,setIsAppointmentRequest}) =>{ 
+  
+const location=useLocation();
+return(
   <div className="">
     <div className="bg-[#EDEDED]">
       <div className="flex justify-start ps-4 items-center gap-[10px] py-[34px]">
@@ -194,6 +197,6 @@ const SidebarContent = ({ menuItems ,location,setIsCaseRequest,setIsAppointmentR
       </nav>
     </div>
   </div>
-);
+)};
 
 export default AttorneyDashboardLayout;
