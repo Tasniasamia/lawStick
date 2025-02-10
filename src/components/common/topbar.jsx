@@ -15,12 +15,12 @@ const Topbar = () => {
 
   return (
     <div className="bg-[#734A35] text-white text-sm py-2 work-sans">
-      <div className="custom-container flex justify-between items-center xl:px-5 md:px-7 sm:px-8  px-2">
+      <div className="custom-container flex justify-between items-center ">
         {/* 1st div */}
         <div>
           <div className="lg:block hidden">
             <div className="flex items-center gap-9">
-              <span className="mr-4 flex items-center gap-1">
+              <span className=" flex items-center gap-1">
                 <IoLocationOutline />
                 82 East Hill, Colchester, Essex, England
               </span>

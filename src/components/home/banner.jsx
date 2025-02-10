@@ -28,7 +28,7 @@ const Banner = () => {
                 Committed to Excellence,
                 <br />
                 Dedicated to
-                <span className="text-[#D4AF37] ms-1 italic font-bold">Your Justice</span>
+                <span className="text-[#D4AF37] ms-1 italic font-semibold">Your Justice</span>
               </h1>
 
               {/* Mobile image container - Optimized positioning */}
