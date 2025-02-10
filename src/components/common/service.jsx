@@ -9,13 +9,15 @@ import practiceEducation from "./../../../public/images/Practiceeducation.png";
 import practiceCorporate from "./../../../public/images/Practicecorporate.png";
 import { MdChevronLeft } from "react-icons/md";
 import { MdChevronRight } from "react-icons/md";
-import  { useRef} from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 // import { Pagination } from "swiper/modules";
 import ServiceCard from "./card/serviceCard";
 import Button from "./button";
+import { Link } from "react-router-dom";
+import { LiaAngleRightSolid, LiaAngleLeftSolid } from "react-icons/lia";
 
 const Service = () => {
   let swiperRef = useRef(null);
@@ -71,9 +73,9 @@ const Service = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white relative service  xl:mb-[150px] md:mb-14 mb-[29px]">
+    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white relative service  xl:mb-[150px] md:mb-14 mb-[60px]">
       <div className="hidden 2xl:block absolute top-0">
-        <img className="brightness-50" src={practiceDesign} alt="..." />
+        <img className="opacity-[10%]" src={practiceDesign} alt="..." />
       </div>
       <div className="hidden 2xl:block absolute bottom-0">
         <img className="" src={practiceRound} alt="..." />
@@ -85,13 +87,11 @@ const Service = () => {
           <div className="sm:text-start text-center">
             <p className="section-subtitle">Service</p>
 
-            <h1 className="section-title">
-              Our Practice Area
-            </h1>
+            <h1 className="section-title">Our Practice Area</h1>
           </div>
 
           <div className="flex justify-between items-center">
-            <p className="section-description"style={{color:"white"}}>
+            <p className="section-description" style={{ color: "white" }}>
               Our legal services protect your rights and deliver results with
               <br className="" />
               personalized expertise.
@@ -101,15 +101,15 @@ const Service = () => {
               <div className="flex items-center gap-5">
                 <div
                   onClick={() => swiperRef.current.slidePrev()}
-                  className="w-[50px] h-[50px] rounded-full border hover:bg-[#B68C5A] flex justify-center items-center cursor-pointer"
+                  className="w-[50px] h-[50px] rounded-full border group hover:border-[#B68C5A] flex justify-center items-center cursor-pointer duration-300 transition-all"
                 >
-                  <MdChevronLeft className="text-white text-2xl " />
+                  <LiaAngleLeftSolid className="text-white text-[24px] group-hover:text-primary duration-300 transition-all" />{" "}
                 </div>
                 <div
                   onClick={() => swiperRef.current.slideNext()}
-                  className="w-[50px] h-[50px] rounded-full border hover:bg-[#B68C5A] flex justify-center items-center cursor-pointer"
+                  className="w-[50px] h-[50px] rounded-full border group hover:border-[#B68C5A] flex justify-center items-center cursor-pointer duration-300 transition-all"
                 >
-                  <MdChevronRight className="text-white text-2xl " />
+                  <LiaAngleRightSolid className="text-white text-[24px] group-hover:text-primary duration-300 transition-all" />
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ const Service = () => {
                 slidesPerView: 1,
                 spaceBetween: 5,
               },
-              640: {
+              425: {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
@@ -145,31 +145,40 @@ const Service = () => {
             // modules={[Pagination]}
             className="mySwiper"
           >
-            
-              {data?.map((i, index) => {
-                return (<SwiperSlide key={index} > <ServiceCard data={i} /> </SwiperSlide>)
-              })}
-            
+            {data?.map((i, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  {" "}
+                  <ServiceCard data={i} />{" "}
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
         <div className="md:hidden block mt-6">
           <div className="flex justify-center items-center gap-5">
             <div
               onClick={() => swiperRef.current.slidePrev()}
-              className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-[#B68C5A] flex justify-center items-center cursor-pointer"
+              className="w-[50px] h-[50px] rounded-full border group hover:border-[#B68C5A] flex justify-center items-center cursor-pointer"
             >
-              <MdChevronLeft className="hover:text-white text-black text-2xl " />
+              <LiaAngleLeftSolid className="text-white text-[24px] group-hover:text-primary " />{" "}
             </div>
             <div
               onClick={() => swiperRef.current.slideNext()}
-              className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-[#B68C5A] flex justify-center items-center cursor-pointer"
+              className="w-[50px] h-[50px] rounded-full border group hover:border-[#B68C5A] flex justify-center items-center cursor-pointer duration-300 transition-all"
             >
-              <MdChevronRight className="hover:text-white text-black text-2xl " />
+              <LiaAngleRightSolid className="text-white text-[24px] group-hover:text-primary duration-300 transition-all" />
             </div>
           </div>
         </div>
-        <div className="flex md:justify-end justify-center md:pt-[50px] pt-[38px] cursor-pointer">
-          <Button link={"/service"}>See all Service</Button>
+        <div className="flex md:justify-end justify-center md:pt-[50px] pt-[38px] cursor-pointer duration-300 transition-all">
+          <Link
+            className="px-[32px] py-[16px] bg-primary text-white font-medium text-[18px] leading-[24px] font-sans rounded-[8px] duration-300 transition-all"
+            to="/service"
+            style={{ zIndex: "150" }}
+          >
+            See all Service
+          </Link>
         </div>
       </div>
     </div>

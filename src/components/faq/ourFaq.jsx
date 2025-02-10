@@ -25,7 +25,7 @@ const OurFaq = () => {
         },
       ];
     return (
-        <div className='custom-container  xl:pb-[150px] md:pb-14 pb-[29px] '>
+        <div className='custom-container  xl:pb-[150px] md:pb-14 pb-[60px] '>
           <h1 className="section-title">Frequently Asked Questions</h1>
           <p className="section-description ">
             Find answers to common questions about our services and processes.

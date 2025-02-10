@@ -1,6 +1,6 @@
 const OurClients = () => {
   return (
-    <div className="custom-container xl:pb-[150px] md:pb-14 pb-[29px] our_client">
+    <div className="custom-container xl:pb-[150px] md:pb-14 pb-[60px] our_client">
       <div className="flex justify-center">
         <div className="w-fit">
           <p className="font-semibold md:text-2xl text-[20px] text-[#242628] border-b-2 border-b-[#B68C5A] h-11">

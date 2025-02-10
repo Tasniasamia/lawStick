@@ -78,7 +78,7 @@ const handlePageChange = async (page) => {
 }
   return (
     <div className="  text-black">
-      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
+      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[60px] ">
         <div className=" sm:text-start text-center">
           <p className="section-subtitle text-[#D4AF37]">News & Blog</p>
           <h1 className="section-title">Our Latest Blog & News</h1>

@@ -3,7 +3,7 @@ import Button from "../common/button";
 
 const Fairness = () => {
   return (
-    <div className="relative   xl:mb-[150px] md:mb-14 mb-[29px] ">
+    <div className="relative   xl:mb-[150px] md:mb-14 mb-[60px] ">
       <div className="custom-container">
         <div className="flex flex-col lg:flex-row  lg:gap-14 md:gap-7 gap-6 ">
           {/* image container */}

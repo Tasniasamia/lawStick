@@ -57,7 +57,7 @@ const Login = () => {
           />
         </div>
         {/* Form Header */}
-        <h2 className="sm:leading-[32.84px] sm:text-[28px] text-base font-semibold text-[#242628] mb-[40px] ">
+        <h2 className="leading-[32.84px] text-[28px]  font-semibold text-[#242628] mb-[40px] ">
           Sign in
         </h2>
 
@@ -114,13 +114,13 @@ const Login = () => {
             <div className="grid place-content-end">
               <Link
                 to="/forget-password"
-                className="text-primary hover:text-primary hover:underline text-base font-medium -mt-3 !mb-[24px]"
+                className="text-[#B68C5A] hover:text-primary hover:underline  cursor-pointer duration-300 transition-all text-base font-medium -mt-3 !mb-[24px]"
               >
                 Forget Password?
               </Link>
             </div>
             {/* Sign Up Button */}
-            <button className={"border-2 mb-4 bg-primary  button text-white hover:bg-transparent w-full hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4 h-fit py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm"} type="submit">
+            <button className={"h-[56px] border-2 mb-4 bg-primary  button text-white hover:bg-transparent w-full hover:text-primary border-primary lg:px-8 text-textMain !font-poppins md:px-4  py-4 px-4 whitespace-pre rounded-[8px] transition-all !font-medium duration-300 ease-in-out sm:text-base capitalize text-sm"} type="submit">
               Log In
             </button>
           </>

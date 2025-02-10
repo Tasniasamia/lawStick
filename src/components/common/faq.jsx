@@ -1,11 +1,12 @@
 import  { useState } from 'react'
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { LuPlus } from "react-icons/lu";
+import { HiMinusSmall } from "react-icons/hi2";
 
 
 // eslint-disable-next-line react/prop-types
 export default function FAQ({data}) {
-    const [openIndex, setOpenIndex] = useState();
+    const [openIndex, setOpenIndex] = useState(0);
 
   return (
       
@@ -15,13 +16,13 @@ export default function FAQ({data}) {
          <div
           onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
            className={`md:px-7 px-3 md:py-5 py-[7px] flex gap-4 md:items-center items-start border  rounded-lg text-lg font-medium cursor-pointer ${
-             openIndex === index ?  "rounded-b-none bg-primary text-white" : ""
+             openIndex === index ?  "rounded-b-none bg-[#B68C5A] border-[#B68C5A] text-white" : ""
            }`}
          >
            {!(openIndex === index) ?  (
-             <LuPlus className="h-6 w-6" />
+             <LuPlus className="text-[24px]" />
            ) : (
-             <TfiLayoutLineSolid className="h-6 w-6" />
+             <HiMinusSmall className="text-[24px]" />
            )}
            <p className="">{faq?.question}</p>
          </div>

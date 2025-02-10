@@ -10,7 +10,7 @@ const OurServiceDetails = () => {
 
   return (
     <div className="min-h-fit  text-white relative">
-      <div className="custom-container xl:mb-[150px] md:mb-14 mb-[29px]  text-black eb-garamond">
+      <div className="custom-container xl:mb-[150px] md:mb-14 mb-[60px]  text-black eb-garamond">
         <img src={SerdetailsImage} alt="image" />
 
         <div className="md:mt-[56px] mt-[28px] lg:mb-14">

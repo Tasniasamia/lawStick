@@ -5,7 +5,7 @@ import { GiClawHammer } from "react-icons/gi";
 const NotFound = () => {
   return (
     <div>
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 xl:mb-[150px] md:-mb-14 mb-[29px]">
+      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 ">
       <div className=" w-full space-y-8 text-center">
         <div className="flex justify-center">
           <GiClawHammer className="h-24 w-24 text-primary" />

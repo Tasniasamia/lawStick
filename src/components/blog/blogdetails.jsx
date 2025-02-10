@@ -82,7 +82,7 @@ const Details = () => {
      }
   ]
   return (
-    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[29px]">
+    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[60px]">
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-[32px]">
         {/* Sidebar Section */}
         <div className="col-span-1 xl:w-[393px] w-full">

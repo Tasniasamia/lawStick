@@ -48,7 +48,7 @@ const OurTeamDetails = () => {
   ];
 
   return (
-    <div className="relative xl:mb-[150px] md:mb-14 mb-[29px] work-sans">
+    <div className="relative xl:mb-[150px] md:mb-14 mb-[60px] work-sans">
       <div className="custom-container">
         <div className="flex flex-col lg:flex-row shadow-xl rounded-[20px] md:pl-10 md:pr-10 px-5 md:gap-7 gap-6 ">
           {/* image container */}

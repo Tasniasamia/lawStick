@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../common/button';
 const AboutUS = () => {
   const navigate=useNavigate();
@@ -11,7 +11,7 @@ const AboutUS = () => {
       </div>
 
       <div className="custom-container">
-        <div className="flex flex-col-reverse lg:flex-row  xl:mb-[150px] md:mb-14 mb-[29px]">
+        <div className="flex flex-col-reverse lg:flex-row  xl:mb-[150px] md:mb-14 mb-[60px]">
           {/* image container */}
           <div className="flex w-full xl:w-2/5 justify-center items-center ">
             <div className="md:max-w-[564px] md:max-h-[646px] rounded-[20px]">
@@ -26,10 +26,10 @@ const AboutUS = () => {
           {/* text container */}
           <div className=" w-full xl:w-3/5 flex flex-col   lg:px-5 xl:px-5 md:px-7 smaller:px-8 sm:px-4 px-2 ">
             <div className="text-center sm:text-start xl:px-5 md:px-7 smaller:px-8 small:px-4">
-              <p className="section-subtitle">
+              <p className="section-subtitle text-[#D4AF37]">
                 About Us
               </p>
-              <h1 className=" section-title">
+              <h1 className=" section-title capitalize">
                 We fight for fairness and stand <br className='xl:inline-block lg:hidden inline-block'/>
                 against <span className="text-[#D4AF37]">injustice</span>.
               </h1>
@@ -42,8 +42,8 @@ const AboutUS = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 work-sans xl:mb-[50px] mb-[30px] xl:px-5 md:px-7 smaller:px-8 small:px-4">
-              <div className="space-y-4">
+            <div className="grid grid-cols-1 xl:grid-cols-[331px_341px] gap-x-[24px] gap-y-[30px] font-sans xl:mb-[50px] mb-[30px] xl:px-5 md:px-7 smaller:px-8 small:px-4">
+              {/* <div className="space-y-4"> */}
                 <div className="flex gap-4">
                   <div className="flex-none md:w-[60px] md:h-[60px] w-11 h-11 rounded-full bg-red-100 flex justify-center items-center">
                     <img
@@ -79,9 +79,9 @@ const AboutUS = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              {/* </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4"> */}
                 <div className="flex gap-4">
                   <div className="flex-none md:w-[60px] md:h-[60px] w-11 h-11 rounded-full bg-red-100 flex justify-center items-center">
                     <img
@@ -117,12 +117,12 @@ const AboutUS = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              {/* </div> */}
             </div>
             <div className="flex sm:justify-start justify-center xl:px-5 md:px-7 smaller:px-8 small:px-4 xl:pb-0 pb-10">
-              <Button link={'/about'}>
-                Read More
-              </Button>
+            <Link className="px-[32px] py-[16px] bg-primary text-white font-medium text-[18px] leading-[24px] font-sans rounded-[8px]" to="/about">
+                  Read More
+                </Link>
             </div>
           </div>
         </div>

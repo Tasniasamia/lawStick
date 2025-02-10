@@ -95,7 +95,7 @@ const handlePageChange = async (page) => {
 }
 
   return (
-    <div className=" text-white relative service  xl:mb-[150px] md:mb-14 mb-[29px]">
+    <div className=" text-white relative service  xl:mb-[150px] md:mb-14 mb-[60px]">
      
 
       <div className="custom-container  ">

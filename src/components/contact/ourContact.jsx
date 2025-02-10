@@ -22,7 +22,7 @@ const OurContact = () => {
     }
   };
   return (
-    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[29px] flex xl:flex-row flex-col gap-[56px]">
+    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[60px] flex xl:flex-row flex-col gap-[56px]">
       <div className="md:basis-1/2 basis-full">
         <h1 className="header-1">Contact Us</h1>
         <p className="section-description md:w-[550px] w-full text-textColor">
