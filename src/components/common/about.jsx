@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/button';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 const AboutUS = () => {
   const navigate = useNavigate();
   const container = useRef();

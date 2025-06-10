@@ -1,5 +1,5 @@
 import { FaBell, FaRegChartBar, FaRegUser } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./button";
 import { IoMdClose } from "react-icons/io";
@@ -19,6 +19,32 @@ import { ImExit } from "react-icons/im";
 import gsap from "gsap";
 
 const Navbar = () => {
+  const [active, setActive] = useState(false);
+  const openIconRef = useRef(null);
+  const closeIconRef = useRef(null);
+
+  const animateToggleIcon = () => {
+    const tl = gsap.timeline({ defaults: { duration: 0.4, ease: "power2.inOut" } });
+  
+    if (!active) {
+      // When opening (Chart -> Close)
+      tl.to(openIconRef.current, { rotation: 180, opacity: 0, scale: 0, duration: 0.3 });
+      tl.fromTo(
+        closeIconRef.current,
+        { rotation: -180, opacity: 0, scale: 0 },
+        { rotation: 0, opacity: 1, scale: 1 }
+      );
+    } else {
+      // When closing (Close -> Chart)
+      tl.to(closeIconRef.current, { rotation: 180, opacity: 0, scale: 0, duration: 0.3 });
+      tl.fromTo(
+        openIconRef.current,
+        { rotation: -180, opacity: 0, scale: 0 },
+        { rotation: 0, opacity: 1, scale: 1 }
+      );
+    }
+  };
+  
   useEffect(()=>{
     let tl=gsap.timeline();
     tl.from(".logo",{
@@ -35,9 +61,67 @@ const Navbar = () => {
       duration:1,
       stagger:0.3,
     })
+  
   },[])
+
+  useEffect(() => {
+    if (active) {
+      gsap.from(".mobile-nav", {
+        x: -20,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        
+      });
+      gsap.from(".open",{
+        opacity:0,
+        duration:0.3,
+        ease: "power4.in",
+      })
+      gsap.from(".close",{
+        opacity:0,
+        duration:0.3,
+        ease: "power4.in",
+     
+      })
+    }
+  }, [active]);
+  useEffect(() => {
+    const listItems = document.querySelectorAll("li");
+  
+    const handleMouseEnter = (li) => {
+      gsap.from(
+        li,
+        {
+          y:-10,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
+    };
+  
+  
+  
+    listItems.forEach((li) => {
+      const enterHandler = () => handleMouseEnter(li);
+  
+      li.addEventListener("mouseenter", enterHandler);
+  
+      // Store the handlers for cleanup
+      li._enterHandler = enterHandler;
+    });
+  
+    return () => {
+      listItems.forEach((li) => {
+        li.removeEventListener("mouseenter", li._enterHandler);
+      });
+    };
+  }, []);
+  
+  
+  
   const location = useLocation();
-  const [active, setActive] = useState(false);
+  
   const {
     isLoginModalOpen,
     openLoginModal,
@@ -341,21 +425,29 @@ const Navbar = () => {
             {/*droppings*/}
             {  (findPath[0] !== "attorney") && (
             <div className="relative">
-              <div
-                onClick={() => setActive((prev) => !prev)}
-                className="block lg:hidden toggle-icon"
-              >
-                <FaRegChartBar className="h-6 w-6" />
-              </div>
+            <div
+  onClick={() => {
+    setActive((prev) => !prev);
+    animateToggleIcon();
+  }}
+  className="block lg:hidden toggle-icon"
+>
+  {active ? (
+    <IoMdClose ref={closeIconRef} className="h-6 w-6 close" />
+  ) : (
+    <FaRegChartBar ref={openIconRef} className="h-6 w-6 open" />
+  )}
+</div>
+
             </div>)}
           </div>
         </div>
         {active && (
           <div
-            className={`absolute top-[-15px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white`}
+            className={`absolute  top-[50px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white`}
             style={{ zIndex: "150" }}
           >
-            <ul className="flex flex-col items-center gap-8">
+            <ul className="flex flex-col items-center gap-8 mobile-nav">
               <div>
                 <Link to={`/`}>
                   <li

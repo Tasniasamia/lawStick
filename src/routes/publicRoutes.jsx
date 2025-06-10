@@ -1,3 +1,4 @@
+import Practice from "../components/practice/practice";
 import Index from "../pages";
 import About from "../pages/about";
 import Blog from "../pages/blog";
@@ -60,5 +61,9 @@ export const PublicRoutes = [
     {
         path:"/faq",
         component:FaqPage
+    },
+    {
+        path:"/practice",
+        component:Practice
     }
 ];
