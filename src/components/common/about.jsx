@@ -1,9 +1,27 @@
-import { useNavigate } from 'react-router-dom';
-import Button from '../common/button';
+import { useNavigate } from "react-router-dom";
+import Button from "../common/button";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 const AboutUS = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const container = useRef();
+  gsap.registerEffect({
+    name: "explode",
+    effect: (targets, config) => {
+      
+    },
+    extendTimeline: true,
+  });
+  useEffect(() => {
+    gsap.set(container, { perspective: 500 })
+    gsap.effects.explode(".section-title", {
+      direction: "up",
+      duration: 3,
+    });
+  }, []);
+
   return (
-    <div className="relative about-section">
+    <div className="relative about-section"ref={container}>
       <div className="hidden 2xl:block absolute bottom-0 about-statu">
         <div className="">
           <img src="./images/justice-statu.png" alt="" />
@@ -26,11 +44,10 @@ const AboutUS = () => {
           {/* text container */}
           <div className=" w-full xl:w-3/5 flex flex-col   lg:px-5 xl:px-5 md:px-7 smaller:px-8 sm:px-4 px-2 ">
             <div className="text-center sm:text-start xl:px-5 md:px-7 smaller:px-8 small:px-4">
-              <p className="section-subtitle">
-                About Us
-              </p>
+              <p className="section-subtitle">About Us</p>
               <h1 className=" section-title">
-                We fight for fairness and stand <br className='xl:inline-block lg:hidden inline-block'/>
+                We fight for fairness and stand{" "}
+                <br className="xl:inline-block lg:hidden inline-block" />
                 against <span className="text-[#D4AF37]">injustice</span>.
               </h1>
               <p className="section-description">
@@ -120,9 +137,7 @@ const AboutUS = () => {
               </div>
             </div>
             <div className="flex sm:justify-start justify-center xl:px-5 md:px-7 smaller:px-8 small:px-4 xl:pb-0 pb-10">
-              <Button link={'/about'}>
-                Read More
-              </Button>
+              <Button link={"/about"}>Read More</Button>
             </div>
           </div>
         </div>

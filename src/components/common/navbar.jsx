@@ -1,5 +1,5 @@
 import { FaBell, FaRegChartBar, FaRegUser } from "react-icons/fa6";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./button";
 import { IoMdClose } from "react-icons/io";
@@ -16,8 +16,26 @@ import { FiLogOut, FiSettings } from "react-icons/fi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { RxDash, RxDashboard } from "react-icons/rx";
 import { ImExit } from "react-icons/im";
+import gsap from "gsap";
 
 const Navbar = () => {
+  useEffect(()=>{
+    let tl=gsap.timeline();
+    tl.from(".logo",{
+      y:-30,
+      opacity:0,
+      duration:1,
+      delay:0.5,
+      
+     
+    })
+    tl.from('li',{
+      y:-30,
+      opacity:0,
+      duration:1,
+      stagger:0.3,
+    })
+  },[])
   const location = useLocation();
   const [active, setActive] = useState(false);
   const {
@@ -164,7 +182,7 @@ const Navbar = () => {
     >
       <nav className="flex justify-between items-center custom-container relative">
         {/* 1st */}
-        <a href="#">
+        <a href="#" className="logo">
           <img
             className="xl:w-[56px] xl:h-[62px] md:w-[45px] md:h-[49px] w-[29px] h-[32px]"
             src={logo}
