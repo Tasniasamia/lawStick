@@ -5,6 +5,7 @@ import { FiPhone } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import Button from "./button";
 import { message } from "antd";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -20,7 +21,7 @@ const Contact = () => {
     
   };
   return (
-    <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
+    <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[60px] ">
       <div className="relative min-h-[738px] rounded-[20px]">
         <div
           style={{ backgroundImage: `url(${bg_contact})` }}
@@ -84,21 +85,21 @@ const Contact = () => {
               placeholder="Enter your message"
               required
             />
-            <Button
-              className="flex items-center gap-[10px] mt-[50px]"
+            <button
+              className="flex font-sans items-center gap-[10px] mt-[50px] px-[32px] py-[16px] bg-[#B68C5A] text-white rounded-[8px]"
               type='submit'
               
             >
               <FiSend size={18.36} />
               Send Message
-            </Button>
+            </button>
           </form>
           {/* div 2 */}
           <div className="md:basis-1/2 basis-full    text-center text-white md:mt-0 mt-7 order-1 ">
             <div className="flex justify-center">
-              <Button className={"button_overwrite mb-[40px]"} link={'/contact'}>
+              <Link className={"px-[32px] font-ebgramond py-[18px] font-medium bg-[#B68C5A] mb-[40px] text-[20px] leading-[26.1px] rounded-[40px]"} to={'/contact'}>
                 Contact Us
-              </Button>
+              </Link>
             </div>
             <div className="">
               <h1 className="section-title text-[#D4AF37]">

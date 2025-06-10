@@ -51,7 +51,7 @@ const OurTeam = () => {
 
   return (
     <div className=" work-sans text-black lawyer">
-      <div className="custom-container xl:pb-[150px] md:pb-14 pb-[29px]">
+      <div className="custom-container xl:pb-[150px] md:pb-14 pb-[60px]">
         <div className="text-center">
           <p className="section-subtitle">Team</p>
           <h1 className="section-title">The Face Of Justice</h1>

@@ -89,7 +89,7 @@ const Tabs = () => {
   //   };
   const filterData = data.find((i, index) => i?.name === activeTab);
   return (
-    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[29px] xl:px-5  md:px-8 sm:px-4 px-2 work-sans ">
+    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[60px] xl:px-5  md:px-8 sm:px-4 px-2 work-sans ">
       <div className="flex flex-wrap gap-4 work-sans">
         {data?.map((tab, index) => (
           <button

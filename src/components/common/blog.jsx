@@ -56,7 +56,7 @@ const NewsBlog = () => {
 
   return (
     <div className="  text-black">
-      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[29px] ">
+      <div className="custom-container  xl:pb-[150px] md:pb-14 pb-[60px] ">
         <div className=" sm:text-start text-center">
           <p className="section-subtitle text-[#D4AF37]">News & Blog</p>
           <h1 className="section-title">Our Latest Blog & News</h1>
@@ -109,15 +109,15 @@ const NewsBlog = () => {
           <div className="flex gap-4">
             <div
               onClick={() => sliderRef.current.slidePrev()}
-              className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-[#B68C5A] flex justify-center items-center"
+              className="w-[50px] h-[50px] rounded-full border group hover:border-primary duration-300 transition-all bg-white hover:bg-[#B68C5A] flex justify-center items-center"
             >
-              <MdChevronLeft className="hover:text-white text-black text-2xl " />
+              <MdChevronLeft className="group-hover:text-white text-black text-2xl duration-300 transition-all" />
             </div>
             <div
               onClick={() => sliderRef.current.slideNext()}
-              className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-[#B68C5A] flex justify-center items-center"
+              className="w-[50px] h-[50px] rounded-full border group hover:border-primary bg-white hover:bg-[#B68C5A] flex justify-center items-center duration-300 transition-all" 
             >
-              <MdChevronRight className="hover:text-white text-black text-2xl " />
+              <MdChevronRight className="group-hover:text-white text-black text-2xl duration-300 transition-all" />
             </div>
           </div>
         </div>

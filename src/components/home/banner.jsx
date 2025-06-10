@@ -26,7 +26,7 @@ const Banner = () => {
 
   return (
     <div
-      className="relative overflow-hidden 2xl:bg-trasnsparent bg-black text-white pt-[89px] hero-banner xl:mb-[150px] md:mb-14 mb-[29px]"
+      className="relative overflow-hidden 2xl:bg-trasnsparent bg-black text-white pt-[89px] hero-banner xl:mb-[150px] md:mb-14 mb-[60px]"
       style={{
         backgroundImage: `url(./images/bg.png)`,
         backgroundSize: "cover",
@@ -37,9 +37,9 @@ const Banner = () => {
       <div className="absolute h-full w-full">
         <div className="flex md:flex-row flex-col h-full custom-container lg:gap-[100px] gap-[50px]">
           <div className="xl:basis-2/3 lg:basis-1/2 md:basis-full">
-            <div className="flex flex-col justify-center text-start w-full md:pb-16 xl:pt-[230px] lg:pt-[200px] md:pt-[120px] sm:pt-[80px] pt-[40px] pb-10">
+            <div className="flex flex-col justify-center text-start w-full md:pb-16 xl:pt-[230px]  md:pt-[100px] sm:pt-[80px] pt-[40px] pb-10">
               {/* Subtitle - Adjusted for better small screen readability */}
-              <p className="title md:text-lg sm:text-base text-sm font-medium sm:mb-[13px] mb-2 px-4 sm:px-0">
+              <p className="md:text-lg sm:text-[18px] text-sm font-medium sm:mb-[13px] mb-2 px-4 sm:px-0 leading-[21.18px] tracking-widest">
                 Dependable Legal Support with Unwavering Dedication
               </p>
               
@@ -48,7 +48,7 @@ const Banner = () => {
                 Committed to Excellence,
                 <br />
                 Dedicated to
-                <span className="text-[#D4AF37] ms-1 italic">Your Justice</span>
+                <span className="text-[#D4AF37] ms-1 italic font-semibold">Your Justice</span>
               </h1>
 
               {/* Mobile image container - Optimized positioning */}
@@ -61,7 +61,7 @@ const Banner = () => {
               </div>
 
               {/* Description text - Adjusted for mobile readability */}
-              <p className="title lg:text-base md:mt-0 xs:mt-[-90px] mt-[-115px] md:text-sm  md:text-start text-center text-base font-normal md:pt-[13px] pt-0 2xl:w-[666px] xl:w-[600px] lg:w-[500px] w-full px-4 sm:px-0">
+              <p className="lg:text-base md:mt-0 xs:mt-[-90px] mt-[-115px] md:text-sm  md:text-start text-center text-sm font-normal md:pt-[13px] pt-0 2xl:w-[666px] xl:w-[600px] lg:w-[500px] w-full px-4 sm:px-0">
                 We deliver tailored legal solutions with precision and expertise, 
                 prioritizing your case to achieve the best outcomes. With years 
                 of experience, we ensure your case receives the attention it deserves.
@@ -69,9 +69,9 @@ const Banner = () => {
 
               {/* Button container - Improved mobile positioning */}
               <div className="lg:mt-10 sm:mt-5 mt-6 px-4 sm:px-0 grid md:place-content-start place-content-center">
-                <Button onClick={openLoginModal}>
+                <button className="px-[32px] py-[16px] bg-primary text-white font-medium text-[18px] leading-[24px] font-sans rounded-[8px]" onClick={openLoginModal}>
                   Get Appointed
-                </Button>
+                </button>
               </div>
             </div>
           </div>

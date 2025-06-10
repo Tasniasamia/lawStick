@@ -59,7 +59,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const findPath = location.pathname.match(/user|attorney|admin/gi) || [];
   const dropdownContent2 = (
-    <div className="absolute right-0 z-50  mt-2 transition-all duration-300 bg-white  shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
+    <div className="absolute right-0 z-40  mt-2 transition-all duration-300 bg-white  shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
       <div className="">
         {/* Profile */}
         <Link
@@ -118,7 +118,7 @@ const Navbar = () => {
     </div>
   );
   const dropdownContent = (
-    <div className="bg-white  flex flex-col items-start w-[150px] h-fit shadow-xl ">
+    <div className="bg-white relative z-40 flex flex-col items-start w-[150px] h-fit shadow-xl ">
       <Link
         to="/blog"
         className={`${
@@ -177,7 +177,7 @@ const Navbar = () => {
         findPath && (findPath[0] === "user" || findPath[0] === "attorney")
           ? "text-textColor border-[#EDEDED]"
           : "text-white border-b-amber-900"
-      } z-20 pt-[30px] pb-[27.66px] border-b`}
+      } z-20 lg:pt-[30px] lg:pb-[27.66px] pb-[12px] pt-[15px] border-b`}
       id="navbar"
     >
       <nav className="flex justify-between items-center custom-container relative">
@@ -352,7 +352,7 @@ const Navbar = () => {
         </div>
         {active && (
           <div
-            className={`absolute top-[-30px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white`}
+            className={`absolute top-[-15px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white`}
             style={{ zIndex: "150" }}
           >
             <ul className="flex flex-col items-center gap-8">

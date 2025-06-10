@@ -1,6 +1,6 @@
 const CasesStatus = () => {
   return (
-    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] xl:mb-[150px] md:mb-14 mb-[29px]">
+    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] xl:mb-[150px] md:mb-14 mb-[60px]">
       <div className="custom-container  py-[75px] plan-section ">
         <div className="lg:flex lg:flex-row grid sm:grid-cols-2 grid-cols-1 lg:gap-0 gap-8 sm:align-items-start align-items-center justify-between  text-center  text-white">
           {/* Item 1 */}

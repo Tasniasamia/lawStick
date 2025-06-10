@@ -46,12 +46,11 @@ const OtpModal = () => {
       closeIcon={false}
       open={otpModal}
       onCancel={closeOtpModal}
-      style={{position:"relative",zIndex:"200"}}
-      wrapClassName="auth"
-
+      styles={{position:"relative",zIndex:"200"}}
+      wrapClassName="auth relative z-50"
 
     >
-      <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative">
+      <div className="sm:max-w-[488px] w-full  mx-auto bg-white rounded-[20px] p-4 sm:p-10 relative " >
         {/* Close Button */}
         <button
           className="w-[32px] h-[32px] rounded-full bg-[#EDEDED] absolute right-6 top-6 inline-flex justify-center items-center"

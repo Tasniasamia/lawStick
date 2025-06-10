@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import TestimonialCard from "../common/card/testimonialCard";
 
 const Testimonial = () => {
+  // #FFC000
   let sliderRef = useRef(null);
   const data = [
     {
@@ -49,18 +50,18 @@ const Testimonial = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white relative z-40 testimonial  xl:mb-[150px] md:mb-14 mb-[29px]">
-      <div className="hidden 3xl:block absolute bottom-0">
-        <img className="brightness-50" src={TLeft} alt="..." />
+    <div className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white relative z-40 testimonial  xl:mb-[150px] md:mb-14 mb-[60px]">
+      <div className="hidden 2xl:block absolute bottom-0">
+        <img className="opacity-[10%]" src={TLeft} alt="..." />
       </div>
-      <div className="hidden 3xl:block absolute right-0">
-        <img className="brightness-50" src={TRight} alt="..." />
+      <div className="hidden 2xl:block absolute right-0">
+        <img className="opacity-[10%]" src={TRight} alt="..." />
       </div>
 
       <div className="custom-container lg:py-[130px] md:py-[80px] py-[29px] ">
-        <div className="flex flex-col md:flex-row w-full lg:gap-12 md:gap-7 gap-5">
+        <div className="flex flex-col md:flex-row w-full lg:gap-[47px] md:gap-7 gap-5">
           {/* grid 1 */}
-          <div className="w-full md:w-2/3  work-sans md:order-1 order-2">
+          <div className="w-full md:w-2/3  font-sans md:order-1 order-2">
             <Swiper
               onSwiper={(swiper) => (sliderRef.current = swiper)}
               slidesPerView={4}
@@ -102,15 +103,15 @@ const Testimonial = () => {
               <div className="flex md:justify-start justify-center gap-4">
                 <div
                   onClick={() => sliderRef.current.slidePrev()}
-                  className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-primary flex justify-center items-center"
+                  className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-primary hover:border-primary flex justify-center items-center duration-300 transition-all"
                 >
-                  <MdChevronLeft className="hover:text-white text-black text-2xl " />
+                  <MdChevronLeft className="hover:text-white text-black text-2xl duration-300 transition-all" />
                 </div>
                 <div
                   onClick={() => sliderRef.current.slideNext()}
-                  className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-primary flex justify-center items-center"
+                  className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-primary hover:border-primary flex justify-center items-center duration-300 transition-all"
                 >
-                  <MdChevronRight className="hover:text-white text-black text-2xl " />
+                  <MdChevronRight className="hover:text-white text-black text-2xl duration-300 transition-all" />
                 </div>
               </div>
             </div>
@@ -136,15 +137,15 @@ const Testimonial = () => {
               <div className="flex md:justify-start justify-center gap-4">
                 <div
                   onClick={() => sliderRef.current.slidePrev()}
-                  className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-primary flex justify-center items-center"
+                  className="w-[50px] h-[50px] rounded-full border group bg-white hover:bg-primary hover:border-primary flex justify-center items-center duration-300 transition-all"
                 >
-                  <MdChevronLeft className="hover:text-white text-black text-2xl " />
+                  <MdChevronLeft className="group-hover:text-white text-black text-2xl duration-300 transition-all" />
                 </div>
                 <div
                   onClick={() => sliderRef.current.slideNext()}
-                  className="w-[50px] h-[50px] rounded-full border bg-white hover:bg-primary flex justify-center items-center"
+                  className="w-[50px] h-[50px] group rounded-full border bg-white hover:bg-primary hover:border-primary flex justify-center items-center duration-300 transition-all"
                 >
-                  <MdChevronRight className="hover:text-white text-black text-2xl " />
+                  <MdChevronRight className="group-hover:text-white text-black text-2xl  duration-300 transition-all" />
                 </div>
               </div>
             </div>

@@ -147,7 +147,7 @@ padding: 0!important;
   margin-bottom: 1rem; 
   font-family: var(--font-garamond);
   font-size: 1.563rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.875rem; 
   
   @media (min-width: 768px) {
@@ -330,7 +330,7 @@ padding: 0!important;
     height:600px;
   }
   .hero-image-shape{
-    height:492px!important;
+    height:523px!important;
   }
 }
 
@@ -475,6 +475,18 @@ select {
     padding:0!important;
     width: 100%;
   }
+  .auth .ant-modal .ant-modal-content {
+    position: relative;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: none!important;
+    pointer-events: auto;
+    padding:0!important;
+    width: 100%!important;
+  }
+ 
 
 
 }
@@ -580,6 +592,11 @@ select {
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   background-color: #C7A87D!important;
   border: white !important;
+}
+.ant-rate .ant-rate-star {
+
+  color: #FFC000!important;
+
 }
 .upload{
   width:100%!important;
