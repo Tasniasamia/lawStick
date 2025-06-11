@@ -1,523 +1,276 @@
-import { FaBell, FaRegChartBar, FaRegUser } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Button from "./button";
+import { Dropdown, Badge, Avatar } from "antd";
+import {
+  FaBell,
+  FaRegChartBar,
+  FaUser,
+  FaAngleDown,
+  FaRegUser,
+} from "react-icons/fa6";
+import { TfiCommentAlt } from "react-icons/tfi";
+import { RxDashboard } from "react-icons/rx";
+import { FiLogOut } from "react-icons/fi";
+import { ImExit } from "react-icons/im";
 import { IoMdClose } from "react-icons/io";
-import { Avatar, Badge, Dropdown } from "antd";
-import { FaAngleDown, FaUser } from "react-icons/fa";
+import gsap from "gsap";
+
 import logo from "./../../../public/images/logo.png";
 import { useModal } from "../../context/modalContext";
+import Button from "./button";
 import SignUp from "../modal/signup";
 import Login from "../modal/login";
 import OtpModal from "../modal/otpmodal";
 import UpdateProfile1 from "../modal/updateProfile1";
 import UpdateProfile2 from "../modal/updateProfile2";
-import { FiLogOut, FiSettings } from "react-icons/fi";
-import { TfiCommentAlt } from "react-icons/tfi";
-import { RxDash, RxDashboard } from "react-icons/rx";
-import { ImExit } from "react-icons/im";
-import gsap from "gsap";
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
-  const openIconRef = useRef(null);
-  const closeIconRef = useRef(null);
-
-  const animateToggleIcon = () => {
-    const tl = gsap.timeline({ defaults: { duration: 0.4, ease: "power2.inOut" } });
-  
-    if (!active) {
-      // When opening (Chart -> Close)
-      tl.to(openIconRef.current, { rotation: 180, opacity: 0, scale: 0, duration: 0.3 });
-      tl.fromTo(
-        closeIconRef.current,
-        { rotation: -180, opacity: 0, scale: 0 },
-        { rotation: 0, opacity: 1, scale: 1 }
-      );
-    } else {
-      // When closing (Close -> Chart)
-      tl.to(closeIconRef.current, { rotation: 180, opacity: 0, scale: 0, duration: 0.3 });
-      tl.fromTo(
-        openIconRef.current,
-        { rotation: -180, opacity: 0, scale: 0 },
-        { rotation: 0, opacity: 1, scale: 1 }
-      );
-    }
-  };
-  
-  useEffect(()=>{
-    let tl=gsap.timeline();
-    tl.from(".logo",{
-      y:-30,
-      opacity:0,
-      duration:1,
-      delay:0.5,
-      
-     
-    })
-    tl.from('li',{
-      y:-30,
-      opacity:0,
-      duration:1,
-      stagger:0.3,
-    })
-  
-  },[])
-
-  useEffect(() => {
-    if (active) {
-      gsap.from(".mobile-nav", {
-        x: -20,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-        
-      });
-      gsap.from(".open",{
-        opacity:0,
-        duration:0.3,
-        ease: "power4.in",
-      })
-      gsap.from(".close",{
-        opacity:0,
-        duration:0.3,
-        ease: "power4.in",
-     
-      })
-    }
-  }, [active]);
-  useEffect(() => {
-    const listItems = document.querySelectorAll("li");
-  
-    const handleMouseEnter = (li) => {
-      gsap.from(
-        li,
-        {
-          y:-10,
-          duration: 1,
-          ease: "power2.out",
-        }
-      );
-    };
-  
-  
-  
-    listItems.forEach((li) => {
-      const enterHandler = () => handleMouseEnter(li);
-  
-      li.addEventListener("mouseenter", enterHandler);
-  
-      // Store the handlers for cleanup
-      li._enterHandler = enterHandler;
-    });
-  
-    return () => {
-      listItems.forEach((li) => {
-        li.removeEventListener("mouseenter", li._enterHandler);
-      });
-    };
-  }, []);
-  
-  
-  
   const location = useLocation();
-  
+  const [user, setUser] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuTl = useRef(gsap.timeline({ paused: true }));
+  const findPath = location.pathname.match(/user|attorney|admin/gi) || [];
+
   const {
     isLoginModalOpen,
     openLoginModal,
-    closeLoginModal,
-    openSignUp,
-    closeSignUp,
     signUpModal,
     otpModal,
-    openOtpModal,
-    closeOtpModal,
     isProfleUpdate1,
-    openUpdateProfile1,
-    closeUpdateProfile1,
     isProfleUpdate2,
-    openUpdateProfile2,
-    closeUpdateProfile2,
   } = useModal();
-  const [user, setUser] = useState(true);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const findPath = location.pathname.match(/user|attorney|admin/gi) || [];
-  const dropdownContent2 = (
-    <div className="absolute right-0 z-40  mt-2 transition-all duration-300 bg-white  shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
-      <div className="">
-        {/* Profile */}
-        <Link
-          to={
-            user?.role === "admin"
-              ? "/admin/profile"
-              : user?.role === "attorney"
-              ? "/attorney/profile"
-              : "/user/profile"
-          }
-          className={`block ${
-            location?.pathname ===
-            ("/user/profile" || "/attorney/profile" || "/admin/profile")
-              ? "bg-primary text-white"
-              : ""
-          } px-4 py-2 text-lg text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
-        >
-          <div className="flex items-center gap-2">
-            <FaRegUser />
-            <span>Profile</span>
-          </div>
-        </Link>
 
-        {/* Dashboard */}
-        {/* user?.role === "admin"
-              ? "/admin/dashboard"
-              : user?.role === "attorney"
-              ? "/attorney/dashboard"
-              : "/user/dashboard" */}
-        <Link
-          to={user && "/user/dashboard"}
-          className={`block ${
-            location?.pathname ===
-            ("/user/dashboard" || "/attorney/dashboard" || "/admin/dashboard")
-              ? "bg-primary text-white"
-              : ""
-          } px-4 py-2 text-lg text-textColor transition duration-200  hover:bg-primary  hover:text-white`}
-        >
-          <div className="flex items-center gap-2">
-            <RxDashboard />
-            <span>Dashboard</span>
-          </div>
-        </Link>
+  useEffect(() => {
+    // Logo animation
+    gsap.from(".logo", { y: -30, opacity: 0, duration: 1, delay: 0.5 });
 
-        {/* Logout */}
-        <div
-          // onClick={handleLogout}
-          className="block px-4 py-2 text-lg text-textColor transition duration-200  cursor-pointer hover:bg-primary hover:text-white"
-        >
-          <div className="flex items-center gap-2">
-            <FiLogOut />
-            <span>Logout</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    // Mobile nav timeline
+    menuTl.current
+      .to("#mobile", { right: 0, duration: 0.6 })
+      .from("#mobile li", {
+        x: 80,
+        duration: 0.3,
+        stagger: 0.2,
+        opacity: 0,
+       
+      });
+  }, []);
+
+  const handleMenuToggle = () => {
+    if (!menuOpen) {
+      menuTl.current.play();
+    } else {
+      menuTl.current.reverse();
+    }
+    setMenuOpen(!menuOpen);
+  };
+
   const dropdownContent = (
-    <div className="bg-white relative z-40 flex flex-col items-start w-[150px] h-fit shadow-xl ">
-      <Link
-        to="/blog"
-        className={`${
-          location?.pathname === "/blog"
-            ? "bg-primary text-white"
-            : "bg-white text-textColor"
-        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
-      >
-        Blog
-      </Link>
-      <Link
-        to="/team"
-        className={`${
-          location?.pathname === "/team"
-            ? "bg-primary text-white"
-            : "bg-white text-textColor"
-        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
-      >
-        Team
-      </Link>
-
-      <Link
-        to="/faq"
-        className={`${
-          location?.pathname === "/faq"
-            ? "bg-primary text-white"
-            : "bg-white text-textColor"
-        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
-      >
-        Faq
-      </Link>
-      <Link
-        to="/contact"
-        className={`${
-          location?.pathname === "/contact"
-            ? "bg-primary text-white"
-            : "bg-white text-textColor"
-        } hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full`}
-      >
-        Contact
-      </Link>
+    <div className="bg-white z-40 flex flex-col items-start w-[150px] shadow-xl">
+      {["blog", "team", "faq", "contact"].map((item) => (
+        <Link
+          key={item}
+          to={`/${item}`}
+          className={`${
+            location.pathname === `/${item}`
+              ? "bg-primary text-white"
+              : "text-textColor"
+          } hover:bg-primary hover:text-white ps-5 py-2 w-full block text-lg`}
+        >
+          {item.charAt(0).toUpperCase() + item.slice(1)}
+        </Link>
+      ))}
       <p
-        className={` hover:bg-primary hover:text-white text-lg  ps-[20px] block py-[10px] w-full cursor-pointer`}
-        onClick={() => {
-          openOtpModal();
-          console.log("clicked");
-        }}
+        className="hover:bg-primary hover:text-white ps-5 py-2 w-full block text-lg cursor-pointer"
+        onClick={() => console.log("OTP Clicked")}
       >
         OTP
       </p>
     </div>
   );
+
+  const dropdownContent2 = (
+    <div className="absolute right-0 z-40 mt-2 bg-white shadow-lg ring-1 ring-black ring-opacity-5 w-[150px]">
+      <Link
+        to={
+          user?.role === "admin"
+            ? "/admin/profile"
+            : user?.role === "attorney"
+            ? "/attorney/profile"
+            : "/user/profile"
+        }
+        className={`block px-4 py-2 text-lg ${
+          location.pathname.includes("profile")
+            ? "bg-primary text-white"
+            : "text-textColor"
+        } hover:bg-primary hover:text-white`}
+      >
+        <div className="flex items-center gap-2">
+          <FaRegUser />
+          <span>Profile</span>
+        </div>
+      </Link>
+      <Link
+        to={
+          user?.role === "admin"
+            ? "/admin/dashboard"
+            : user?.role === "attorney"
+            ? "/attorney/dashboard"
+            : "/user/dashboard"
+        }
+        className={`block px-4 py-2 text-lg ${
+          location.pathname.includes("dashboard")
+            ? "bg-primary text-white"
+            : "text-textColor"
+        } hover:bg-primary hover:text-white`}
+      >
+        <div className="flex items-center gap-2">
+          <RxDashboard />
+          <span>Dashboard</span>
+        </div>
+      </Link>
+      <div className="px-4 py-2 text-lg text-textColor cursor-pointer hover:bg-primary hover:text-white">
+        <div className="flex items-center gap-2">
+          <FiLogOut />
+          <span>Logout</span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <header
-      className={`w-full absolute bg-transparent  ${
-        findPath && (findPath[0] === "user" || findPath[0] === "attorney")
+      className={`w-full absolute z-20 border-b ${
+        findPath.length
           ? "text-textColor border-[#EDEDED]"
           : "text-white border-b-amber-900"
-      } z-20 lg:pt-[30px] lg:pb-[27.66px] pb-[12px] pt-[15px] border-b`}
-      id="navbar"
+      } pt-4 pb-3 lg:pt-[30px] lg:pb-[27.66px]`}
     >
-      <nav className="flex justify-between items-center custom-container relative">
-        {/* 1st */}
-        <a href="#" className="logo">
-          <img
-            className="xl:w-[56px] xl:h-[62px] md:w-[45px] md:h-[49px] w-[29px] h-[32px]"
-            src={logo}
-            alt="logo"
-          />
-        </a>
-        {/* 2nd */}
-        <div className={` items-center gap-[100px] flex`}>
-          <div
-            className={` ${
-              (findPath && findPath[0]) === "attorney"
-                ? "hidden"
-                : "hidden lg:block"
-            }`}
-          >
-            <div
-              className={`flex gap-9 text-lg font-medium transition-all  w-full items-center`}
-            >
-              <ul className="flex items-center gap-8">
-                <div>
-                  <Link to={`/`}>
-                    <li
-                      className={`hover:text-primary ${
-                        location?.pathname === "/" ? "text-primary" : ""
-                      }`}
-                    >
-                      Home
-                    </li>
-                  </Link>
-                </div>
-                <div>
-                  <Link to={`/about`}>
-                    <li
-                      className={`hover:text-primary ${
-                        location?.pathname === "/about" ? "text-primary" : ""
-                      }`}
-                    >
-                      About
-                    </li>
-                  </Link>
-                </div>
-                <div>
-                  <Link to={`/service`}>
-                    <li
-                      className={`hover:text-primary ${
-                        location?.pathname === "/service" ? "text-primary" : ""
-                      }`}
-                    >
-                      Service
-                    </li>
-                  </Link>
-                </div>
-                <div>
-                  <Link to={`/caseStudy`}>
-                    <li
-                      className={`hover:text-primary ${
-                        location?.pathname === "/caseStudy"
-                          ? "text-primary"
-                          : ""
-                      }`}
-                    >
-                      Case Study
-                    </li>
-                  </Link>
-                </div>
-                <Link to={`/contact`}>
-                  <li
-                    className={`hover:text-primary cursor-pointer ${
-                      location?.pathname === "/contact" ? "text-primary" : ""
+      <div className="overflow-hidden">
+        <nav className="flex justify-between items-center custom-container">
+          <a href="#" className="logo">
+            <img
+              src={logo}
+              alt="logo"
+              className="xl:w-[56px] xl:h-[62px] md:w-[45px] md:h-[49px] w-[29px] h-[32px]"
+            />
+          </a>
+          <div className="flex items-center gap-10">
+            <ul className="hidden lg:flex gap-8 text-lg font-medium">
+              {["", "about", "service", "caseStudy", "contact"].map((path) => (
+                <li key={path}>
+                  <Link
+                    to={`/${path}`}
+                    className={`hover:text-primary ${
+                      location.pathname === `/${path}` ? "text-primary" : ""
                     }`}
                   >
-                    Contact Us
-                  </li>
-                </Link>
-                <li className={`hover:text-primary cursor-pointer`}>
-                  <Dropdown overlay={dropdownContent} trigger={["hover"]}>
-                    <a
-                      onClick={(e) => e.preventDefault()}
-                      className="flex items-center gap-2"
-                    >
-                      Pages
-                      <FaAngleDown className="text-sm" />
-                    </a>
-                  </Dropdown>
+                    {path === ""
+                      ? "Home"
+                      : path.charAt(0).toUpperCase() + path.slice(1)}
+                  </Link>
                 </li>
-              </ul>
-            </div>
-          </div>
-          {/* Right Section */}
-          <div className="flex items-center gap-3">
-            {user ? (
-              <div className="flex gap-[20px] items-center">
-                {
-                  findPath &&
-                  (findPath[0] === "attorney") && (
-                    <Link to="/" target="_blank" className="flex items-center gap-1 hover:text-primary">
-                    <ImExit />
-                    <p className="whitespace-pre">Live Site</p>
-                </Link>
-                  ) }
-               
-                <TfiCommentAlt
-                  className={`text-[18px] ${
-                    findPath &&
-                    (findPath[0] === "user" || findPath[0] === "attorney")
-                      ? "text-textColor"
-                      : "text-white"
-                  }`}
-                />
-                <Badge count={5} size="small">
-                  <FaBell
-                    className={`text-[18px] ${
-                      findPath &&
-                      (findPath[0] === "user" || findPath[0] === "attorney")
-                        ? "text-textColor"
-                        : "text-white"
-                    }`}
-                  />
-                </Badge>
-                <div className="relative dropdown-container">
-                  <Dropdown overlay={dropdownContent2} trigger={["hover"]}>
-                    <div
-                      className="cursor-pointer"
-                      // aria-label="User Profile"
-                      // onClick={() => setIsDropdownOpen((prev) => !prev)}
-                    >
-                      {user?.image ? (
-                        <img
-                          src={user?.image}
-                          alt="User"
-                          className="object-cover w-[56px] h-[56px] rounded-full"
-                        />
-                      ) : (
-                        <Avatar
-                          name={user?.name}
-                          className="w-[40px] h-[40px]"
-                          bgColor="bg-secondary"
-                          icon={<FaUser className="text-[20px]" />}
-                        />
-                      )}
-                    </div>
-                  </Dropdown>
-                  {/* Dropdown Menu */}
-                </div>
-              </div>
-            ) : (
-              <Button
-                onClick={() => {
-                  openLoginModal();
-                }}
-              >
-                Get Appointed
-              </Button>
-            )}
-
-            {/*droppings*/}
-            {  (findPath[0] !== "attorney") && (
-            <div className="relative">
-            <div
-  onClick={() => {
-    setActive((prev) => !prev);
-    animateToggleIcon();
-  }}
-  className="block lg:hidden toggle-icon"
->
-  {active ? (
-    <IoMdClose ref={closeIconRef} className="h-6 w-6 close" />
-  ) : (
-    <FaRegChartBar ref={openIconRef} className="h-6 w-6 open" />
-  )}
-</div>
-
-            </div>)}
-          </div>
-        </div>
-        {active && (
-          <div
-            className={`absolute  top-[50px] left-0  bg-[#3F4069] w-full md:px-[57px] px-7 py-8  text-white`}
-            style={{ zIndex: "150" }}
-          >
-            <ul className="flex flex-col items-center gap-8 mobile-nav">
-              <div>
-                <Link to={`/`}>
-                  <li
-                    className={`hover:text-primary ${
-                      location?.pathname === "/" ? "text-primary" : ""
-                    }`}
-                  >
-                    Home
-                  </li>
-                </Link>
-              </div>
-              <div>
-                <Link to={`/about`}>
-                  <li
-                    className={`hover:text-primary ${
-                      location?.pathname === "About" ? "text-primary" : ""
-                    }`}
-                  >
-                    About
-                  </li>
-                </Link>
-              </div>
-              <div>
-                <Link to={`/service`}>
-                  <li
-                    className={`hover:text-primary ${
-                      location?.pathname === "Service" ? "text-primary" : ""
-                    }`}
-                  >
-                    Service
-                  </li>
-                </Link>
-              </div>
-              <li
-                className={`hover:text-primary ${
-                  location?.pathname === "Case Study" ? "text-primary" : ""
-                }`}
-              >
-                Case Study
-              </li>
-              <li
-                className={`hover:text-primary cursor-pointer ${
-                  location?.pathname === "Contact Us" ? "text-primary" : ""
-                }`}
-              >
-                Contact Us
-              </li>
-              <li className={`hover:text-primary cursor-pointer`}>
+              ))}
+              <li className="cursor-pointer">
                 <Dropdown overlay={dropdownContent} trigger={["hover"]}>
                   <a
                     onClick={(e) => e.preventDefault()}
                     className="flex items-center gap-2"
                   >
-                    Pages
-                    <FaAngleDown className="text-sm" />
+                    Pages <FaAngleDown className="text-sm" />
                   </a>
                 </Dropdown>
               </li>
             </ul>
-            <div className="absolute right-[2rem] top-[1rem]">
-              <div
-                onClick={() => setActive((prev) => !prev)}
-                className="block lg:hidden toggle-icon"
-              >
-                <IoMdClose className="h-6 w-6" />
-              </div>
+
+            {/* Right Side Icons */}
+            <div className="flex items-center gap-4">
+              {user ? (
+                <>
+                  {findPath[0] === "attorney" && (
+                    <Link
+                      to="/"
+                      target="_blank"
+                      className="flex items-center gap-1 hover:text-primary"
+                    >
+                      <ImExit />
+                      <span>Live Site</span>
+                    </Link>
+                  )}
+                  <TfiCommentAlt />
+                  <Badge count={3} size="small">
+                    <FaBell />
+                  </Badge>
+                  <Dropdown overlay={dropdownContent2} trigger={["hover"]}>
+                    <div className="cursor-pointer">
+                      <Avatar
+                        icon={<FaUser />}
+                        className="w-[40px] h-[40px] object-cover rounded-full"
+                      />
+                    </div>
+                  </Dropdown>
+                </>
+              ) : (
+                <Button onClick={openLoginModal}>Get Appointed</Button>
+              )}
+
+              {/* Mobile Menu Icon */}
+              {!findPath.includes("attorney") && (
+                <div className="lg:hidden">
+                  {!menuOpen && (
+                    <FaRegChartBar
+                      className="h-6 w-6 text-white cursor-pointer"
+                      onClick={handleMenuToggle}
+                    />
+                  )}
+                </div>
+              )}
             </div>
           </div>
-        )}
-      </nav>
+        </nav>
+
+        {/* Mobile Navigation */}
+        
+          <div
+            id="mobile"
+            className={`fixed ${menuOpen && "block"} top-0  right-[-100%] w-[40%] h-full bg-black text-white py-12 z-30`}
+          >
+            <IoMdClose
+              className="h-6 w-6 text-white cursor-pointer absolute top-4 right-4"
+              onClick={handleMenuToggle}
+            />
+
+            <ul className="flex flex-col items-start px-6 gap-6">
+              {["", "about", "service", "caseStudy", "contact"].map((path) => (
+                <li key={path}>
+                  <Link
+                    to={`/${path}`}
+                    className={`hover:text-primary ${
+                      location.pathname === `/${path}` ? "text-primary" : ""
+                    }`}
+                  >
+                    {path === ""
+                      ? "Home"
+                      : path.charAt(0).toUpperCase() + path.slice(1)}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Dropdown overlay={dropdownContent} trigger={["hover"]}>
+                  <a
+                    onClick={(e) => e.preventDefault()}
+                    className="flex items-center gap-2"
+                  >
+                    Pages <FaAngleDown />
+                  </a>
+                </Dropdown>
+              </li>
+            </ul>
+          </div>
+       
+      </div>
+
+      {/* Modals */}
       {signUpModal && <SignUp />}
       {isLoginModalOpen && <Login />}
       {otpModal && <OtpModal />}

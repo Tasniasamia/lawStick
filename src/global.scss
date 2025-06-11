@@ -24,6 +24,7 @@ padding:0;
 background:var(--white);
 color:var(--textcolor);
 font-family: var(--font-sans);
+overflow-x: hidden;
 
 }
 .custom-container {
@@ -673,4 +674,8 @@ select {
   border-color: #B68C5A !important;
 }
 
+#mobile{
+  background-color:rgba(63, 64, 105, 0.482);
+  backdrop-filter: blur(20px);
+}
 
