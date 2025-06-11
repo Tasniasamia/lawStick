@@ -1,3 +1,4 @@
+import AnimationPage from "../components/animation/animationPage";
 import Practice from "../components/practice/practice";
 import Index from "../pages";
 import About from "../pages/about";
@@ -65,5 +66,9 @@ export const PublicRoutes = [
     {
         path:"/practice",
         component:Practice
+    }
+    ,{
+        path:"/animation",
+        component:AnimationPage
     }
 ];

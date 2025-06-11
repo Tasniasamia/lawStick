@@ -1,6 +1,7 @@
 import AboutUs from "../components/about/about";
 import CasesStatus from "../components/about/caseStatus";
 import Fairness from "../components/about/fairness";
+import Marque from "../components/about/marque";
 import Banner from "../components/common/banner";
 import Contact from "../components/common/contact";
 import Lawyer from "../components/common/lawyer";
@@ -19,6 +20,7 @@ const About = () => {
             <Lawyer/>
             <Contact/>
             <OurClients/>
+            <Marque/>
         </div>
     );
 };

@@ -678,4 +678,30 @@ select {
   background-color:rgba(63, 64, 105, 0.482);
   backdrop-filter: blur(20px);
 }
+#main{
+  height: 100%;
+  width: 100%;
+}
 
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: gray;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* important so it doesn't block clicks */
+  transform: translate(-50%, -50%); /* center on real cursor */
+  z-index: 9999; /* ensure it's on top */
+}
+
+#text h2 span{
+  display: inline-block;
+  cursor: pointer;
+}
+
+.marquee{
+  transform: translateX(-100%);
+  background-color: lawngreen;
+}
