@@ -9,6 +9,7 @@ import Testimonial from "../components/common/testimonial";
 import Banner from "../components/home/banner";
 import Faq from "../components/home/faq";
 import gsap from "gsap";
+import AnimationForm from "../components/common/form";
 
 const Index = () => {
     useEffect(()=>{
@@ -23,6 +24,7 @@ const Index = () => {
     return (
         <div>
             <Banner/>
+            {/* <AnimationForm/> */}
             <AboutUS/>
             <Service/>
             <Lawyer/>

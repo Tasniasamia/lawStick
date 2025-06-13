@@ -5,8 +5,74 @@ import { AiOutlineMail } from "react-icons/ai";
 import { LuPhone } from "react-icons/lu";
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegClock,FaFacebookF,FaInstagram,FaTwitter } from "react-icons/fa";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const OurContact = () => {
+  useEffect(() => {
+  
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        scroller: "body",
+        scrub: 2,
+        markers: true,
+        pin: true,
+        top: "top top",
+      }
+    });
+    tl.from(".header-11", {
+      x: "-100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    })
+    tl.from(".section-descriptions", {
+      x: "-100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    })
+    tl.from(".elem1.line1", {
+      x: "-100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    },"anim");
+    tl.from(".elem1.line2", {
+      x: "100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    },"anim");
+    tl.from(".elem2.line1", {
+      x: "-100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    },"anim2");
+    tl.from(".elem2.line2", {
+      x: "100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    },"anim2");
+    tl.from(".contacts-form", {
+      x: "100%",
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    },"-=1");
+  
+  }, []);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(
@@ -22,15 +88,15 @@ const OurContact = () => {
     }
   };
   return (
-    <div className="custom-container xl:mb-[150px] md:mb-14 mb-[60px] flex xl:flex-row flex-col gap-[56px]">
+    <div id="contact" className="custom-container xl:pt-[150px] md:pt-14 pt-[60px] xl:mb-[150px] md:mb-14 mb-[60px] flex xl:flex-row flex-col gap-[56px]">
       <div className="md:basis-1/2 basis-full">
-        <h1 className="header-1">Contact Us</h1>
-        <p className="section-description md:w-[550px] w-full text-textColor">
+        <h1 className="header-11">Contact Us</h1>
+        <p className="section-descriptions md:w-[550px] w-full text-textColor">
           We’re here to help. Contact us today for personalized legal support
           and solutions.
         </p>
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-[60px] sm:mb-[90px] mb-[45px]">
-          <div className="flex gap-[8px]">
+          <div className="flex gap-[8px] elem1 line1">
               <AiOutlineMail className="text-[30px] text-[#242628] mx-[5px]" />
             <div>
               <p className="text-[#242628] leading-[23.46px] text-[20px] font-medium capitalize">
@@ -42,7 +108,7 @@ const OurContact = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[8px]">
+          <div className="flex gap-[8px] elem1 line2">
               <LuPhone className="text-[30px] text-[#242628] mx-[5px]" />
             <div>
               <p className="text-[#242628] leading-[23.46px] text-[20px] font-medium capitalize">
@@ -54,7 +120,7 @@ const OurContact = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[8px]">
+          <div className="flex gap-[8px] elem2 line1">
               <CiLocationOn className="text-[30px] text-[#242628] mx-[5px]" />
             <div>
               <p className="text-[#242628] leading-[23.46px] text-[20px] font-medium capitalize">
@@ -66,7 +132,7 @@ const OurContact = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[8px]">
+          <div className="flex gap-[8px] elem2 line2">
               <FaRegClock className="text-[30px] text-[#242628] mx-[5px]" />
             <div>
               <p className="text-[#242628] leading-[23.46px] text-[20px] font-medium capitalize">
@@ -91,7 +157,7 @@ const OurContact = () => {
           e.preventDefault();
           handleSubmit(e);
         }}
-        className="md:basis-1/2 basis-full rounded-[20px] bg-white p-[40px] border border-[#E0E0E0]   md:px-10 px-4 order-2 "
+        className="md:basis-1/2 contacts-form basis-full rounded-[20px] bg-white p-[40px] border border-[#E0E0E0]   md:px-10 px-4 order-2 "
       >
         <div className="flex sm:flex-row flex-col gap-6 mb-[24px]">
           {/* name */}

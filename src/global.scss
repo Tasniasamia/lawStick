@@ -184,6 +184,18 @@ padding: 0!important;
     font-size: 1rem!important
   }
 }
+.section-descriptions {
+  color: #3A3D3F; 
+  font-size: 0.875rem; 
+  font-weight: 400; 
+  margin-bottom: 2.5rem;
+  font-family: var(--font-sans);
+
+  /* Medium (md) screens and up */
+  @media (min-width: 768px) {
+    font-size: 1rem!important
+  }
+}
 //header and title section 
 .simple-text{
   font-family: 'Work Sans', sans-serif;
@@ -220,6 +232,12 @@ padding: 0!important;
   margin-top: 37px;
 }
 
+.header-11 {
+  font-family: 'EB Garamond', serif;
+  font-size: 30px;
+  font-weight: 600; /* Semibold */
+  margin-top: 37px;
+}
 /* Medium screens (md) */
 @media (min-width: 768px) {
   .header-1 {

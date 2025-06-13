@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CaseCard = ({ data }) => {
   return (
     <div
-      className="max-w-[424px] mx-auto bg-white border border-[#E0E0E0] flex flex-col items-center text-black  rounded-[10px] lg:pb-[30px] md:pb-[19px] pb-[17px] overflow-auto"
+      className="max-w-[424px] mx-auto bg-white border border-[#E0E0E0] flex flex-col items-center text-black  rounded-[10px] lg:pb-[30px] md:pb-[19px] pb-[17px] overflow-auto card"
       style={{
         boxShadow: "0px 4px 25px 0px #00000014",
       }}

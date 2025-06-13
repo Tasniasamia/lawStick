@@ -7,9 +7,31 @@ import "swiper/css";
 import "swiper/css/pagination";
 import CaseCard from "./card/caseCard";
 import Button from "./button";
+import gsap from "gsap";
+import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 const CaseStudy = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    gsap.from(".card", {
+      x: -100,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power4.out",
+      
+      yoyo: true,
+      scrollTrigger: {
+        trigger: ".case-study",
+        scroller: "body",
+        scrub: 2,
+        markers: true,
+        pin: true,
+        stagger: 0.2,
+      },
+    })
+  }, []);
   const data=[
     {
       image: case1,
@@ -95,6 +117,7 @@ const CaseStudy = () => {
               data?.map((i,index)=>{
                 return (
                   <SwiperSlide key={index}>
+                  
                   <CaseCard data={i}/>
                   </SwiperSlide>
                 )
